@@ -10,9 +10,17 @@
 		1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01B2853286000FFBDD0 /* AppDelegate.swift */; };
 		1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */; };
 		1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01F2853286000FFBDD0 /* ViewController.swift */; };
-		1F68C0232853286000FFBDD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0212853286000FFBDD0 /* Main.storyboard */; };
 		1F68C0252853286200FFBDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0242853286200FFBDD0 /* Assets.xcassets */; };
 		1F68C0282853286200FFBDD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */; };
+		1F68C030285328D200FFBDD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C02F285328D200FFBDD0 /* MainViewController.swift */; };
+		1F68C0322853298900FFBDD0 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C0312853298800FFBDD0 /* CollectionView.swift */; };
+		1F68C03428532CE400FFBDD0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C03328532CE400FFBDD0 /* CollectionViewCell.swift */; };
+		1F825ABD285B149200B7C315 /* вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825AB9285B149200B7C315 /* вниз.mp3 */; };
+		1F825ABE285B149200B7C315 /* вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825ABA285B149200B7C315 /* вправо.mp3 */; };
+		1F825ABF285B149200B7C315 /* вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825ABB285B149200B7C315 /* вверх.mp3 */; };
+		1F825AC0285B149200B7C315 /* влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825ABC285B149200B7C315 /* влево.mp3 */; };
+		1F825AC2285B468800B7C315 /* Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825AC1285B468800B7C315 /* Где муха?.mp3 */; };
+		1F825AC4285B7C8300B7C315 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F825AC3285B7C8300B7C315 /* OptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +28,18 @@
 		1F68C01B2853286000FFBDD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1F68C01F2853286000FFBDD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1F68C0222853286000FFBDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F68C0242853286200FFBDD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F68C0272853286200FFBDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F68C0292853286200FFBDD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F68C02F285328D200FFBDD0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1F68C0312853298800FFBDD0 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		1F68C03328532CE400FFBDD0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1F825AB9285B149200B7C315 /* вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "вниз.mp3"; sourceTree = SOURCE_ROOT; };
+		1F825ABA285B149200B7C315 /* вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "вправо.mp3"; sourceTree = SOURCE_ROOT; };
+		1F825ABB285B149200B7C315 /* вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "вверх.mp3"; sourceTree = SOURCE_ROOT; };
+		1F825ABC285B149200B7C315 /* влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "влево.mp3"; sourceTree = SOURCE_ROOT; };
+		1F825AC1285B468800B7C315 /* Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Где муха?.mp3"; sourceTree = "<group>"; };
+		1F825AC3285B7C8300B7C315 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,31 @@
 		1F68C01A2853286000FFBDD0 /* Муха */ = {
 			isa = PBXGroup;
 			children = (
+				1F825AB8285B146800B7C315 /* Sounds */,
 				1F68C01B2853286000FFBDD0 /* AppDelegate.swift */,
 				1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */,
 				1F68C01F2853286000FFBDD0 /* ViewController.swift */,
-				1F68C0212853286000FFBDD0 /* Main.storyboard */,
 				1F68C0242853286200FFBDD0 /* Assets.xcassets */,
 				1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */,
 				1F68C0292853286200FFBDD0 /* Info.plist */,
+				1F68C02F285328D200FFBDD0 /* MainViewController.swift */,
+				1F825AC3285B7C8300B7C315 /* OptionsViewController.swift */,
+				1F68C0312853298800FFBDD0 /* CollectionView.swift */,
+				1F68C03328532CE400FFBDD0 /* CollectionViewCell.swift */,
 			);
 			path = "Муха";
+			sourceTree = "<group>";
+		};
+		1F825AB8285B146800B7C315 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1F825AB9285B149200B7C315 /* вниз.mp3 */,
+				1F825ABC285B149200B7C315 /* влево.mp3 */,
+				1F825ABA285B149200B7C315 /* вправо.mp3 */,
+				1F825ABB285B149200B7C315 /* вверх.mp3 */,
+				1F825AC1285B468800B7C315 /* Где муха?.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +157,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F825ABF285B149200B7C315 /* вверх.mp3 in Resources */,
+				1F825AC2285B468800B7C315 /* Где муха?.mp3 in Resources */,
 				1F68C0282853286200FFBDD0 /* LaunchScreen.storyboard in Resources */,
+				1F825ABE285B149200B7C315 /* вправо.mp3 in Resources */,
 				1F68C0252853286200FFBDD0 /* Assets.xcassets in Resources */,
-				1F68C0232853286000FFBDD0 /* Main.storyboard in Resources */,
+				1F825ABD285B149200B7C315 /* вниз.mp3 in Resources */,
+				1F825AC0285B149200B7C315 /* влево.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,22 +175,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */,
+				1F68C0322853298900FFBDD0 /* CollectionView.swift in Sources */,
+				1F68C03428532CE400FFBDD0 /* CollectionViewCell.swift in Sources */,
 				1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */,
 				1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */,
+				1F825AC4285B7C8300B7C315 /* OptionsViewController.swift in Sources */,
+				1F68C030285328D200FFBDD0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1F68C0212853286000FFBDD0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F68C0222853286000FFBDD0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +324,6 @@
 				INFOPLIST_FILE = "Муха/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +351,6 @@
 				INFOPLIST_FILE = "Муха/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
