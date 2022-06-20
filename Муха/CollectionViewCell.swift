@@ -13,6 +13,8 @@ class CollectionViewCell: UICollectionViewCell {
 
    let imageView: UIImageView = {
       let imageView = UIImageView()
+      imageView.layer.cornerRadius = 15
+      imageView.clipsToBounds = true
       imageView.translatesAutoresizingMaskIntoConstraints = false
       imageView.contentMode = .scaleAspectFit
       return imageView
