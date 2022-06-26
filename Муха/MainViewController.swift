@@ -12,6 +12,8 @@ class MainViewController : UIViewController {
    
    // MARK: - Properties
    
+   let defaults = UserDefaults.standard
+   
    private var collectionView = CollectionView(cells: 5)
    
    private let label: UILabel = {
@@ -58,6 +60,7 @@ class MainViewController : UIViewController {
 
    var steps = 5
    var speedInSec: Double = 1
+   var isHide: Bool = false
    var x = 0
    var y = 0
    var movingDirection = ""
@@ -67,8 +70,6 @@ class MainViewController : UIViewController {
          label.text = "\(time)"
       }
    }
-   
-   
    
    var prepareTimer = Timer()
    var stepsTimer = Timer()
@@ -81,6 +82,7 @@ class MainViewController : UIViewController {
       setupViews()
       setConstraints()
       setDelegates()
+      loadDefaults()
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +112,15 @@ class MainViewController : UIViewController {
    
    //MARK: - Selectors
    
+   private func loadDefaults() {
+      
+      if defaults.object(forKey: "steps") != nil {
+         steps = defaults.integer(forKey: "steps")
+         speedInSec = defaults.double(forKey: "speedInSec")
+         isHide = defaults.bool(forKey: "isHide")
+      }
+   }
+   
    @objc private func startButtonTapped() {
       
       freezeButtons(freeze: true)
@@ -124,6 +135,7 @@ class MainViewController : UIViewController {
       prepareTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
          self.time -= 1
          if self.time == -1 {
+            self.collectionView.isHidden = self.isHide
             self.label.text = ""
             self.prepareTimer.invalidate()
             self.collectionView.index = nil
@@ -135,6 +147,7 @@ class MainViewController : UIViewController {
    
    @objc private func stopButtonTapped() {
       print("stopButtonTapped")
+      self.collectionView.isHidden = false
       prepareTimer.invalidate()
       stepsTimer.invalidate()
       freezeButtons(freeze: false)
@@ -146,6 +159,7 @@ class MainViewController : UIViewController {
       let optionVC = OptionsViewController()
       optionVC.steps = steps
       optionVC.speedInSec = speedInSec
+      optionVC.isHide = isHide
       optionVC.delegate = self
       present(optionVC, animated: true)
    }
@@ -159,13 +173,13 @@ class MainViewController : UIViewController {
          self.pickDirection()
          self.changePositionInXY()
          round += 1
-         
+                  
          if round == self.steps {
             self.stepsTimer.invalidate()
-            
             Timer.scheduledTimer(withTimeInterval: self.speedInSec, repeats: false) { timer in
                self.collectionView.index = IndexPath(item: self.y, section: self.x)
                print("x - \(self.x), y - \(self.y)")
+               self.collectionView.isHidden = false
                self.playSound(with: "Где муха?")
                self.label.text = "Где муха?"
                self.collectionView.isUserInteractionEnabled = true
@@ -264,14 +278,18 @@ extension MainViewController: CollectionViewProtocol {
 }
 
 extension MainViewController: OptionsViewControllerProtocol {
+
    
    
-   func setOptions(steps: Int, speedInSec: Double) {
+   
+   func setOptions(steps: Int, speedInSec: Double, isHide: Bool) {
       self.steps = steps
       self.speedInSec = speedInSec
+      self.isHide = isHide
       
       print(self.steps)
       print(self.speedInSec)
+      print(self.isHide)
    }
    
    

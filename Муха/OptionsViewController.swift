@@ -9,12 +9,14 @@ import UIKit
 
 protocol OptionsViewControllerProtocol: AnyObject {
    
-   func setOptions(steps: Int, speedInSec: Double)
+   func setOptions(steps: Int, speedInSec: Double, isHide: Bool)
 }
 
 class OptionsViewController : UIViewController {
    
    // MARK: - Properties
+   
+   private let defaults = UserDefaults.standard
    
    private lazy var howToButton: UIButton = {
       let button = UIButton()
@@ -58,6 +60,20 @@ class OptionsViewController : UIViewController {
       return slider
    }()
    
+   private let hideLabel: UILabel = {
+      let label = UILabel()
+      label.text = "спрятать таблицу"
+      label.translatesAutoresizingMaskIntoConstraints = false
+      return label
+   }()
+   
+   private lazy var hideSwitch: UISwitch = {
+      let hideSwitch = UISwitch()
+//      hideSwitch.addTarget(self, action: #selector(hideSwitchValueChanged), for: .valueChanged)
+      hideSwitch.translatesAutoresizingMaskIntoConstraints = false
+      return hideSwitch
+   }()
+   
    
    private lazy var cancelButton: UIButton = {
       let button = UIButton()
@@ -80,6 +96,12 @@ class OptionsViewController : UIViewController {
    }()
    
    var buttonStack = UIStackView()
+   
+   var isHide = false {
+      didSet {
+         hideSwitch.setOn(isHide, animated: false)
+      }
+   }
    
    var steps = 5 {
       didSet {
@@ -111,12 +133,19 @@ class OptionsViewController : UIViewController {
       view.addSubview(speedSlider)
       view.addSubview(stepsLabel)
       view.addSubview(stepsSlider)
+      view.addSubview(hideLabel)
+      view.addSubview(hideSwitch)
       buttonStack = UIStackView(arrangedSubviews: [cancelButton, saveButton])
       buttonStack.translatesAutoresizingMaskIntoConstraints = false
       buttonStack.spacing = 40
       buttonStack.axis = .horizontal
       buttonStack.distribution = .fillEqually
       view.addSubview(buttonStack)
+      if isHide {
+         hideSwitch.setOn(true, animated: false)
+      } else {
+         hideSwitch.setOn(false, animated: false)
+      }
    }
    
    //MARK: - Selectors
@@ -167,11 +196,22 @@ class OptionsViewController : UIViewController {
    weak var delegate: OptionsViewControllerProtocol?
    
    @objc private func saveButtonTapped() {
-      delegate?.setOptions(steps: steps, speedInSec: speedInSec)
+      saveToDefaults()
+      delegate?.setOptions(steps: steps, speedInSec: speedInSec, isHide: hideSwitch.isOn)
       dismiss(animated: true)
-      print("saveButtonTapped")
    }
    
+   private func saveToDefaults() {
+      
+      let steps = self.steps
+      let speedInSec = self.speedInSec
+      let isHide = self.hideSwitch.isOn
+      print("isHide to defaults - \(isHide)")
+      
+      defaults.set(steps, forKey: "steps")
+      defaults.set(speedInSec, forKey: "speedInSec")
+      defaults.set(isHide, forKey: "isHide")
+   }
    
    
    //MARK: - Constraints
@@ -207,6 +247,17 @@ class OptionsViewController : UIViewController {
          speedSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
          speedSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
       ])
+      
+      NSLayoutConstraint.activate([
+         hideLabel.topAnchor.constraint(equalTo: speedSlider.bottomAnchor, constant: 10),
+         hideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+      ])
+      
+      NSLayoutConstraint.activate([
+         hideSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+         hideSwitch.topAnchor.constraint(equalTo: hideLabel.bottomAnchor, constant: 10)
+      ])
+      
       
       NSLayoutConstraint.activate([
          buttonStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
