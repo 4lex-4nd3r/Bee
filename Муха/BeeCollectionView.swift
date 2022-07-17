@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol CollectionViewProtocol: AnyObject {
+protocol BeeCollectionViewProtocol: AnyObject {
    
    func checkResult(result: Bool)
 }
 
-class CollectionView : UICollectionView {
+class BeeCollectionView : UICollectionView {
    
    // MARK: - Properties
    
@@ -34,17 +34,17 @@ class CollectionView : UICollectionView {
    }
    
    private func configure() {
-       delegate = self
-       dataSource = self
-       backgroundColor = .none
-       translatesAutoresizingMaskIntoConstraints = false
-       register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell().idCell)
+      delegate = self
+      dataSource = self
+      backgroundColor = .none
+      translatesAutoresizingMaskIntoConstraints = false
+      register(BeeCollectionViewCell.self, forCellWithReuseIdentifier: BeeCollectionViewCell().idCell)
    }
    
    
    // MARK: - Lifecycle
    
-
+   
    
    //MARK: - Setups
    
@@ -60,21 +60,15 @@ class CollectionView : UICollectionView {
       reloadData()
    }
    
-   weak var tapDelegate: CollectionViewProtocol?
+   weak var tapDelegate: BeeCollectionViewProtocol?
    
    private func sendResultToMainVC(result: Bool) {
-      
       tapDelegate?.checkResult(result: result)
    }
    
-   
-   //MARK: - Constraints
-   
-   private func setConstraints() {
-   }
 }
 
-extension CollectionView: UICollectionViewDelegate {
+extension BeeCollectionView: UICollectionViewDelegate {
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       print(indexPath)
@@ -86,10 +80,10 @@ extension CollectionView: UICollectionViewDelegate {
          sendResultToMainVC(result: false)
       }
    }
-
+   
 }
 
-extension CollectionView: UICollectionViewDataSource {
+extension BeeCollectionView: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       cells
    }
@@ -100,7 +94,7 @@ extension CollectionView: UICollectionViewDataSource {
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
-      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell().idCell, for: indexPath) as? CollectionViewCell else {
+      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeeCollectionViewCell().idCell, for: indexPath) as? BeeCollectionViewCell else {
          return UICollectionViewCell()
       }
       
@@ -117,7 +111,7 @@ extension CollectionView: UICollectionViewDataSource {
    }
 }
 
-extension CollectionView: UICollectionViewDelegateFlowLayout {
+extension BeeCollectionView: UICollectionViewDelegateFlowLayout {
    
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
       let inset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)

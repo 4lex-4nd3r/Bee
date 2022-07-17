@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import AVFoundation
 
-protocol OptionsViewControllerProtocol: AnyObject {
+
+protocol SettingsViewControllerProtocol: AnyObject {
    
-   func setOptions(steps: Int, speedInSec: Double, isHide: Bool)
+   func setOptions(steps: Int, speedInSec: Double, isHide: Bool, voice: String)
 }
 
-class OptionsViewController : UIViewController {
+class SettingsViewController : UIViewController {
    
    // MARK: - Properties
    
@@ -20,9 +22,7 @@ class OptionsViewController : UIViewController {
    
    private lazy var howToButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Как играть?", for: .normal)
-      button.backgroundColor = .systemBlue
-      button.layer.cornerRadius = 10
+      button.setBackgroundImage(UIImage(systemName: "questionmark.circle"), for: .normal)
       button.addTarget(self, action: #selector(howToButtonTapped), for: .touchUpInside)
       button.translatesAutoresizingMaskIntoConstraints = false
       return button
@@ -69,9 +69,22 @@ class OptionsViewController : UIViewController {
    
    private lazy var hideSwitch: UISwitch = {
       let hideSwitch = UISwitch()
-//      hideSwitch.addTarget(self, action: #selector(hideSwitchValueChanged), for: .valueChanged)
       hideSwitch.translatesAutoresizingMaskIntoConstraints = false
       return hideSwitch
+   }()
+   
+   private let voiceLabel: UILabel = {
+      let label = UILabel()
+      label.text = "выбрать голос"
+      label.translatesAutoresizingMaskIntoConstraints = false
+      return label
+   }()
+   
+   private let voicePicker: UIPickerView = {
+      let pickerView = UIPickerView()
+      
+      pickerView.translatesAutoresizingMaskIntoConstraints = false
+      return pickerView
    }()
    
    
@@ -116,14 +129,32 @@ class OptionsViewController : UIViewController {
       }
    }
    
+   var voice = "Даниил" {
+      didSet {
+         print("set voice")
+         print(voice)
+      }
+   }
+   
+   private var voices = ["Анна", "Дмитрий", "Даниил", "Алена", "Филипп", "Карина"]
+   
+   var player: AVAudioPlayer!
+
+   
    // MARK: - Lifecycle
    
    override func viewDidLoad() {
       super.viewDidLoad()
       setupViews()
       setConstraints()
+      setDelegates()
+      loadDefaults()
+      let index = voices.firstIndex(of: voice)
+      if let index = index {
+         voicePicker.selectRow(index, inComponent: 0, animated: true)
+      }
    }
-   
+
    //MARK: - Setups
    
    private func setupViews() {
@@ -135,6 +166,8 @@ class OptionsViewController : UIViewController {
       view.addSubview(stepsSlider)
       view.addSubview(hideLabel)
       view.addSubview(hideSwitch)
+      view.addSubview(voiceLabel)
+      view.addSubview(voicePicker)
       buttonStack = UIStackView(arrangedSubviews: [cancelButton, saveButton])
       buttonStack.translatesAutoresizingMaskIntoConstraints = false
       buttonStack.spacing = 40
@@ -145,6 +178,20 @@ class OptionsViewController : UIViewController {
          hideSwitch.setOn(true, animated: false)
       } else {
          hideSwitch.setOn(false, animated: false)
+      }
+   }
+   
+   private func setDelegates() {
+      voicePicker.delegate = self
+      voicePicker.dataSource = self
+   }
+   
+   private func loadDefaults() {
+      if defaults.object(forKey: "steps") != nil {
+         steps = defaults.integer(forKey: "steps")
+         speedInSec = defaults.double(forKey: "speedInSec")
+         isHide = defaults.bool(forKey: "isHide")
+         voice = defaults.string(forKey: "voice") ?? "0"
       }
    }
    
@@ -193,11 +240,11 @@ class OptionsViewController : UIViewController {
       dismiss(animated: true)
    }
    
-   weak var delegate: OptionsViewControllerProtocol?
+   weak var delegate: SettingsViewControllerProtocol?
    
    @objc private func saveButtonTapped() {
       saveToDefaults()
-      delegate?.setOptions(steps: steps, speedInSec: speedInSec, isHide: hideSwitch.isOn)
+      delegate?.setOptions(steps: steps, speedInSec: speedInSec, isHide: hideSwitch.isOn, voice: voice)
       dismiss(animated: true)
    }
    
@@ -206,11 +253,13 @@ class OptionsViewController : UIViewController {
       let steps = self.steps
       let speedInSec = self.speedInSec
       let isHide = self.hideSwitch.isOn
-      print("isHide to defaults - \(isHide)")
+      let voice = self.voice
       
       defaults.set(steps, forKey: "steps")
       defaults.set(speedInSec, forKey: "speedInSec")
       defaults.set(isHide, forKey: "isHide")
+      defaults.set(voice, forKey: "voice")
+            
    }
    
    
@@ -222,7 +271,7 @@ class OptionsViewController : UIViewController {
       NSLayoutConstraint.activate([
          howToButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
          howToButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-         howToButton.widthAnchor.constraint(equalToConstant: 150),
+         howToButton.widthAnchor.constraint(equalToConstant: 30),
          howToButton.heightAnchor.constraint(equalToConstant: 30)
       ])
       
@@ -233,8 +282,8 @@ class OptionsViewController : UIViewController {
       
       NSLayoutConstraint.activate([
          stepsSlider.topAnchor.constraint(equalTo: stepsLabel.bottomAnchor, constant: 5),
-         stepsSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-         stepsSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+         stepsSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+         stepsSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
       ])
       
       NSLayoutConstraint.activate([
@@ -244,18 +293,29 @@ class OptionsViewController : UIViewController {
       
       NSLayoutConstraint.activate([
          speedSlider.topAnchor.constraint(equalTo: speedLabel.bottomAnchor, constant: 5),
-         speedSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-         speedSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+         speedSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+         speedSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
       ])
       
       NSLayoutConstraint.activate([
-         hideLabel.topAnchor.constraint(equalTo: speedSlider.bottomAnchor, constant: 10),
-         hideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+         hideLabel.topAnchor.constraint(equalTo: speedSlider.bottomAnchor, constant: 40),
+         hideLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40)
       ])
       
       NSLayoutConstraint.activate([
-         hideSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-         hideSwitch.topAnchor.constraint(equalTo: hideLabel.bottomAnchor, constant: 10)
+         hideSwitch.centerXAnchor.constraint(equalTo: voicePicker.centerXAnchor),
+         hideSwitch.centerYAnchor.constraint(equalTo: hideLabel.centerYAnchor)
+      ])
+      
+      NSLayoutConstraint.activate([
+         voiceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+         voiceLabel.centerYAnchor.constraint(equalTo: voicePicker.centerYAnchor)
+      ])
+      
+      NSLayoutConstraint.activate([
+         voicePicker.topAnchor.constraint(equalTo: hideSwitch.bottomAnchor, constant: 20),
+         voicePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+         voicePicker.widthAnchor.constraint(equalToConstant: 150)
       ])
       
       
@@ -265,5 +325,30 @@ class OptionsViewController : UIViewController {
          buttonStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
          buttonStack.heightAnchor.constraint(equalToConstant: 40)
       ])
+   }
+}
+
+extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+   func numberOfComponents(in pickerView: UIPickerView) -> Int {
+      1
+   }
+   
+   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+      voices.count
+   }
+   
+   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+      voices[row]
+   }
+   
+   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      voice = voices[row]
+      playSound(with: voices[row] + " - " + "Где муха?")
+   }
+   
+   private func playSound(with name: String) {
+      guard let url = Bundle.main.url(forResource: name, withExtension:"mp3") else { return }
+      player = try! AVAudioPlayer(contentsOf: url)
+      player.play()
    }
 }

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class BeeCollectionViewCell: UICollectionViewCell {
    
    let idCell = "idCell"
-
+   
    let imageView: UIImageView = {
       let imageView = UIImageView()
       imageView.layer.cornerRadius = 15
@@ -33,22 +33,22 @@ class CollectionViewCell: UICollectionViewCell {
    private func setupViews() {
       backgroundColor = .systemGray3
       layer.cornerRadius = 15
-//      layer.bo
+      //      layer.bo
       addSubview(imageView)
    }
-
    
-    func setBee() {
-       imageView.image = UIImage(named: "bee")
+   
+   func setBee() {
+      imageView.image = UIImage(named: "bigBee")
    }
    
    private func setConstraints() {
       
       NSLayoutConstraint.activate([
-         imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-         imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-         imageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-         imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+         imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+         imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+         imageView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+         imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
       ])
       
    }

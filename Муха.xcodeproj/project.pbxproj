@@ -12,15 +12,52 @@
 		1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01F2853286000FFBDD0 /* ViewController.swift */; };
 		1F68C0252853286200FFBDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0242853286200FFBDD0 /* Assets.xcassets */; };
 		1F68C0282853286200FFBDD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */; };
-		1F68C030285328D200FFBDD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C02F285328D200FFBDD0 /* MainViewController.swift */; };
-		1F68C0322853298900FFBDD0 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C0312853298800FFBDD0 /* CollectionView.swift */; };
-		1F68C03428532CE400FFBDD0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C03328532CE400FFBDD0 /* CollectionViewCell.swift */; };
-		1F825ABD285B149200B7C315 /* вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825AB9285B149200B7C315 /* вниз.mp3 */; };
-		1F825ABE285B149200B7C315 /* вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825ABA285B149200B7C315 /* вправо.mp3 */; };
-		1F825ABF285B149200B7C315 /* вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825ABB285B149200B7C315 /* вверх.mp3 */; };
-		1F825AC0285B149200B7C315 /* влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825ABC285B149200B7C315 /* влево.mp3 */; };
-		1F825AC2285B468800B7C315 /* Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F825AC1285B468800B7C315 /* Где муха?.mp3 */; };
-		1F825AC4285B7C8300B7C315 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F825AC3285B7C8300B7C315 /* OptionsViewController.swift */; };
+		1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C02F285328D200FFBDD0 /* BeeViewController.swift */; };
+		1F68C0322853298900FFBDD0 /* BeeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */; };
+		1F68C03428532CE400FFBDD0 /* BeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */; };
+		1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */; };
+		1F9510ED28844BE5002F4345 /* Даниил - вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510E828844BE5002F4345 /* Даниил - вниз.mp3 */; };
+		1F9510EE28844BE5002F4345 /* Даниил - Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510E928844BE5002F4345 /* Даниил - Где муха?.mp3 */; };
+		1F9510EF28844BE5002F4345 /* Даниил - вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510EA28844BE5002F4345 /* Даниил - вправо.mp3 */; };
+		1F9510F028844BE5002F4345 /* Даниил - вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510EB28844BE5002F4345 /* Даниил - вверх.mp3 */; };
+		1F9510F128844BE5002F4345 /* Даниил - влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510EC28844BE5002F4345 /* Даниил - влево.mp3 */; };
+		1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DC288464A5008E02AF /* Даниил - false.mp3 */; };
+		1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DD288464A5008E02AF /* Даниил - true.mp3 */; };
+		1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E128846656008E02AF /* Филипп - false.mp3 */; };
+		1FD864E928846656008E02AF /* Филипп - влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E228846656008E02AF /* Филипп - влево.mp3 */; };
+		1FD864EA28846656008E02AF /* Филипп - вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E328846656008E02AF /* Филипп - вправо.mp3 */; };
+		1FD864EB28846656008E02AF /* Филипп - вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E428846656008E02AF /* Филипп - вниз.mp3 */; };
+		1FD864EC28846656008E02AF /* Филипп - вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E528846656008E02AF /* Филипп - вверх.mp3 */; };
+		1FD864ED28846656008E02AF /* Филипп - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E628846656008E02AF /* Филипп - true.mp3 */; };
+		1FD864EE28846656008E02AF /* Филипп - Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E728846656008E02AF /* Филипп - Где муха?.mp3 */; };
+		1FD864F62884673A008E02AF /* Карина - влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864EF2884673A008E02AF /* Карина - влево.mp3 */; };
+		1FD864F72884673A008E02AF /* Карина - вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864F02884673A008E02AF /* Карина - вверх.mp3 */; };
+		1FD864F82884673A008E02AF /* Карина - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864F12884673A008E02AF /* Карина - true.mp3 */; };
+		1FD864F92884673A008E02AF /* Карина - Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864F22884673A008E02AF /* Карина - Где муха?.mp3 */; };
+		1FD864FA2884673A008E02AF /* Карина - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864F32884673A008E02AF /* Карина - false.mp3 */; };
+		1FD864FB2884673A008E02AF /* Карина - вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864F42884673A008E02AF /* Карина - вправо.mp3 */; };
+		1FD864FC2884673A008E02AF /* Карина - вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864F52884673A008E02AF /* Карина - вниз.mp3 */; };
+		1FD8650D28846874008E02AF /* Алена - влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8650628846874008E02AF /* Алена - влево.mp3 */; };
+		1FD8650E28846874008E02AF /* Алена - вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8650728846874008E02AF /* Алена - вверх.mp3 */; };
+		1FD8650F28846874008E02AF /* Алена - вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8650828846874008E02AF /* Алена - вправо.mp3 */; };
+		1FD8651028846874008E02AF /* Алена - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8650928846874008E02AF /* Алена - true.mp3 */; };
+		1FD8651128846874008E02AF /* Алена - Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8650A28846874008E02AF /* Алена - Где муха?.mp3 */; };
+		1FD8651228846874008E02AF /* Алена - вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8650B28846874008E02AF /* Алена - вниз.mp3 */; };
+		1FD8651328846874008E02AF /* Алена - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8650C28846874008E02AF /* Алена - false.mp3 */; };
+		1FD8651D28846997008E02AF /* Анна - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8651628846997008E02AF /* Анна - true.mp3 */; };
+		1FD8651E28846997008E02AF /* Анна - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8651728846997008E02AF /* Анна - false.mp3 */; };
+		1FD8651F28846997008E02AF /* Анна - вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8651828846997008E02AF /* Анна - вправо.mp3 */; };
+		1FD8652028846997008E02AF /* Анна - вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8651928846997008E02AF /* Анна - вверх.mp3 */; };
+		1FD8652128846997008E02AF /* Анна - влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8651A28846997008E02AF /* Анна - влево.mp3 */; };
+		1FD8652228846997008E02AF /* Анна - вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8651B28846997008E02AF /* Анна - вниз.mp3 */; };
+		1FD8652328846997008E02AF /* Анна - Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8651C28846997008E02AF /* Анна - Где муха?.mp3 */; };
+		1FD8652B288469A4008E02AF /* Дмитрий - вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86524288469A4008E02AF /* Дмитрий - вверх.mp3 */; };
+		1FD8652C288469A4008E02AF /* Дмитрий - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86525288469A4008E02AF /* Дмитрий - false.mp3 */; };
+		1FD8652D288469A4008E02AF /* Дмитрий - вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86526288469A4008E02AF /* Дмитрий - вниз.mp3 */; };
+		1FD8652E288469A4008E02AF /* Дмитрий - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86527288469A4008E02AF /* Дмитрий - true.mp3 */; };
+		1FD8652F288469A4008E02AF /* Дмитрий - влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86528288469A4008E02AF /* Дмитрий - влево.mp3 */; };
+		1FD86530288469A4008E02AF /* Дмитрий - Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86529288469A4008E02AF /* Дмитрий - Где муха?.mp3 */; };
+		1FD86531288469A4008E02AF /* Дмитрий - вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD8652A288469A4008E02AF /* Дмитрий - вправо.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,15 +68,52 @@
 		1F68C0242853286200FFBDD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F68C0272853286200FFBDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F68C0292853286200FFBDD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F68C02F285328D200FFBDD0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		1F68C0312853298800FFBDD0 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		1F68C03328532CE400FFBDD0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		1F825AB9285B149200B7C315 /* вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "вниз.mp3"; sourceTree = SOURCE_ROOT; };
-		1F825ABA285B149200B7C315 /* вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "вправо.mp3"; sourceTree = SOURCE_ROOT; };
-		1F825ABB285B149200B7C315 /* вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "вверх.mp3"; sourceTree = SOURCE_ROOT; };
-		1F825ABC285B149200B7C315 /* влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "влево.mp3"; sourceTree = SOURCE_ROOT; };
-		1F825AC1285B468800B7C315 /* Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Где муха?.mp3"; sourceTree = "<group>"; };
-		1F825AC3285B7C8300B7C315 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		1F68C02F285328D200FFBDD0 /* BeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeViewController.swift; sourceTree = "<group>"; };
+		1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeCollectionView.swift; sourceTree = "<group>"; };
+		1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1F9510E828844BE5002F4345 /* Даниил - вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - вниз.mp3"; sourceTree = "<group>"; };
+		1F9510E928844BE5002F4345 /* Даниил - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - Где муха?.mp3"; sourceTree = "<group>"; };
+		1F9510EA28844BE5002F4345 /* Даниил - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - вправо.mp3"; sourceTree = "<group>"; };
+		1F9510EB28844BE5002F4345 /* Даниил - вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - вверх.mp3"; sourceTree = "<group>"; };
+		1F9510EC28844BE5002F4345 /* Даниил - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - влево.mp3"; sourceTree = "<group>"; };
+		1FD864DC288464A5008E02AF /* Даниил - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - false.mp3"; sourceTree = "<group>"; };
+		1FD864DD288464A5008E02AF /* Даниил - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - true.mp3"; sourceTree = "<group>"; };
+		1FD864E128846656008E02AF /* Филипп - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - false.mp3"; sourceTree = "<group>"; };
+		1FD864E228846656008E02AF /* Филипп - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - влево.mp3"; sourceTree = "<group>"; };
+		1FD864E328846656008E02AF /* Филипп - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - вправо.mp3"; sourceTree = "<group>"; };
+		1FD864E428846656008E02AF /* Филипп - вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - вниз.mp3"; sourceTree = "<group>"; };
+		1FD864E528846656008E02AF /* Филипп - вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - вверх.mp3"; sourceTree = "<group>"; };
+		1FD864E628846656008E02AF /* Филипп - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - true.mp3"; sourceTree = "<group>"; };
+		1FD864E728846656008E02AF /* Филипп - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - Где муха?.mp3"; sourceTree = "<group>"; };
+		1FD864EF2884673A008E02AF /* Карина - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Карина - влево.mp3"; sourceTree = "<group>"; };
+		1FD864F02884673A008E02AF /* Карина - вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Карина - вверх.mp3"; sourceTree = "<group>"; };
+		1FD864F12884673A008E02AF /* Карина - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Карина - true.mp3"; sourceTree = "<group>"; };
+		1FD864F22884673A008E02AF /* Карина - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Карина - Где муха?.mp3"; sourceTree = "<group>"; };
+		1FD864F32884673A008E02AF /* Карина - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Карина - false.mp3"; sourceTree = "<group>"; };
+		1FD864F42884673A008E02AF /* Карина - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Карина - вправо.mp3"; sourceTree = "<group>"; };
+		1FD864F52884673A008E02AF /* Карина - вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Карина - вниз.mp3"; sourceTree = "<group>"; };
+		1FD8650628846874008E02AF /* Алена - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Алена - влево.mp3"; sourceTree = "<group>"; };
+		1FD8650728846874008E02AF /* Алена - вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Алена - вверх.mp3"; sourceTree = "<group>"; };
+		1FD8650828846874008E02AF /* Алена - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Алена - вправо.mp3"; sourceTree = "<group>"; };
+		1FD8650928846874008E02AF /* Алена - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Алена - true.mp3"; sourceTree = "<group>"; };
+		1FD8650A28846874008E02AF /* Алена - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Алена - Где муха?.mp3"; sourceTree = "<group>"; };
+		1FD8650B28846874008E02AF /* Алена - вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Алена - вниз.mp3"; sourceTree = "<group>"; };
+		1FD8650C28846874008E02AF /* Алена - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Алена - false.mp3"; sourceTree = "<group>"; };
+		1FD8651628846997008E02AF /* Анна - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Анна - true.mp3"; sourceTree = "<group>"; };
+		1FD8651728846997008E02AF /* Анна - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Анна - false.mp3"; sourceTree = "<group>"; };
+		1FD8651828846997008E02AF /* Анна - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Анна - вправо.mp3"; sourceTree = "<group>"; };
+		1FD8651928846997008E02AF /* Анна - вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Анна - вверх.mp3"; sourceTree = "<group>"; };
+		1FD8651A28846997008E02AF /* Анна - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Анна - влево.mp3"; sourceTree = "<group>"; };
+		1FD8651B28846997008E02AF /* Анна - вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Анна - вниз.mp3"; sourceTree = "<group>"; };
+		1FD8651C28846997008E02AF /* Анна - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Анна - Где муха?.mp3"; sourceTree = "<group>"; };
+		1FD86524288469A4008E02AF /* Дмитрий - вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - вверх.mp3"; sourceTree = "<group>"; };
+		1FD86525288469A4008E02AF /* Дмитрий - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - false.mp3"; sourceTree = "<group>"; };
+		1FD86526288469A4008E02AF /* Дмитрий - вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - вниз.mp3"; sourceTree = "<group>"; };
+		1FD86527288469A4008E02AF /* Дмитрий - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - true.mp3"; sourceTree = "<group>"; };
+		1FD86528288469A4008E02AF /* Дмитрий - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - влево.mp3"; sourceTree = "<group>"; };
+		1FD86529288469A4008E02AF /* Дмитрий - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - Где муха?.mp3"; sourceTree = "<group>"; };
+		1FD8652A288469A4008E02AF /* Дмитрий - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - вправо.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +153,10 @@
 				1F68C0242853286200FFBDD0 /* Assets.xcassets */,
 				1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */,
 				1F68C0292853286200FFBDD0 /* Info.plist */,
-				1F68C02F285328D200FFBDD0 /* MainViewController.swift */,
-				1F825AC3285B7C8300B7C315 /* OptionsViewController.swift */,
-				1F68C0312853298800FFBDD0 /* CollectionView.swift */,
-				1F68C03328532CE400FFBDD0 /* CollectionViewCell.swift */,
+				1F68C02F285328D200FFBDD0 /* BeeViewController.swift */,
+				1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */,
+				1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */,
+				1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */,
 			);
 			path = "Муха";
 			sourceTree = "<group>";
@@ -90,13 +164,99 @@
 		1F825AB8285B146800B7C315 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				1F825AB9285B149200B7C315 /* вниз.mp3 */,
-				1F825ABC285B149200B7C315 /* влево.mp3 */,
-				1F825ABA285B149200B7C315 /* вправо.mp3 */,
-				1F825ABB285B149200B7C315 /* вверх.mp3 */,
-				1F825AC1285B468800B7C315 /* Где муха?.mp3 */,
+				1FD865152884698A008E02AF /* Дмитрий */,
+				1FD865142884697F008E02AF /* Анна */,
+				1FD864FE28846753008E02AF /* Алена */,
+				1FD864E02884663C008E02AF /* Филипп */,
+				1F9510F228844D10002F4345 /* Карина */,
+				1F9510E728844BBC002F4345 /* Даниил */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		1F9510E728844BBC002F4345 /* Даниил */ = {
+			isa = PBXGroup;
+			children = (
+				1F9510EB28844BE5002F4345 /* Даниил - вверх.mp3 */,
+				1F9510EC28844BE5002F4345 /* Даниил - влево.mp3 */,
+				1F9510E828844BE5002F4345 /* Даниил - вниз.mp3 */,
+				1F9510EA28844BE5002F4345 /* Даниил - вправо.mp3 */,
+				1F9510E928844BE5002F4345 /* Даниил - Где муха?.mp3 */,
+				1FD864DC288464A5008E02AF /* Даниил - false.mp3 */,
+				1FD864DD288464A5008E02AF /* Даниил - true.mp3 */,
+			);
+			path = "Даниил";
+			sourceTree = "<group>";
+		};
+		1F9510F228844D10002F4345 /* Карина */ = {
+			isa = PBXGroup;
+			children = (
+				1FD864F02884673A008E02AF /* Карина - вверх.mp3 */,
+				1FD864EF2884673A008E02AF /* Карина - влево.mp3 */,
+				1FD864F52884673A008E02AF /* Карина - вниз.mp3 */,
+				1FD864F42884673A008E02AF /* Карина - вправо.mp3 */,
+				1FD864F22884673A008E02AF /* Карина - Где муха?.mp3 */,
+				1FD864F32884673A008E02AF /* Карина - false.mp3 */,
+				1FD864F12884673A008E02AF /* Карина - true.mp3 */,
+			);
+			path = "Карина";
+			sourceTree = "<group>";
+		};
+		1FD864E02884663C008E02AF /* Филипп */ = {
+			isa = PBXGroup;
+			children = (
+				1FD864E528846656008E02AF /* Филипп - вверх.mp3 */,
+				1FD864E228846656008E02AF /* Филипп - влево.mp3 */,
+				1FD864E428846656008E02AF /* Филипп - вниз.mp3 */,
+				1FD864E328846656008E02AF /* Филипп - вправо.mp3 */,
+				1FD864E728846656008E02AF /* Филипп - Где муха?.mp3 */,
+				1FD864E128846656008E02AF /* Филипп - false.mp3 */,
+				1FD864E628846656008E02AF /* Филипп - true.mp3 */,
+			);
+			path = "Филипп";
+			sourceTree = "<group>";
+		};
+		1FD864FE28846753008E02AF /* Алена */ = {
+			isa = PBXGroup;
+			children = (
+				1FD8650728846874008E02AF /* Алена - вверх.mp3 */,
+				1FD8650628846874008E02AF /* Алена - влево.mp3 */,
+				1FD8650B28846874008E02AF /* Алена - вниз.mp3 */,
+				1FD8650828846874008E02AF /* Алена - вправо.mp3 */,
+				1FD8650A28846874008E02AF /* Алена - Где муха?.mp3 */,
+				1FD8650C28846874008E02AF /* Алена - false.mp3 */,
+				1FD8650928846874008E02AF /* Алена - true.mp3 */,
+			);
+			path = "Алена";
+			sourceTree = "<group>";
+		};
+		1FD865142884697F008E02AF /* Анна */ = {
+			isa = PBXGroup;
+			children = (
+				1FD8651928846997008E02AF /* Анна - вверх.mp3 */,
+				1FD8651A28846997008E02AF /* Анна - влево.mp3 */,
+				1FD8651B28846997008E02AF /* Анна - вниз.mp3 */,
+				1FD8651828846997008E02AF /* Анна - вправо.mp3 */,
+				1FD8651C28846997008E02AF /* Анна - Где муха?.mp3 */,
+				1FD8651728846997008E02AF /* Анна - false.mp3 */,
+				1FD8651628846997008E02AF /* Анна - true.mp3 */,
+			);
+			path = "Анна";
+			sourceTree = "<group>";
+		};
+		1FD865152884698A008E02AF /* Дмитрий */ = {
+			isa = PBXGroup;
+			children = (
+				1FD86524288469A4008E02AF /* Дмитрий - вверх.mp3 */,
+				1FD86528288469A4008E02AF /* Дмитрий - влево.mp3 */,
+				1FD86526288469A4008E02AF /* Дмитрий - вниз.mp3 */,
+				1FD8652A288469A4008E02AF /* Дмитрий - вправо.mp3 */,
+				1FD86529288469A4008E02AF /* Дмитрий - Где муха?.mp3 */,
+				1FD86525288469A4008E02AF /* Дмитрий - false.mp3 */,
+				1FD86527288469A4008E02AF /* Дмитрий - true.mp3 */,
+			);
+			name = "Дмитрий";
+			path = "Дмитрий";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,13 +317,50 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F825ABF285B149200B7C315 /* вверх.mp3 in Resources */,
-				1F825AC2285B468800B7C315 /* Где муха?.mp3 in Resources */,
+				1FD8651E28846997008E02AF /* Анна - false.mp3 in Resources */,
+				1FD864FB2884673A008E02AF /* Карина - вправо.mp3 in Resources */,
+				1FD8652228846997008E02AF /* Анна - вниз.mp3 in Resources */,
+				1FD8652E288469A4008E02AF /* Дмитрий - true.mp3 in Resources */,
+				1FD864F72884673A008E02AF /* Карина - вверх.mp3 in Resources */,
 				1F68C0282853286200FFBDD0 /* LaunchScreen.storyboard in Resources */,
-				1F825ABE285B149200B7C315 /* вправо.mp3 in Resources */,
+				1FD864E928846656008E02AF /* Филипп - влево.mp3 in Resources */,
+				1FD864F92884673A008E02AF /* Карина - Где муха?.mp3 in Resources */,
+				1FD864EB28846656008E02AF /* Филипп - вниз.mp3 in Resources */,
+				1F9510EF28844BE5002F4345 /* Даниил - вправо.mp3 in Resources */,
+				1FD8652C288469A4008E02AF /* Дмитрий - false.mp3 in Resources */,
+				1FD864EC28846656008E02AF /* Филипп - вверх.mp3 in Resources */,
+				1FD8651328846874008E02AF /* Алена - false.mp3 in Resources */,
+				1FD86531288469A4008E02AF /* Дмитрий - вправо.mp3 in Resources */,
+				1FD8651028846874008E02AF /* Алена - true.mp3 in Resources */,
+				1F9510EE28844BE5002F4345 /* Даниил - Где муха?.mp3 in Resources */,
+				1FD8650F28846874008E02AF /* Алена - вправо.mp3 in Resources */,
+				1FD864EA28846656008E02AF /* Филипп - вправо.mp3 in Resources */,
+				1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */,
+				1FD864ED28846656008E02AF /* Филипп - true.mp3 in Resources */,
+				1FD8652B288469A4008E02AF /* Дмитрий - вверх.mp3 in Resources */,
+				1FD8652128846997008E02AF /* Анна - влево.mp3 in Resources */,
+				1FD8650E28846874008E02AF /* Алена - вверх.mp3 in Resources */,
+				1F9510F028844BE5002F4345 /* Даниил - вверх.mp3 in Resources */,
+				1FD8651F28846997008E02AF /* Анна - вправо.mp3 in Resources */,
+				1FD8651228846874008E02AF /* Алена - вниз.mp3 in Resources */,
+				1FD864F82884673A008E02AF /* Карина - true.mp3 in Resources */,
+				1FD8651D28846997008E02AF /* Анна - true.mp3 in Resources */,
+				1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */,
+				1F9510ED28844BE5002F4345 /* Даниил - вниз.mp3 in Resources */,
 				1F68C0252853286200FFBDD0 /* Assets.xcassets in Resources */,
-				1F825ABD285B149200B7C315 /* вниз.mp3 in Resources */,
-				1F825AC0285B149200B7C315 /* влево.mp3 in Resources */,
+				1FD8651128846874008E02AF /* Алена - Где муха?.mp3 in Resources */,
+				1FD864EE28846656008E02AF /* Филипп - Где муха?.mp3 in Resources */,
+				1FD8652028846997008E02AF /* Анна - вверх.mp3 in Resources */,
+				1F9510F128844BE5002F4345 /* Даниил - влево.mp3 in Resources */,
+				1FD8650D28846874008E02AF /* Алена - влево.mp3 in Resources */,
+				1FD864FA2884673A008E02AF /* Карина - false.mp3 in Resources */,
+				1FD8652328846997008E02AF /* Анна - Где муха?.mp3 in Resources */,
+				1FD8652D288469A4008E02AF /* Дмитрий - вниз.mp3 in Resources */,
+				1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */,
+				1FD864FC2884673A008E02AF /* Карина - вниз.mp3 in Resources */,
+				1FD864F62884673A008E02AF /* Карина - влево.mp3 in Resources */,
+				1FD8652F288469A4008E02AF /* Дмитрий - влево.mp3 in Resources */,
+				1FD86530288469A4008E02AF /* Дмитрий - Где муха?.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,12 +372,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */,
-				1F68C0322853298900FFBDD0 /* CollectionView.swift in Sources */,
-				1F68C03428532CE400FFBDD0 /* CollectionViewCell.swift in Sources */,
+				1F68C0322853298900FFBDD0 /* BeeCollectionView.swift in Sources */,
+				1F68C03428532CE400FFBDD0 /* BeeCollectionViewCell.swift in Sources */,
 				1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */,
 				1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */,
-				1F825AC4285B7C8300B7C315 /* OptionsViewController.swift in Sources */,
-				1F68C030285328D200FFBDD0 /* MainViewController.swift in Sources */,
+				1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */,
+				1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
