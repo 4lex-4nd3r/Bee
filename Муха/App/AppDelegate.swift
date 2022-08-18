@@ -6,14 +6,22 @@
 //
 
 import UIKit
+import Siren
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+//   let notifications = Notifications()
+   
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      // Override point for customization after application launch.
+//       Override point for customization after application launch.
+      
+//      notifications.requestAuth()
+//      notifications.notificationCenter.delegate = notifications
+//      notifications.scheduleDateNotification()
+      Siren.shared.wail()
+      Siren.shared.presentationManager = PresentationManager(forceLanguageLocalization: .russian)
+      Siren.shared.rulesManager = RulesManager(globalRules: .annoying)
       return true
    }
 

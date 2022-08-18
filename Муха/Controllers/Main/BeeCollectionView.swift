@@ -16,23 +16,22 @@ class BeeCollectionView : UICollectionView {
    
    // MARK: - Properties
    
-   var cells = 0
+   var cells = 5
    var index: IndexPath?
    
+   // MARK: - Init
+
    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-      super.init(frame: frame, collectionViewLayout: layout)
+      super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
       configure()
    }
-   
-   convenience init(cells: Int) {
-      self.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-      self.cells = cells
-   }
-   
+
    required init?(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }
    
+   // MARK: - Setups
+
    private func configure() {
       delegate = self
       dataSource = self
@@ -41,22 +40,10 @@ class BeeCollectionView : UICollectionView {
       register(BeeCollectionViewCell.self, forCellWithReuseIdentifier: BeeCollectionViewCell().idCell)
    }
    
-   
-   // MARK: - Lifecycle
-   
-   
-   
-   //MARK: - Setups
-   
-   private func setupViews() {
-      
-   }
-   
-   //MARK: - Selectors
+   //MARK: - Methods
    
    func setupBee(x: Int, y: Int) {
       index = IndexPath(item: y, section: x)
-      print(index!)
       reloadData()
    }
    
@@ -68,22 +55,26 @@ class BeeCollectionView : UICollectionView {
    
 }
 
+//MARK: - UICollectionViewDelegate
+
 extension BeeCollectionView: UICollectionViewDelegate {
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      print(indexPath)
+      guard let index = index else { return }
       collectionView.isUserInteractionEnabled = false
       reloadData()
-      if indexPath == index! {
+      if indexPath == index {
          sendResultToMainVC(result: true)
       } else {
          sendResultToMainVC(result: false)
       }
    }
-   
 }
 
+//MARK: - UICollectionViewDataSource
+
 extension BeeCollectionView: UICollectionViewDataSource {
+   
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       cells
    }
@@ -102,14 +93,16 @@ extension BeeCollectionView: UICollectionViewDataSource {
          if index! == indexPath {
             cell.setBee()
          } else {
-            cell.imageView.image = UIImage()
+            cell.imageView.image = nil
          }
       } else {
-         cell.imageView.image = UIImage()
+         cell.imageView.image = nil
       }
       return cell
    }
 }
+
+//MARK: - UICollectionViewDelegateFlowLayout
 
 extension BeeCollectionView: UICollectionViewDelegateFlowLayout {
    
@@ -118,8 +111,12 @@ extension BeeCollectionView: UICollectionViewDelegateFlowLayout {
       return inset
    }
    
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+      10
+   }
+   
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      CGSize(width: collectionView.frame.width / CGFloat(cells + 1),
-             height: collectionView.frame.width / CGFloat(cells + 1))
+      CGSize(width: (collectionView.frame.width - 40 ) / 5 ,
+             height: (collectionView.frame.width - 40 ) / 5)
    }
 }

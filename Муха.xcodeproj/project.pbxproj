@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1ADD44288FCFC100D908D7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD43288FCFC100D908D7 /* Notifications.swift */; };
+		1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD452892633200D908D7 /* StatisticModel.swift */; };
+		1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */; };
+		1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */; };
+		1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */; };
 		1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01B2853286000FFBDD0 /* AppDelegate.swift */; };
 		1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */; };
 		1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01F2853286000FFBDD0 /* ViewController.swift */; };
@@ -61,6 +66,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F1ADD43288FCFC100D908D7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		1F1ADD452892633200D908D7 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticManager.swift; sourceTree = "<group>"; };
+		1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
+		1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		1F68C0182853286000FFBDD0 /* Муха.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Муха.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F68C01B2853286000FFBDD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +124,8 @@
 		1FD86528288469A4008E02AF /* Дмитрий - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - влево.mp3"; sourceTree = "<group>"; };
 		1FD86529288469A4008E02AF /* Дмитрий - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - Где муха?.mp3"; sourceTree = "<group>"; };
 		1FD8652A288469A4008E02AF /* Дмитрий - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - вправо.mp3"; sourceTree = "<group>"; };
+		B3345615330339374395CE16 /* Pods-Муха.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Муха.debug.xcconfig"; path = "Target Support Files/Pods-Муха/Pods-Муха.debug.xcconfig"; sourceTree = "<group>"; };
+		E0CE08313C80FB50470D50CF /* Pods-Муха.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Муха.release.xcconfig"; path = "Target Support Files/Pods-Муха/Pods-Муха.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +139,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1ADD4728927BC100D908D7 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */,
+				1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */,
+				1F1ADD452892633200D908D7 /* StatisticModel.swift */,
+				1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		1F1ADD4828927BD000D908D7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1F1ADD4928927BDD00D908D7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1F68C02F285328D200FFBDD0 /* BeeViewController.swift */,
+				1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */,
+				1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1F68C00F2853286000FFBDD0 = {
 			isa = PBXGroup;
 			children = (
 				1F68C01A2853286000FFBDD0 /* Муха */,
 				1F68C0192853286000FFBDD0 /* Products */,
+				ED85468B18D57881F02DB71C /* Pods */,
+				98BAC5E61334ADE24CFB3F8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,16 +190,11 @@
 			isa = PBXGroup;
 			children = (
 				1F825AB8285B146800B7C315 /* Sounds */,
-				1F68C01B2853286000FFBDD0 /* AppDelegate.swift */,
-				1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */,
-				1F68C01F2853286000FFBDD0 /* ViewController.swift */,
+				1FA17FDB28ABEF0B00E9461D /* App */,
 				1F68C0242853286200FFBDD0 /* Assets.xcassets */,
 				1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */,
 				1F68C0292853286200FFBDD0 /* Info.plist */,
-				1F68C02F285328D200FFBDD0 /* BeeViewController.swift */,
-				1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */,
-				1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */,
-				1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */,
+				1FA17FDC28ABEF2B00E9461D /* Controllers */,
 			);
 			path = "Муха";
 			sourceTree = "<group>";
@@ -200,6 +238,27 @@
 				1FD864F12884673A008E02AF /* Карина - true.mp3 */,
 			);
 			path = "Карина";
+			sourceTree = "<group>";
+		};
+		1FA17FDB28ABEF0B00E9461D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1F68C01B2853286000FFBDD0 /* AppDelegate.swift */,
+				1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */,
+				1F68C01F2853286000FFBDD0 /* ViewController.swift */,
+				1F1ADD43288FCFC100D908D7 /* Notifications.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1FA17FDC28ABEF2B00E9461D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F1ADD4928927BDD00D908D7 /* Main */,
+				1F1ADD4828927BD000D908D7 /* Settings */,
+				1F1ADD4728927BC100D908D7 /* Statistic */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1FD864E02884663C008E02AF /* Филипп */ = {
@@ -259,6 +318,22 @@
 			path = "Дмитрий";
 			sourceTree = "<group>";
 		};
+		98BAC5E61334ADE24CFB3F8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED85468B18D57881F02DB71C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3345615330339374395CE16 /* Pods-Муха.debug.xcconfig */,
+				E0CE08313C80FB50470D50CF /* Pods-Муха.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,9 +341,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F68C02C2853286200FFBDD0 /* Build configuration list for PBXNativeTarget "Муха" */;
 			buildPhases = (
+				A2D6A569EA5453081B4AA4A0 /* [CP] Check Pods Manifest.lock */,
 				1F68C0142853286000FFBDD0 /* Sources */,
 				1F68C0152853286000FFBDD0 /* Frameworks */,
 				1F68C0162853286000FFBDD0 /* Resources */,
+				443109D98DC361693629D4D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -366,17 +443,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		443109D98DC361693629D4D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2D6A569EA5453081B4AA4A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Муха-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F68C0142853286000FFBDD0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1ADD44288FCFC100D908D7 /* Notifications.swift in Sources */,
 				1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */,
+				1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */,
+				1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */,
+				1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */,
 				1F68C0322853298900FFBDD0 /* BeeCollectionView.swift in Sources */,
 				1F68C03428532CE400FFBDD0 /* BeeCollectionViewCell.swift in Sources */,
 				1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */,
 				1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */,
 				1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */,
+				1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */,
 				1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +635,7 @@
 		};
 		1F68C02D2853286200FFBDD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3345615330339374395CE16 /* Pods-Муха.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -530,17 +655,20 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.1;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex-und3r.bee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
 		1F68C02E2853286200FFBDD0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0CE08313C80FB50470D50CF /* Pods-Муха.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -560,7 +688,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.1;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex-und3r.bee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

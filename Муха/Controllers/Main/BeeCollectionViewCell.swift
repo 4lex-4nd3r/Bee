@@ -33,10 +33,8 @@ class BeeCollectionViewCell: UICollectionViewCell {
    private func setupViews() {
       backgroundColor = .systemGray3
       layer.cornerRadius = 15
-      //      layer.bo
       addSubview(imageView)
    }
-   
    
    func setBee() {
       imageView.image = UIImage(named: "bigBee")
