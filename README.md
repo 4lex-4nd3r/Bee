@@ -4,6 +4,8 @@
 ## Приложение для тренировки концентрации внимания.
 ## Потрясающий эффект спустя всего месяц регулярных тренировок!
 
+
+
 ![1](https://user-images.githubusercontent.com/94129076/185613785-cdc98b47-c3b8-4ea6-a998-456b7335bf11.png)
 ![2](https://user-images.githubusercontent.com/94129076/185613788-7d3774ac-dd43-468e-b6ec-ad04b655c36c.png)
 ![3](https://user-images.githubusercontent.com/94129076/185613789-13c4d24a-774b-4a58-9adc-cc91911ed212.png)
