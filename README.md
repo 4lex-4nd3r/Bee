@@ -4,14 +4,14 @@
 ## Приложение для тренировки концентрации внимания.
 ## Потрясающий эффект спустя всего месяц регулярных тренировок!
 
-![1](https://user-images.githubusercontent.com/94129076/185613411-4794e109-172a-4102-abe6-6fef67704394.png)
-![2](https://user-images.githubusercontent.com/94129076/185613414-5a68f4f7-03b4-40b2-8ebb-1cbe77dcb8fc.png)
-![3](https://user-images.githubusercontent.com/94129076/185613416-ed44ec41-56f6-41ec-bd64-2d93700c4a60.png)
-![4](https://user-images.githubusercontent.com/94129076/185613418-59c006d8-f823-4121-955a-3dc2efc09150.png)
-![5](https://user-images.githubusercontent.com/94129076/185613419-c46a1210-e884-4a52-b019-d610744ac9d8.png)
-![6](https://user-images.githubusercontent.com/94129076/185613425-d483bd17-7e10-4376-a6da-9ef5bd209c43.png)
-![7](https://user-images.githubusercontent.com/94129076/185613428-c31caea2-fd77-4e36-8f11-c04f55b5ee12.png)
-![8](https://user-images.githubusercontent.com/94129076/185613432-375ba5c5-9c13-4c9b-9f86-a4e837e99eef.png)
+![1](https://user-images.githubusercontent.com/94129076/185613785-cdc98b47-c3b8-4ea6-a998-456b7335bf11.png)
+![2](https://user-images.githubusercontent.com/94129076/185613788-7d3774ac-dd43-468e-b6ec-ad04b655c36c.png)
+![3](https://user-images.githubusercontent.com/94129076/185613789-13c4d24a-774b-4a58-9adc-cc91911ed212.png)
+![4](https://user-images.githubusercontent.com/94129076/185613794-d78d730e-1c9a-431f-acd2-a4b58e191446.png)
+![5](https://user-images.githubusercontent.com/94129076/185613796-07314442-f996-4479-ba17-b2602100ae27.png)
+![6](https://user-images.githubusercontent.com/94129076/185613798-0ce4aa61-e086-4f10-9a88-a7ff62f0aedc.png)
+![7](https://user-images.githubusercontent.com/94129076/185613801-7bfb4922-e9b6-4b97-ad17-c59d3c025800.png)
+![8](https://user-images.githubusercontent.com/94129076/185613802-921e2b22-5dfa-44c9-88c7-5d465c91660b.png)
 
 
 [приложение в AppStore](http://apps.apple.com/ru/app/%D0%B3%D0%B4%D0%B5-%D0%BC%D1%83%D1%85%D0%B0/id1630745481)
