@@ -2,4 +2,4 @@
 Где Муха?
 
 
-[example site]:http://example.com
+[example.com](http://example.com)
