@@ -27,6 +27,9 @@ class BeeViewController: UIViewController {
    
    private lazy var settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(settingsButtonTapped))
    
+   
+   
+   
    private let beeImage: UIImageView = {
       let imageView = UIImageView()
       imageView.image = UIImage(named: "bigBee")
