@@ -80,6 +80,7 @@ class StatisticTableViewCell: UITableViewCell {
       
       let winImage = UIImage(systemName: "checkmark")
       let lossImage = UIImage(systemName: "xmark")
+      
       winImageView.image = statisticModel.isWin ? winImage : lossImage
       winImageView.tintColor = statisticModel.isWin ? .systemBlue : .systemRed
       dateLabel.text = "Дата " + formatter.string(from: statisticModel.date)

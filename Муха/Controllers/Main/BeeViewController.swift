@@ -85,9 +85,14 @@ class BeeViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
       setupViews()
       setConstraints()
       setDelegates()
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+//      print("apear")
       loadDefaults()
    }
    
@@ -111,12 +116,11 @@ class BeeViewController: UIViewController {
    
    private func loadDefaults() {
       if defaults.object(forKey: "steps") != nil {
-         print("load")
+//         print("load")
          steps = defaults.integer(forKey: "steps")
          speedInSec = defaults.double(forKey: "speedInSec")
          isHide = defaults.bool(forKey: "isHide")
          voice = defaults.string(forKey: "voice") ?? "Даниил"
-         print(voice)
       }
    }
    
@@ -131,11 +135,12 @@ class BeeViewController: UIViewController {
    }
    
    @objc private func settingsButtonTapped() {
+
       let settingsVC = SettingsViewController()
-      settingsVC.delegate = self
+      navigationController?.pushViewController(settingsVC, animated: true)
       settingsVC.modalPresentationStyle = .fullScreen
       settingsVC.modalTransitionStyle = .coverVertical
-      present(settingsVC, animated: true)
+//      present(settingsVC, animated: true)
    }
    
    @objc private func startStopButtonTapped() {
@@ -343,19 +348,6 @@ class BeeViewController: UIViewController {
          startStopButton.heightAnchor.constraint(equalToConstant: 50)
       ])
       
-   }
-}
-
-//MARK: - Set Options
-
-extension BeeViewController: SettingsViewControllerProtocol {
-
-   func setOptions(steps: Int, speedInSec: Double, isHide: Bool, voice: String) {
-      self.steps = steps
-      self.speedInSec = speedInSec
-      self.isHide = isHide
-      self.voice = voice
-      print(voice)
    }
 }
 

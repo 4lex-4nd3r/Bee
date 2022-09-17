@@ -102,7 +102,11 @@ class StatisticViewController : UIViewController {
    }
    
    private func getStatistics() {
+      
+      
       statistic = localRealm.objects(StatisticModel.self).sorted(byKeyPath: "date", ascending: false)
+      
+
       if !statistic.isEmpty {
          deleteButton.isHidden = false
       }

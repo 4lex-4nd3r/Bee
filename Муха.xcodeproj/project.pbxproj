@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1296A528D5F4A700A458C4 /* Voices.swift */; };
 		1F1ADD44288FCFC100D908D7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD43288FCFC100D908D7 /* Notifications.swift */; };
 		1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD452892633200D908D7 /* StatisticModel.swift */; };
 		1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */; };
 		1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */; };
 		1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */; };
+		1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */; };
+		1F3787A028D4C92400C78665 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37879F28D4C92400C78665 /* SettingsModel.swift */; };
+		1F3787A328D4E66000C78665 /* BeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A228D4E66000C78665 /* BeeViewModel.swift */; };
+		1F3787A628D5096D00C78665 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A528D5096D00C78665 /* Help.swift */; };
+		1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A828D50A6300C78665 /* UIStepper +.swift */; };
+		1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AA28D50E0B00C78665 /* UILabel +.swift */; };
+		1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */; };
+		1F3787AF28D5CE7900C78665 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AE28D5CE7900C78665 /* Box.swift */; };
 		1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01B2853286000FFBDD0 /* AppDelegate.swift */; };
 		1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */; };
-		1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01F2853286000FFBDD0 /* ViewController.swift */; };
 		1F68C0252853286200FFBDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0242853286200FFBDD0 /* Assets.xcassets */; };
 		1F68C0282853286200FFBDD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */; };
 		1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C02F285328D200FFBDD0 /* BeeViewController.swift */; };
@@ -66,15 +74,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F1296A528D5F4A700A458C4 /* Voices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices.swift; sourceTree = "<group>"; };
 		1F1ADD43288FCFC100D908D7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		1F1ADD452892633200D908D7 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticManager.swift; sourceTree = "<group>"; };
 		1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
+		1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		1F37879F28D4C92400C78665 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		1F3787A228D4E66000C78665 /* BeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeViewModel.swift; sourceTree = "<group>"; };
+		1F3787A528D5096D00C78665 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		1F3787A828D50A6300C78665 /* UIStepper +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStepper +.swift"; sourceTree = "<group>"; };
+		1F3787AA28D50E0B00C78665 /* UILabel +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel +.swift"; sourceTree = "<group>"; };
+		1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl +.swift"; sourceTree = "<group>"; };
+		1F3787AE28D5CE7900C78665 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		1F68C0182853286000FFBDD0 /* Муха.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Муха.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F68C01B2853286000FFBDD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1F68C01F2853286000FFBDD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F68C0242853286200FFBDD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F68C0272853286200FFBDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F68C0292853286200FFBDD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,8 +140,8 @@
 		1FD86528288469A4008E02AF /* Дмитрий - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - влево.mp3"; sourceTree = "<group>"; };
 		1FD86529288469A4008E02AF /* Дмитрий - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - Где муха?.mp3"; sourceTree = "<group>"; };
 		1FD8652A288469A4008E02AF /* Дмитрий - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Дмитрий - вправо.mp3"; sourceTree = "<group>"; };
-		B3345615330339374395CE16 /* Pods-Муха.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Муха.debug.xcconfig"; path = "Target Support Files/Pods-Муха/Pods-Муха.debug.xcconfig"; sourceTree = "<group>"; };
-		E0CE08313C80FB50470D50CF /* Pods-Муха.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Муха.release.xcconfig"; path = "Target Support Files/Pods-Муха/Pods-Муха.release.xcconfig"; sourceTree = "<group>"; };
+		6D48F490FCEA09371200A8C9 /* Pods-Муха.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Муха.debug.xcconfig"; path = "Target Support Files/Pods-Муха/Pods-Муха.debug.xcconfig"; sourceTree = "<group>"; };
+		898DC98B4DCE18783C5EE233 /* Pods-Муха.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Муха.release.xcconfig"; path = "Target Support Files/Pods-Муха/Pods-Муха.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +169,7 @@
 		1F1ADD4828927BD000D908D7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */,
 				1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -161,11 +178,41 @@
 		1F1ADD4928927BDD00D908D7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1F3787A228D4E66000C78665 /* BeeViewModel.swift */,
 				1F68C02F285328D200FFBDD0 /* BeeViewController.swift */,
+				1F3787A128D4E44800C78665 /* Collection View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1F3787A128D4E44800C78665 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
 				1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */,
 				1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */,
 			);
-			path = Main;
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		1F3787A428D4E67800C78665 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F37879F28D4C92400C78665 /* SettingsModel.swift */,
+				1F3787A528D5096D00C78665 /* Help.swift */,
+				1F1296A528D5F4A700A458C4 /* Voices.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1F3787A728D50A4C00C78665 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1F3787A828D50A6300C78665 /* UIStepper +.swift */,
+				1F3787AA28D50E0B00C78665 /* UILabel +.swift */,
+				1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */,
+				1F3787AE28D5CE7900C78665 /* Box.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		1F68C00F2853286000FFBDD0 = {
@@ -174,7 +221,7 @@
 				1F68C01A2853286000FFBDD0 /* Муха */,
 				1F68C0192853286000FFBDD0 /* Products */,
 				ED85468B18D57881F02DB71C /* Pods */,
-				98BAC5E61334ADE24CFB3F8D /* Frameworks */,
+				4A7EAB14DB5EF031122F279B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +241,8 @@
 				1F68C0242853286200FFBDD0 /* Assets.xcassets */,
 				1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */,
 				1F68C0292853286200FFBDD0 /* Info.plist */,
+				1F3787A728D50A4C00C78665 /* Helpers */,
+				1F3787A428D4E67800C78665 /* Models */,
 				1FA17FDC28ABEF2B00E9461D /* Controllers */,
 			);
 			path = "Муха";
@@ -245,7 +294,6 @@
 			children = (
 				1F68C01B2853286000FFBDD0 /* AppDelegate.swift */,
 				1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */,
-				1F68C01F2853286000FFBDD0 /* ViewController.swift */,
 				1F1ADD43288FCFC100D908D7 /* Notifications.swift */,
 			);
 			path = App;
@@ -318,7 +366,7 @@
 			path = "Дмитрий";
 			sourceTree = "<group>";
 		};
-		98BAC5E61334ADE24CFB3F8D /* Frameworks */ = {
+		4A7EAB14DB5EF031122F279B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -328,8 +376,8 @@
 		ED85468B18D57881F02DB71C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B3345615330339374395CE16 /* Pods-Муха.debug.xcconfig */,
-				E0CE08313C80FB50470D50CF /* Pods-Муха.release.xcconfig */,
+				6D48F490FCEA09371200A8C9 /* Pods-Муха.debug.xcconfig */,
+				898DC98B4DCE18783C5EE233 /* Pods-Муха.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -341,11 +389,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F68C02C2853286200FFBDD0 /* Build configuration list for PBXNativeTarget "Муха" */;
 			buildPhases = (
-				A2D6A569EA5453081B4AA4A0 /* [CP] Check Pods Manifest.lock */,
+				11A2F0C8A05C88E70765ADF0 /* [CP] Check Pods Manifest.lock */,
 				1F68C0142853286000FFBDD0 /* Sources */,
 				1F68C0152853286000FFBDD0 /* Frameworks */,
 				1F68C0162853286000FFBDD0 /* Resources */,
-				443109D98DC361693629D4D1 /* [CP] Embed Pods Frameworks */,
+				15A4CD3055E76326FDD23672 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,24 +492,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		443109D98DC361693629D4D1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A2D6A569EA5453081B4AA4A0 /* [CP] Check Pods Manifest.lock */ = {
+		11A2F0C8A05C88E70765ADF0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,6 +514,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		15A4CD3055E76326FDD23672 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -491,16 +539,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1ADD44288FCFC100D908D7 /* Notifications.swift in Sources */,
-				1F68C0202853286000FFBDD0 /* ViewController.swift in Sources */,
 				1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */,
 				1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */,
 				1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */,
 				1F68C0322853298900FFBDD0 /* BeeCollectionView.swift in Sources */,
 				1F68C03428532CE400FFBDD0 /* BeeCollectionViewCell.swift in Sources */,
+				1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */,
 				1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */,
+				1F3787AF28D5CE7900C78665 /* Box.swift in Sources */,
+				1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */,
 				1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */,
+				1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */,
 				1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */,
+				1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */,
+				1F3787A328D4E66000C78665 /* BeeViewModel.swift in Sources */,
 				1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */,
+				1F3787A028D4C92400C78665 /* SettingsModel.swift in Sources */,
+				1F3787A628D5096D00C78665 /* Help.swift in Sources */,
+				1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */,
 				1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,7 +691,7 @@
 		};
 		1F68C02D2853286200FFBDD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3345615330339374395CE16 /* Pods-Муха.debug.xcconfig */;
+			baseConfigurationReference = 6D48F490FCEA09371200A8C9 /* Pods-Муха.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -655,7 +711,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex-und3r.bee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,7 +724,7 @@
 		};
 		1F68C02E2853286200FFBDD0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0CE08313C80FB50470D50CF /* Pods-Муха.release.xcconfig */;
+			baseConfigurationReference = 898DC98B4DCE18783C5EE233 /* Pods-Муха.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -688,7 +744,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex-und3r.bee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
