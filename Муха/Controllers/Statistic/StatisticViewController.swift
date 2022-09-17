@@ -16,41 +16,11 @@ class StatisticViewController : UIViewController {
    private let localRealm = try! Realm()
    
    // MARK: - UI Properties
-      
-   private let statLabel: UILabel = {
-      let label = UILabel()
-      label.font = .systemFont(ofSize: 25)
-      label.text = "История"
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
    
-   private let tableView: UITableView = {
-      let tableView = UITableView(frame: .zero, style: .plain)
-      tableView.translatesAutoresizingMaskIntoConstraints = false
-      return tableView
-   }()
+   private let tableView = UITableView(frame: .infinite, style: .plain)
    
-   private lazy var deleteButton: UIButton = {
-      let button = UIButton()
-      button.isHidden = true
-      button.setBackgroundImage(UIImage(systemName: "trash"), for: .normal)
-      button.layer.cornerRadius = 10
-      button.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      return button
-   }()
-   
-   private lazy var backButton: UIButton = {
-      let button = UIButton()
-      button.setTitle("Назад", for: .normal)
-      button.backgroundColor = .systemBlue
-      button.layer.cornerRadius = 10
-      button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      return button
-   }()
-   
+   private lazy var deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .done, target: self, action: #selector(deleteButtonTapped))
+
    let statisticCell = StatisticTableViewCell()
    let idStatisticCell = "idStatisticCell"
    
@@ -59,41 +29,32 @@ class StatisticViewController : UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       setupViews()
-      setConstraints()
-   }
-   
-   override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
       getStatistics()
    }
-   
+
    //MARK: - Setups
    
    private func setupViews() {
       view.backgroundColor = .systemBackground
-      view.addSubview(statLabel)
+      navigationItem.title = "Cтатистика"
+      navigationItem.rightBarButtonItem = deleteButton
       view.addSubview(tableView)
-      tableView.register(StatisticTableViewCell.self, forCellReuseIdentifier: idStatisticCell)
-      tableView.rowHeight = 50
-      tableView.delegate = self
+      tableView.frame = view.frame
       tableView.dataSource = self
-      view.addSubview(backButton)
-      view.addSubview(deleteButton)
+      tableView.delegate = self
+      tableView.rowHeight = 50
+      tableView.register(StatisticTableViewCell.self, forCellReuseIdentifier: idStatisticCell)
    }
    
    //MARK: - Selectors
-   
-   @objc private func backButtonTapped() {
-      dismiss(animated: true)
-   }
-   
+
    @objc private func deleteButtonTapped() {
       
       let alert = UIAlertController(title: "Удалить историю игр?", message: "Внимание! Удаление необратимо. Вы уверены?", preferredStyle: .alert)
       let okAction = UIAlertAction(title: "Да, удалить", style: .destructive) { action in
          StatisticManager.shared.deleteAllResults()
          self.tableView.reloadData()
-         self.deleteButton.isHidden = true
+         self.navigationItem.rightBarButtonItem = nil
       }
       let cancelAction = UIAlertAction(title: "Не удалять", style: .default)
       alert.addAction(okAction)
@@ -102,46 +63,12 @@ class StatisticViewController : UIViewController {
    }
    
    private func getStatistics() {
-      
-      
       statistic = localRealm.objects(StatisticModel.self).sorted(byKeyPath: "date", ascending: false)
-      
-
-      if !statistic.isEmpty {
-         deleteButton.isHidden = false
+      print(statistic.count)
+      if statistic.isEmpty {
+         navigationItem.rightBarButtonItem = nil
       }
       tableView.reloadData()
-   }
-   
-   //MARK: - Constraints
-   
-   private func setConstraints() {
-      
-      NSLayoutConstraint.activate([
-         statLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-         statLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20)
-      ])
-      
-      NSLayoutConstraint.activate([
-         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-         tableView.topAnchor.constraint(equalTo: statLabel.bottomAnchor, constant: 20),
-         tableView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -40)
-      ])
-      
-      NSLayoutConstraint.activate([
-         backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-         backButton.widthAnchor.constraint(equalToConstant: 150),
-         backButton.heightAnchor.constraint(equalToConstant: 50),
-         backButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-      ])
-      
-      NSLayoutConstraint.activate([
-         deleteButton.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
-         deleteButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-         deleteButton.widthAnchor.constraint(equalToConstant: 30),
-         deleteButton.heightAnchor.constraint(equalToConstant: 30)
-      ])
    }
 }
 

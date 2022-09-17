@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import RealmSwift
+import SnapKit
 
 class BeeViewController: UIViewController {
    
@@ -15,28 +16,15 @@ class BeeViewController: UIViewController {
    
    private let defaults = UserDefaults.standard
    private var statisticModel = StatisticModel()
-
    private let collectionView = BeeCollectionView()
    
 //   private let localRealm = try! Realm()
    
    //MARK: - UI Properties
    
-   private lazy var statisticButton: UIButton = {
-      let button = UIButton()
-      button.setBackgroundImage(UIImage(systemName: "list.star"), for: .normal)
-      button.addTarget(self, action: #selector(statisticButtonTapped), for: .touchUpInside)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      return button
-   }()
+   private lazy var statisticButton = UIBarButtonItem(image: UIImage(systemName: "list.star"), style: .done, target: self, action: #selector(statisticButtonTapped))
    
-   private lazy var settingsButton: UIButton = {
-      let button = UIButton()
-      button.setBackgroundImage(UIImage(systemName: "gearshape"), for: .normal)
-      button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      return button
-   }()
+   private lazy var settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(settingsButtonTapped))
    
    private let beeImage: UIImageView = {
       let imageView = UIImageView()
@@ -100,11 +88,12 @@ class BeeViewController: UIViewController {
    
    private func setupViews() {
       view.backgroundColor = .systemBackground
+      navigationItem.rightBarButtonItem = settingsButton
+      navigationItem.leftBarButtonItem = statisticButton
       view.addSubview(collectionView)
       collectionView.isHidden = true
       collectionView.isUserInteractionEnabled = false
-      view.addSubview(statisticButton)
-      view.addSubview(settingsButton)
+//      view.addSubview(statisticButton)
       view.addSubview(beeImage)
       view.addSubview(mainLabel)
       view.addSubview(startStopButton)
@@ -127,20 +116,13 @@ class BeeViewController: UIViewController {
    //MARK: - Selectors
    
    @objc private func statisticButtonTapped() {
-      print("statisticButtonTapped")
       let statisticVC = StatisticViewController()
-      statisticVC.modalPresentationStyle = .popover
-      statisticVC.modalTransitionStyle = .coverVertical
-      present(statisticVC, animated: true)
+      navigationController?.pushViewController(statisticVC, animated: true)
    }
    
    @objc private func settingsButtonTapped() {
-
       let settingsVC = SettingsViewController()
       navigationController?.pushViewController(settingsVC, animated: true)
-      settingsVC.modalPresentationStyle = .fullScreen
-      settingsVC.modalTransitionStyle = .coverVertical
-//      present(settingsVC, animated: true)
    }
    
    @objc private func startStopButtonTapped() {
@@ -165,8 +147,10 @@ class BeeViewController: UIViewController {
       //hide collectionView, show settings for game, show back button
       collectionView.isHidden = true
       mainLabel.text = ""
-      statisticButton.isHidden = false
-      settingsButton.isHidden = false
+//      statisticButton.isHidden = false
+      navigationController?.navigationBar.isHidden = false
+
+
       beeImage.isHidden = false
 
       //change status of button
@@ -190,8 +174,8 @@ class BeeViewController: UIViewController {
       
       //hide settings, hide back button - and show collectionView
       collectionView.isHidden = false
-      statisticButton.isHidden = true
-      settingsButton.isHidden = true
+//      statisticButton.isHidden = true
+      navigationController?.navigationBar.isHidden = true
       beeImage.isHidden = true
       
       //change status of button
@@ -313,22 +297,7 @@ class BeeViewController: UIViewController {
          collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
          collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, constant: 10)
       ])
-      
-      NSLayoutConstraint.activate([
-      
-         statisticButton.widthAnchor.constraint(equalToConstant: 30),
-         statisticButton.heightAnchor.constraint(equalToConstant: 30),
-         statisticButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-         statisticButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
-      ])
-
-      NSLayoutConstraint.activate([
-         settingsButton.widthAnchor.constraint(equalToConstant: 30),
-         settingsButton.heightAnchor.constraint(equalToConstant: 30),
-         settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-         settingsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-      ])
-      
+ 
       NSLayoutConstraint.activate([
          beeImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
          beeImage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),

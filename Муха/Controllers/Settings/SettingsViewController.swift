@@ -13,12 +13,6 @@ class SettingsViewController : UIViewController {
    
    // MARK: - views
 
-   private lazy var howToButton: UIButton = {
-      let button = UIButton()
-      button.setBackgroundImage(UIImage(systemName: "questionmark.circle"), for: .normal)
-      return button
-   }()
-   
    private let stepsLabel = UILabel(text: "шаги в раунде")
    private let stepsCountLabel = UILabel(size: 25, weight: .bold)
    private let speedLabel = UILabel(text: "время")
@@ -52,7 +46,9 @@ class SettingsViewController : UIViewController {
    
    private func setupViews() {
       view.backgroundColor = .systemBackground
-      view.addSubview(howToButton)
+      let howToButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"), style: .done, target: self, action: #selector(howToButtonTapped))
+      navigationItem.rightBarButtonItem = howToButton
+      navigationItem.title = "Настройки"
       view.addSubview(stepsLabel)
       view.addSubview(stepsCountLabel)
       view.addSubview(stepsStepper)
@@ -67,7 +63,6 @@ class SettingsViewController : UIViewController {
    }
    
    private func setupTargets() {
-      howToButton.addTarget(self, action: #selector(howToButtonTapped), for: .touchUpInside)
       stepsStepper.addTarget(self, action: #selector(stepsStepperValueChanged), for: .valueChanged)
       speedStepper.addTarget(self, action: #selector(speedStepperValueChanged), for: .valueChanged)
       hideSegmentControl.addTarget(self, action: #selector(hideSegmentChanged), for: .valueChanged)
@@ -172,15 +167,9 @@ class SettingsViewController : UIViewController {
    //MARK: - Constraints
    
    private func setConstraints() {
-      
-      howToButton.snp.makeConstraints { make in
-         make.width.height.equalTo(30)
-         make.right.equalToSuperview().inset(40)
-         make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
-      }
-      
+
       stepsLabel.snp.makeConstraints { make in
-         make.top.equalTo(howToButton.snp.bottom).inset(-50)
+         make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
          make.left.equalToSuperview().inset(40)
       }
       stepsCountLabel.snp.makeConstraints { make in
