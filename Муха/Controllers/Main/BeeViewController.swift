@@ -20,6 +20,7 @@ class BeeViewController: UIViewController {
    
 //   private let localRealm = try! Realm()
    
+   
    //MARK: - UI Properties
    
    private lazy var statisticButton = UIBarButtonItem(image: UIImage(systemName: "list.star"), style: .done, target: self, action: #selector(statisticButtonTapped))
