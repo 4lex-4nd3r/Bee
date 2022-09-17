@@ -14,7 +14,6 @@
 		1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */; };
 		1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */; };
 		1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */; };
-		1F3787A028D4C92400C78665 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37879F28D4C92400C78665 /* SettingsModel.swift */; };
 		1F3787A328D4E66000C78665 /* BeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A228D4E66000C78665 /* BeeViewModel.swift */; };
 		1F3787A628D5096D00C78665 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A528D5096D00C78665 /* Help.swift */; };
 		1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A828D50A6300C78665 /* UIStepper +.swift */; };
@@ -81,7 +80,6 @@
 		1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		1F37879F28D4C92400C78665 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		1F3787A228D4E66000C78665 /* BeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeViewModel.swift; sourceTree = "<group>"; };
 		1F3787A528D5096D00C78665 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		1F3787A828D50A6300C78665 /* UIStepper +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStepper +.swift"; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 		1F3787A428D4E67800C78665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F37879F28D4C92400C78665 /* SettingsModel.swift */,
 				1F3787A528D5096D00C78665 /* Help.swift */,
 				1F1296A528D5F4A700A458C4 /* Voices.swift */,
 			);
@@ -554,7 +551,6 @@
 				1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */,
 				1F3787A328D4E66000C78665 /* BeeViewModel.swift in Sources */,
 				1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */,
-				1F3787A028D4C92400C78665 /* SettingsModel.swift in Sources */,
 				1F3787A628D5096D00C78665 /* Help.swift in Sources */,
 				1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */,
 				1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */,
