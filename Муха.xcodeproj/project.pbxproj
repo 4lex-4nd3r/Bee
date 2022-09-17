@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1296A528D5F4A700A458C4 /* Voices.swift */; };
-		1F1296A828D66ADD00A458C4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F1296A728D66ADD00A458C4 /* README.md */; };
 		1F1ADD44288FCFC100D908D7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD43288FCFC100D908D7 /* Notifications.swift */; };
 		1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD452892633200D908D7 /* StatisticModel.swift */; };
 		1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */; };
@@ -75,7 +74,6 @@
 
 /* Begin PBXFileReference section */
 		1F1296A528D5F4A700A458C4 /* Voices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices.swift; sourceTree = "<group>"; };
-		1F1296A728D66ADD00A458C4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F1ADD43288FCFC100D908D7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		1F1ADD452892633200D908D7 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticManager.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 		1F68C00F2853286000FFBDD0 = {
 			isa = PBXGroup;
 			children = (
-				1F1296A728D66ADD00A458C4 /* README.md */,
 				1F68C01A2853286000FFBDD0 /* Муха */,
 				1F68C0192853286000FFBDD0 /* Products */,
 				ED85468B18D57881F02DB71C /* Pods */,
@@ -484,7 +481,6 @@
 				1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */,
 				1FD864FC2884673A008E02AF /* Карина - вниз.mp3 in Resources */,
 				1FD864F62884673A008E02AF /* Карина - влево.mp3 in Resources */,
-				1F1296A828D66ADD00A458C4 /* README.md in Resources */,
 				1FD8652F288469A4008E02AF /* Дмитрий - влево.mp3 in Resources */,
 				1FD86530288469A4008E02AF /* Дмитрий - Где муха?.mp3 in Resources */,
 			);
