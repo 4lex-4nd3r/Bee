@@ -13,11 +13,13 @@ protocol SettingsViewModelProtocol {
    var steps: Box<Int> { get }
    var speedInSec: Box<Double> { get }
    var voice: Box<String> { get }
+   var timer: Box<Date?> { get }
    
    func changeIsHide(value: Bool)
    func changeSteps(value: Int)
    func changeSpeedInSec(value: Double)
    func changeVoice(value: String)
+   func changeTimer(value: Date?)
 }
 
 class SettingsViewModel: SettingsViewModelProtocol {
@@ -27,6 +29,13 @@ class SettingsViewModel: SettingsViewModelProtocol {
       steps = Box(value: defaults.integer(forKey: "steps"))
       speedInSec = Box(value: defaults.double(forKey: "speedInSec"))
       voice = Box(value: defaults.string(forKey: "voice") ?? "Даниил")
+      if let timerDate = defaults.object(forKey: "timer") as? Date {
+         print("timer exist")
+         timer = Box(value: timerDate)
+      } else {
+         print("no timer exist")
+         timer = Box(value: nil)
+      }
    }
    
    private let defaults = UserDefaults.standard
@@ -35,7 +44,8 @@ class SettingsViewModel: SettingsViewModelProtocol {
    var steps: Box<Int>
    var speedInSec: Box<Double>
    var voice: Box<String>
-
+   var timer: Box<Date?>
+   
    func changeIsHide(value: Bool) {
       isHide.value.toggle()
       defaults.set(value, forKey: "isHide")
@@ -53,5 +63,19 @@ class SettingsViewModel: SettingsViewModelProtocol {
    func changeVoice(value: String) {
       voice.value = value
       defaults.set(value, forKey: "voice")
+   }
+   
+   func changeTimer(value: Date?) {
+//      print(value)
+      
+      if let value = value {
+         timer.value = value
+         defaults.set(value, forKey: "timer")
+         print("set timer to defaults")
+      } else {
+         timer.value = nil
+         defaults.removeObject(forKey: "timer")
+         print("remove timer from defaults")
+      }
    }
 }

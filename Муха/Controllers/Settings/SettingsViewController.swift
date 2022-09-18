@@ -11,26 +11,41 @@ import AVFoundation
 
 class SettingsViewController : UIViewController {
    
-   // MARK: - views
+   // MARK: - Properties
+   
+   private var viewModel: SettingsViewModelProtocol!
+   private var player: AVAudioPlayer!
 
-   private let stepsLabel = UILabel(text: "шаги в раунде")
+   private let stepsLabel = UILabel(text: "шаги")
    private let stepsCountLabel = UILabel(size: 25, weight: .bold)
    private let speedLabel = UILabel(text: "время")
    private let speedCountLabel = UILabel(size: 25, weight: .bold)
-   private let voiceLabel = UILabel(text: "Голос")
-   private let hideLabel = UILabel(text: "отображение таблицы")
    private lazy var stepsStepper = UIStepper(min: 5, max: 100, step: 5)
    private lazy var speedStepper = UIStepper(min: 1, max: 10, step: 0.5)
-   private lazy var hideSegmentControl = UISegmentedControl(segments: ["Показать", "Спрятать"], color: .systemBlue)
+   private lazy var hideSegmentControl = UISegmentedControl(segments: ["Показать ячейки", "Спрятать ячейки"], color: .systemBlue)
    private lazy var menSegmentedControl = UISegmentedControl(segments: ["Даниил", "Дмитрий", "Филипп"], color: .systemBlue)
    private lazy var womenSegmentedControl = UISegmentedControl(segments: ["Анна", "Алена", "Карина"], color: .systemPink)
    
-   //MARK: - settings
+   private let reminderLabel = UILabel(text: "напоминание")
    
-   private var viewModel: SettingsViewModelProtocol!
+   private lazy var reminderSwitch: UISwitch = {
+      let switcher = UISwitch()
+      switcher.isOn = false
+      switcher.onTintColor = .systemBlue
+      return switcher
+   }()
+   
+   private let datePicker: UIDatePicker = {
+      let picker = UIDatePicker()
+      picker.datePickerMode = .time
+      picker.isEnabled = false
+      picker.tintColor = .systemBlue
+      return picker
+   }()
+   
+   private var reminderStack = UIStackView()
+   
 
-   var player: AVAudioPlayer!
-   
    // MARK: - Lifecycle
    
    override func viewDidLoad() {
@@ -55,11 +70,15 @@ class SettingsViewController : UIViewController {
       view.addSubview(speedLabel)
       view.addSubview(speedCountLabel)
       view.addSubview(speedStepper)
-      view.addSubview(hideLabel)
       view.addSubview(hideSegmentControl)
-      view.addSubview(voiceLabel)
       view.addSubview(menSegmentedControl)
       view.addSubview(womenSegmentedControl)
+      reminderStack = UIStackView(arrangedSubviews: [reminderLabel,
+                                                     datePicker,
+                                                     reminderSwitch])
+      reminderStack.axis = .horizontal
+      reminderStack.distribution = .equalCentering
+      view.addSubview(reminderStack)
    }
    
    private func setupTargets() {
@@ -68,6 +87,8 @@ class SettingsViewController : UIViewController {
       hideSegmentControl.addTarget(self, action: #selector(hideSegmentChanged), for: .valueChanged)
       womenSegmentedControl.addTarget(self, action: #selector(womenSegmentedChanged), for: .valueChanged)
       menSegmentedControl.addTarget(self, action: #selector(menSegmentedChanged), for: .valueChanged)
+      reminderSwitch.addTarget(self, action: #selector(reminderSwitchChanged), for: .valueChanged)
+      datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
    }
    
    private func setupBind() {
@@ -96,6 +117,21 @@ class SettingsViewController : UIViewController {
          guard let self = self else { return }
          print("new value of voice is - \(voice)")
          self.setSegmentsIndex(for: voice)
+      }
+      
+      viewModel.timer.bind { [weak self] date in
+         guard let self = self else { return }
+         
+         if let date = date {
+            print("new value of timer is - \(date)")
+            self.datePicker.setDate(date, animated: true)
+            self.datePicker.isEnabled = true
+            self.reminderSwitch.isOn = true
+         } else {
+            print("new value of timer is - nil")
+            self.datePicker.isEnabled = false
+            self.reminderSwitch.isOn = false
+         }
       }
    }
    
@@ -146,6 +182,22 @@ class SettingsViewController : UIViewController {
       voiceChanged(voice: voice)
    }
    
+   @objc private func reminderSwitchChanged() {
+      if reminderSwitch.isOn {
+         datePicker.isEnabled = true
+         print(datePicker.date)
+         viewModel.changeTimer(value: datePicker.date)
+      } else {
+         datePicker.isEnabled = false
+         viewModel.changeTimer(value: nil)
+      }
+   }
+   
+   @objc private func datePickerChanged() {
+      print(datePicker.date)
+      viewModel.changeTimer(value: datePicker.date)
+   }
+   
    private func voiceChanged(voice: String) {
       viewModel.changeVoice(value: voice)
       playSound(with: voice + " - " + "Где муха?")
@@ -169,7 +221,7 @@ class SettingsViewController : UIViewController {
    private func setConstraints() {
 
       stepsLabel.snp.makeConstraints { make in
-         make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+         make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
          make.left.equalToSuperview().inset(40)
       }
       stepsCountLabel.snp.makeConstraints { make in
@@ -180,9 +232,8 @@ class SettingsViewController : UIViewController {
          make.right.equalToSuperview().inset(40)
          make.centerY.equalTo(stepsLabel)
       }
-      
       speedLabel.snp.makeConstraints { make in
-         make.top.equalTo(stepsLabel.snp.bottom).inset(-30)
+         make.top.equalTo(stepsLabel.snp.bottom).inset(-20)
          make.left.equalToSuperview().inset(40)
       }
       speedCountLabel.snp.makeConstraints { make in
@@ -193,29 +244,23 @@ class SettingsViewController : UIViewController {
          make.right.equalToSuperview().inset(40)
          make.centerY.equalTo(speedLabel)
       }
-
-      hideLabel.snp.makeConstraints { make in
-         make.top.equalTo(speedLabel.snp.bottom).inset(-40)
-         make.centerX.equalToSuperview()
-      }
       hideSegmentControl.snp.makeConstraints { make in
          make.left.right.equalToSuperview().inset(40)
-         make.top.equalTo(hideLabel.snp.bottom).inset(-10)
+         make.top.equalTo(speedStepper.snp.bottom).inset(-40)
       }
       
-      voiceLabel.snp.makeConstraints { make in
-         make.top.equalTo(hideSegmentControl.snp.bottom).inset(-20)
-         make.centerX.equalToSuperview()
-      }
-
       menSegmentedControl.snp.makeConstraints { make in
-         make.top.equalTo(voiceLabel.snp.bottom).inset(-10)
+         make.top.equalTo(hideSegmentControl.snp.bottom).inset(-40)
+         make.left.right.equalToSuperview().inset(40)
+      }
+      womenSegmentedControl.snp.makeConstraints { make in
+         make.top.equalTo(menSegmentedControl.snp.bottom).inset(-5)
          make.left.right.equalToSuperview().inset(40)
       }
       
-      womenSegmentedControl.snp.makeConstraints { make in
-         make.top.equalTo(menSegmentedControl.snp.bottom).inset(-20)
+      reminderStack.snp.makeConstraints { make in
          make.left.right.equalToSuperview().inset(40)
+         make.top.equalTo(womenSegmentedControl.snp.bottom).inset(-40)
       }
    }
 }
