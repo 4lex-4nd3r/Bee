@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1296A528D5F4A700A458C4 /* Voices.swift */; };
+		1F1296AA28D76AB600A458C4 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F1296A928D76AB600A458C4 /* Readme.md */; };
 		1F1ADD44288FCFC100D908D7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD43288FCFC100D908D7 /* Notifications.swift */; };
 		1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD452892633200D908D7 /* StatisticModel.swift */; };
 		1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		1F1296A528D5F4A700A458C4 /* Voices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices.swift; sourceTree = "<group>"; };
+		1F1296A928D76AB600A458C4 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		1F1ADD43288FCFC100D908D7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		1F1ADD452892633200D908D7 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticManager.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		1F68C00F2853286000FFBDD0 = {
 			isa = PBXGroup;
 			children = (
+				1F1296A928D76AB600A458C4 /* Readme.md */,
 				1F68C01A2853286000FFBDD0 /* Муха */,
 				1F68C0192853286000FFBDD0 /* Products */,
 				ED85468B18D57881F02DB71C /* Pods */,
@@ -474,6 +477,7 @@
 				1FD864EE28846656008E02AF /* Филипп - Где муха?.mp3 in Resources */,
 				1FD8652028846997008E02AF /* Анна - вверх.mp3 in Resources */,
 				1F9510F128844BE5002F4345 /* Даниил - влево.mp3 in Resources */,
+				1F1296AA28D76AB600A458C4 /* Readme.md in Resources */,
 				1FD8650D28846874008E02AF /* Алена - влево.mp3 in Resources */,
 				1FD864FA2884673A008E02AF /* Карина - false.mp3 in Resources */,
 				1FD8652328846997008E02AF /* Анна - Где муха?.mp3 in Resources */,
