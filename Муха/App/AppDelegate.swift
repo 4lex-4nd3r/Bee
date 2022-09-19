@@ -11,16 +11,13 @@ import Siren
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-//   let notifications = Notifications()
-   
-   
+   let notifications = NotificationsService()
    
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//       Override point for customization after application launch.
       
-//      notifications.requestAuth()
-//      notifications.notificationCenter.delegate = notifications
-//      notifications.scheduleDateNotification()
+      notifications.requestAuth()
+      notifications.center.delegate = notifications
+
       Siren.shared.wail()
       Siren.shared.presentationManager = PresentationManager(forceLanguageLocalization: .russian)
       Siren.shared.rulesManager = RulesManager(globalRules: .annoying)

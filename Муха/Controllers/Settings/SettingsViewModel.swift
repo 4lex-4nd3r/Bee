@@ -26,8 +26,8 @@ class SettingsViewModel: SettingsViewModelProtocol {
 
    init() {
       isHide = Box(value: defaults.bool(forKey: "isHide"))
-      steps = Box(value: defaults.integer(forKey: "steps"))
-      speedInSec = Box(value: defaults.double(forKey: "speedInSec"))
+      steps = Box(value: defaults.integer(forKey: "steps") == 0 ? 5 : defaults.integer(forKey: "steps"))
+      speedInSec = Box(value: defaults.double(forKey: "speedInSec") == 0.0 ? 1.0 : defaults.double(forKey: "speedInSec"))
       voice = Box(value: defaults.string(forKey: "voice") ?? "Даниил")
       if let timerDate = defaults.object(forKey: "timer") as? Date {
          print("timer exist")
@@ -39,6 +39,7 @@ class SettingsViewModel: SettingsViewModelProtocol {
    }
    
    private let defaults = UserDefaults.standard
+   private let notifications = NotificationsService()
       
    var isHide: Box<Bool>
    var steps: Box<Int>
@@ -66,8 +67,6 @@ class SettingsViewModel: SettingsViewModelProtocol {
    }
    
    func changeTimer(value: Date?) {
-//      print(value)
-      
       if let value = value {
          timer.value = value
          defaults.set(value, forKey: "timer")
@@ -77,5 +76,6 @@ class SettingsViewModel: SettingsViewModelProtocol {
          defaults.removeObject(forKey: "timer")
          print("remove timer from defaults")
       }
+      notifications.createScheduleLocal()
    }
 }

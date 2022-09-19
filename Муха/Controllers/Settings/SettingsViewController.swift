@@ -17,35 +17,19 @@ class SettingsViewController : UIViewController {
    private var player: AVAudioPlayer!
 
    private let stepsLabel = UILabel(text: "шаги")
-   private let stepsCountLabel = UILabel(size: 25, weight: .bold)
    private let speedLabel = UILabel(text: "время")
+   private let reminderLabel = UILabel(text: "напоминание")
+   private let stepsCountLabel = UILabel(size: 25, weight: .bold)
    private let speedCountLabel = UILabel(size: 25, weight: .bold)
    private lazy var stepsStepper = UIStepper(min: 5, max: 100, step: 5)
    private lazy var speedStepper = UIStepper(min: 1, max: 10, step: 0.5)
    private lazy var hideSegmentControl = UISegmentedControl(segments: ["Показать ячейки", "Спрятать ячейки"], color: .systemBlue)
    private lazy var menSegmentedControl = UISegmentedControl(segments: ["Даниил", "Дмитрий", "Филипп"], color: .systemBlue)
    private lazy var womenSegmentedControl = UISegmentedControl(segments: ["Анна", "Алена", "Карина"], color: .systemPink)
-   
-   private let reminderLabel = UILabel(text: "напоминание")
-   
-   private lazy var reminderSwitch: UISwitch = {
-      let switcher = UISwitch()
-      switcher.isOn = false
-      switcher.onTintColor = .systemBlue
-      return switcher
-   }()
-   
-   private let datePicker: UIDatePicker = {
-      let picker = UIDatePicker()
-      picker.datePickerMode = .time
-      picker.isEnabled = false
-      picker.tintColor = .systemBlue
-      return picker
-   }()
-   
+   private lazy var reminderSwitch = UISwitch(color: .systemBlue)
+   private let datePicker = UIDatePicker(color: .systemBlue)
    private var reminderStack = UIStackView()
    
-
    // MARK: - Lifecycle
    
    override func viewDidLoad() {
@@ -198,6 +182,18 @@ class SettingsViewController : UIViewController {
       viewModel.changeTimer(value: datePicker.date)
    }
    
+   @objc private func howToButtonTapped() {
+//      let alert = UIAlertController(title: "Как играть?", message: Help.text, preferredStyle: .alert)
+//      let okAction = UIAlertAction(title: "Понятно.", style: .default)
+//      alert.addAction(okAction)
+//      present(alert, animated: true)
+//      
+      let helpVC = HelpViewController()
+      navigationController?.pushViewController(helpVC, animated: true)
+   }
+   
+   //MARK: - Functions
+   
    private func voiceChanged(voice: String) {
       viewModel.changeVoice(value: voice)
       playSound(with: voice + " - " + "Где муха?")
@@ -207,13 +203,6 @@ class SettingsViewController : UIViewController {
       guard let url = Bundle.main.url(forResource: name, withExtension:"mp3") else { return }
       player = try! AVAudioPlayer(contentsOf: url)
       player.play()
-   }
-   
-   @objc private func howToButtonTapped() {
-      let alert = UIAlertController(title: "Как играть?", message: Help.text, preferredStyle: .alert)
-      let okAction = UIAlertAction(title: "Понятно.", style: .default)
-      alert.addAction(okAction)
-      present(alert, animated: true)
    }
    
    //MARK: - Constraints

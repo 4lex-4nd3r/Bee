@@ -26,4 +26,11 @@ class StatisticManager {
          localRealm.deleteAll()
       }
    }
+   
+   func getStatistic() -> [StatisticModel] {
+      
+      let statistic = Array(localRealm.objects(StatisticModel.self).sorted(byKeyPath: "date", ascending: false))
+      print(statistic.count)
+      return statistic
+   }
 }
