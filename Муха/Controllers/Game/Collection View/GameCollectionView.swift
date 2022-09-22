@@ -1,5 +1,5 @@
 //
-//  CollectionView.swift
+//  GameCollectionView.swift
 //  Муха
 //
 //  Created by Александр on 10.06.2022.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol BeeCollectionViewProtocol: AnyObject {
+protocol GameCollectionViewProtocol: AnyObject {
    
    func checkResult(result: Bool)
 }
 
-class BeeCollectionView : UICollectionView {
+class GameCollectionView: UICollectionView {
    
    // MARK: - Properties
    
@@ -37,17 +37,17 @@ class BeeCollectionView : UICollectionView {
       dataSource = self
       backgroundColor = .none
       translatesAutoresizingMaskIntoConstraints = false
-      register(BeeCollectionViewCell.self, forCellWithReuseIdentifier: BeeCollectionViewCell().idCell)
+      register(GameCollectionViewCell.self, forCellWithReuseIdentifier: GameCollectionViewCell().idCell)
    }
    
-   //MARK: - Methods
+   // MARK: - Methods
    
    func setupBee(x: Int, y: Int) {
       index = IndexPath(item: y, section: x)
       reloadData()
    }
    
-   weak var tapDelegate: BeeCollectionViewProtocol?
+   weak var tapDelegate: GameCollectionViewProtocol?
    
    private func sendResultToMainVC(result: Bool) {
       tapDelegate?.checkResult(result: result)
@@ -55,9 +55,9 @@ class BeeCollectionView : UICollectionView {
    
 }
 
-//MARK: - UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 
-extension BeeCollectionView: UICollectionViewDelegate {
+extension GameCollectionView: UICollectionViewDelegate {
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       guard let index = index else { return }
@@ -71,9 +71,9 @@ extension BeeCollectionView: UICollectionViewDelegate {
    }
 }
 
-//MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
-extension BeeCollectionView: UICollectionViewDataSource {
+extension GameCollectionView: UICollectionViewDataSource {
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       cells
@@ -85,7 +85,9 @@ extension BeeCollectionView: UICollectionViewDataSource {
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
-      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeeCollectionViewCell().idCell, for: indexPath) as? BeeCollectionViewCell else {
+      guard let cell = collectionView
+         .dequeueReusableCell(withReuseIdentifier: GameCollectionViewCell().idCell,
+                              for: indexPath) as? GameCollectionViewCell else {
          return UICollectionViewCell()
       }
       
@@ -104,19 +106,25 @@ extension BeeCollectionView: UICollectionViewDataSource {
 
 //MARK: - UICollectionViewDelegateFlowLayout
 
-extension BeeCollectionView: UICollectionViewDelegateFlowLayout {
+extension GameCollectionView: UICollectionViewDelegateFlowLayout {
    
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+   func collectionView(_ collectionView: UICollectionView,
+                       layout collectionViewLayout: UICollectionViewLayout,
+                       insetForSectionAt section: Int) -> UIEdgeInsets {
       let inset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
       return inset
    }
    
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+   func collectionView(_ collectionView: UICollectionView,
+                       layout collectionViewLayout: UICollectionViewLayout,
+                       minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
       10
    }
    
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      CGSize(width: (collectionView.frame.width - 40 ) / 5 ,
+   func collectionView(_ collectionView: UICollectionView,
+                       layout collectionViewLayout: UICollectionViewLayout,
+                       sizeForItemAt indexPath: IndexPath) -> CGSize {
+      CGSize(width: (collectionView.frame.width - 40 ) / 5,
              height: (collectionView.frame.width - 40 ) / 5)
    }
 }

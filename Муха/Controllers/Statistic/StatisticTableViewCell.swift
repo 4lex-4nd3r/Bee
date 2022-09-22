@@ -9,7 +9,7 @@ import UIKit
 
 class StatisticTableViewCell: UITableViewCell {
    
-   //MARK: - Properties
+   // MARK: - Properties
    
    private let winImageView: UIImageView = {
       let imageView = UIImageView()
@@ -63,7 +63,7 @@ class StatisticTableViewCell: UITableViewCell {
       fatalError("init(coder:) has not been implemented")
    }
    
-   //MARK: - Setups
+   // MARK: - Setups
    
    private func setupViews() {
       backgroundColor = .clear

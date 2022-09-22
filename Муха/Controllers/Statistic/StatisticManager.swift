@@ -20,17 +20,21 @@ class StatisticManager {
          localRealm.add(model)
       })
    }
-   
-   func deleteAllResults() {
-      try! localRealm.write {
-         localRealm.deleteAll()
+
+   func deleteModel(model: StatisticModel) {
+      try! localRealm.write{
+         localRealm.delete(model)
       }
    }
    
    func getStatistic() -> [StatisticModel] {
       
       let statistic = Array(localRealm.objects(StatisticModel.self).sorted(byKeyPath: "date", ascending: false))
-      print(statistic.count)
       return statistic
    }
+
+
+   
+
+   
 }

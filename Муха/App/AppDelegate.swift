@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Siren
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,9 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       notifications.requestAuth()
       notifications.center.delegate = notifications
 
-      Siren.shared.wail()
-      Siren.shared.presentationManager = PresentationManager(forceLanguageLocalization: .russian)
-      Siren.shared.rulesManager = RulesManager(globalRules: .annoying)
       return true
    }
 

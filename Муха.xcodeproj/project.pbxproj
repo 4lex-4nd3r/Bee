@@ -16,7 +16,7 @@
 		1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */; };
 		1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */; };
 		1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */; };
-		1F3787A328D4E66000C78665 /* BeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A228D4E66000C78665 /* BeeViewModel.swift */; };
+		1F3787A328D4E66000C78665 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A228D4E66000C78665 /* GameViewModel.swift */; };
 		1F3787A628D5096D00C78665 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A528D5096D00C78665 /* Help.swift */; };
 		1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A828D50A6300C78665 /* UIStepper +.swift */; };
 		1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AA28D50E0B00C78665 /* UILabel +.swift */; };
@@ -26,15 +26,20 @@
 		1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */; };
 		1F68C0252853286200FFBDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0242853286200FFBDD0 /* Assets.xcassets */; };
 		1F68C0282853286200FFBDD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */; };
-		1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C02F285328D200FFBDD0 /* BeeViewController.swift */; };
-		1F68C0322853298900FFBDD0 /* BeeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */; };
-		1F68C03428532CE400FFBDD0 /* BeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */; };
+		1F68C030285328D200FFBDD0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C02F285328D200FFBDD0 /* GameViewController.swift */; };
+		1F68C0322853298900FFBDD0 /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C0312853298800FFBDD0 /* GameCollectionView.swift */; };
+		1F68C03428532CE400FFBDD0 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68C03328532CE400FFBDD0 /* GameCollectionViewCell.swift */; };
 		1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */; };
 		1F9510ED28844BE5002F4345 /* Даниил - вниз.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510E828844BE5002F4345 /* Даниил - вниз.mp3 */; };
 		1F9510EE28844BE5002F4345 /* Даниил - Где муха?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510E928844BE5002F4345 /* Даниил - Где муха?.mp3 */; };
 		1F9510EF28844BE5002F4345 /* Даниил - вправо.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510EA28844BE5002F4345 /* Даниил - вправо.mp3 */; };
 		1F9510F028844BE5002F4345 /* Даниил - вверх.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510EB28844BE5002F4345 /* Даниил - вверх.mp3 */; };
 		1F9510F128844BE5002F4345 /* Даниил - влево.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9510EC28844BE5002F4345 /* Даниил - влево.mp3 */; };
+		1F9FB98A28DB3FFA00B20366 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB98928DB3FFA00B20366 /* AchievementsViewController.swift */; };
+		1F9FB98E28DB4EAB00B20366 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB98D28DB4EAB00B20366 /* StarsView.swift */; };
+		1F9FB99228DB9CA200B20366 /* Date + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99128DB9CA200B20366 /* Date + .swift */; };
+		1F9FB99428DBA7B300B20366 /* UIButton + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99328DBA7B300B20366 /* UIButton + .swift */; };
+		1F9FB99628DC287700B20366 /* Int +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99528DC287700B20366 /* Int +.swift */; };
 		1FA7B1BF28D859A8000C4B51 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7B1BE28D859A8000C4B51 /* HelpViewController.swift */; };
 		1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DC288464A5008E02AF /* Даниил - false.mp3 */; };
 		1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DD288464A5008E02AF /* Даниил - true.mp3 */; };
@@ -85,7 +90,7 @@
 		1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		1F3787A228D4E66000C78665 /* BeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeViewModel.swift; sourceTree = "<group>"; };
+		1F3787A228D4E66000C78665 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1F3787A528D5096D00C78665 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		1F3787A828D50A6300C78665 /* UIStepper +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStepper +.swift"; sourceTree = "<group>"; };
 		1F3787AA28D50E0B00C78665 /* UILabel +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel +.swift"; sourceTree = "<group>"; };
@@ -97,15 +102,20 @@
 		1F68C0242853286200FFBDD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F68C0272853286200FFBDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F68C0292853286200FFBDD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F68C02F285328D200FFBDD0 /* BeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeViewController.swift; sourceTree = "<group>"; };
-		1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeCollectionView.swift; sourceTree = "<group>"; };
-		1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F68C02F285328D200FFBDD0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1F68C0312853298800FFBDD0 /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
+		1F68C03328532CE400FFBDD0 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1F9510E828844BE5002F4345 /* Даниил - вниз.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - вниз.mp3"; sourceTree = "<group>"; };
 		1F9510E928844BE5002F4345 /* Даниил - Где муха?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - Где муха?.mp3"; sourceTree = "<group>"; };
 		1F9510EA28844BE5002F4345 /* Даниил - вправо.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - вправо.mp3"; sourceTree = "<group>"; };
 		1F9510EB28844BE5002F4345 /* Даниил - вверх.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - вверх.mp3"; sourceTree = "<group>"; };
 		1F9510EC28844BE5002F4345 /* Даниил - влево.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - влево.mp3"; sourceTree = "<group>"; };
+		1F9FB98928DB3FFA00B20366 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		1F9FB98D28DB4EAB00B20366 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		1F9FB99128DB9CA200B20366 /* Date + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + .swift"; sourceTree = "<group>"; };
+		1F9FB99328DBA7B300B20366 /* UIButton + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + .swift"; sourceTree = "<group>"; };
+		1F9FB99528DC287700B20366 /* Int +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int +.swift"; sourceTree = "<group>"; };
 		1FA7B1BE28D859A8000C4B51 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		1FD864DC288464A5008E02AF /* Даниил - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - false.mp3"; sourceTree = "<group>"; };
 		1FD864DD288464A5008E02AF /* Даниил - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - true.mp3"; sourceTree = "<group>"; };
@@ -180,21 +190,21 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		1F1ADD4928927BDD00D908D7 /* Main */ = {
+		1F1ADD4928927BDD00D908D7 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				1F3787A228D4E66000C78665 /* BeeViewModel.swift */,
-				1F68C02F285328D200FFBDD0 /* BeeViewController.swift */,
+				1F3787A228D4E66000C78665 /* GameViewModel.swift */,
+				1F68C02F285328D200FFBDD0 /* GameViewController.swift */,
 				1F3787A128D4E44800C78665 /* Collection View */,
 			);
-			path = Main;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		1F3787A128D4E44800C78665 /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
-				1F68C0312853298800FFBDD0 /* BeeCollectionView.swift */,
-				1F68C03328532CE400FFBDD0 /* BeeCollectionViewCell.swift */,
+				1F68C0312853298800FFBDD0 /* GameCollectionView.swift */,
+				1F68C03328532CE400FFBDD0 /* GameCollectionViewCell.swift */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -213,9 +223,12 @@
 			children = (
 				1F3787A828D50A6300C78665 /* UIStepper +.swift */,
 				1F3787AA28D50E0B00C78665 /* UILabel +.swift */,
+				1F9FB99328DBA7B300B20366 /* UIButton + .swift */,
 				1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */,
 				1F1296AB28D783C800A458C4 /* UISwitch + .swift */,
 				1F1296AD28D793E200A458C4 /* DatePicker +.swift */,
+				1F9FB99128DB9CA200B20366 /* Date + .swift */,
+				1F9FB99528DC287700B20366 /* Int +.swift */,
 				1F3787AE28D5CE7900C78665 /* Box.swift */,
 			);
 			path = Helpers;
@@ -244,9 +257,7 @@
 			children = (
 				1F825AB8285B146800B7C315 /* Sounds */,
 				1FA17FDB28ABEF0B00E9461D /* App */,
-				1F68C0242853286200FFBDD0 /* Assets.xcassets */,
-				1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */,
-				1F68C0292853286200FFBDD0 /* Info.plist */,
+				1F9FB98C28DB46C600B20366 /* Resources */,
 				1F3787A728D50A4C00C78665 /* Helpers */,
 				1F3787A428D4E67800C78665 /* Models */,
 				1FA17FDC28ABEF2B00E9461D /* Controllers */,
@@ -295,6 +306,25 @@
 			path = "Карина";
 			sourceTree = "<group>";
 		};
+		1F9FB98B28DB41E700B20366 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				1F9FB98928DB3FFA00B20366 /* AchievementsViewController.swift */,
+				1F9FB98D28DB4EAB00B20366 /* StarsView.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		1F9FB98C28DB46C600B20366 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F68C0242853286200FFBDD0 /* Assets.xcassets */,
+				1F68C0262853286200FFBDD0 /* LaunchScreen.storyboard */,
+				1F68C0292853286200FFBDD0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1FA17FDB28ABEF0B00E9461D /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,9 +338,10 @@
 		1FA17FDC28ABEF2B00E9461D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F1ADD4928927BDD00D908D7 /* Main */,
-				1F1ADD4828927BD000D908D7 /* Settings */,
+				1F1ADD4928927BDD00D908D7 /* Game */,
 				1F1ADD4728927BC100D908D7 /* Statistic */,
+				1F9FB98B28DB41E700B20366 /* Achievements */,
+				1F1ADD4828927BD000D908D7 /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -400,6 +431,7 @@
 				1F68C0152853286000FFBDD0 /* Frameworks */,
 				1F68C0162853286000FFBDD0 /* Resources */,
 				15A4CD3055E76326FDD23672 /* [CP] Embed Pods Frameworks */,
+				1FA7B1C128D9C7DA000C4B51 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -537,6 +569,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Муха/Pods-Муха-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1FA7B1C128D9C7DA000C4B51 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -549,22 +598,27 @@
 				1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */,
 				1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */,
 				1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */,
-				1F68C0322853298900FFBDD0 /* BeeCollectionView.swift in Sources */,
-				1F68C03428532CE400FFBDD0 /* BeeCollectionViewCell.swift in Sources */,
+				1F9FB98E28DB4EAB00B20366 /* StarsView.swift in Sources */,
+				1F68C0322853298900FFBDD0 /* GameCollectionView.swift in Sources */,
+				1F68C03428532CE400FFBDD0 /* GameCollectionViewCell.swift in Sources */,
 				1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */,
 				1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */,
 				1F3787AF28D5CE7900C78665 /* Box.swift in Sources */,
 				1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */,
+				1F9FB98A28DB3FFA00B20366 /* AchievementsViewController.swift in Sources */,
 				1FA7B1BF28D859A8000C4B51 /* HelpViewController.swift in Sources */,
 				1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */,
+				1F9FB99628DC287700B20366 /* Int +.swift in Sources */,
+				1F9FB99428DBA7B300B20366 /* UIButton + .swift in Sources */,
 				1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */,
 				1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */,
 				1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */,
-				1F3787A328D4E66000C78665 /* BeeViewModel.swift in Sources */,
+				1F3787A328D4E66000C78665 /* GameViewModel.swift in Sources */,
 				1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */,
 				1F3787A628D5096D00C78665 /* Help.swift in Sources */,
 				1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */,
-				1F68C030285328D200FFBDD0 /* BeeViewController.swift in Sources */,
+				1F9FB99228DB9CA200B20366 /* Date + .swift in Sources */,
+				1F68C030285328D200FFBDD0 /* GameViewController.swift in Sources */,
 				1F1296AC28D783C800A458C4 /* UISwitch + .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,7 +761,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5VQ3T5G2F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Муха/Info.plist";
+				INFOPLIST_FILE = "Муха/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Где муха?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -740,7 +794,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5VQ3T5G2F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Муха/Info.plist";
+				INFOPLIST_FILE = "Муха/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Где муха?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

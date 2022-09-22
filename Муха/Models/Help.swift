@@ -8,7 +8,7 @@
 import Foundation
 
 struct Help {
-   
+
    static let text = """
 
 Упражнение «Муха» развивает концентрацию внимания.

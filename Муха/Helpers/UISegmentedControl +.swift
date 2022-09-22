@@ -13,7 +13,7 @@ extension UISegmentedControl {
       self.init(items: segments)
       self.backgroundColor = .systemGray3
       self.selectedSegmentTintColor = color
-      self.setTitleTextAttributes([.foregroundColor : UIColor.systemBackground], for: .normal)
-      self.setTitleTextAttributes([.foregroundColor : UIColor.systemBackground], for: .selected)
+      self.setTitleTextAttributes([.foregroundColor: UIColor.systemBackground], for: .normal)
+      self.setTitleTextAttributes([.foregroundColor: UIColor.systemBackground], for: .selected)
    }
 }

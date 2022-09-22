@@ -18,4 +18,11 @@ extension UILabel {
       self.init()
       self.font = .systemFont(ofSize: size, weight: weight)
    }
+
+   convenience init(text: String, textAlignment: NSTextAlignment) {
+      self.init()
+      self.text = text
+      self.textAlignment = textAlignment
+      self.adjustsFontSizeToFitWidth = true
+   }
 }

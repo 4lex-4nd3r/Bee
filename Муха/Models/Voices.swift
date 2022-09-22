@@ -7,9 +7,8 @@
 
 import Foundation
 
-
 enum Voices {
-   
+
    case men
    case women
 }

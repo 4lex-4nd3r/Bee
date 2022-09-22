@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  GameViewController.swift
 //  Муха
 //
 //  Created by Александр on 10.06.2022.
@@ -10,26 +10,23 @@ import AVFoundation
 import RealmSwift
 import SnapKit
 
-class BeeViewController: UIViewController {
+class GameViewController: UIViewController {
    
    // MARK: - Properties
    
    private let defaults = UserDefaults.standard
    private var statisticModel = StatisticModel()
-   private let collectionView = BeeCollectionView()
+   private let collectionView = GameCollectionView()
    
 //   private let localRealm = try! Realm()
-   
-   
-   //MARK: - UI Properties
-   
-   private lazy var statisticButton = UIBarButtonItem(image: UIImage(systemName: "list.star"), style: .done, target: self, action: #selector(statisticButtonTapped))
-   
-   private lazy var settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(settingsButtonTapped))
-   
-   
-   
-   
+
+   // MARK: - UI Properties
+
+   private lazy var statisticButton = UIButton(imageName: "list.star")
+   private lazy var achievementsButton = UIButton(imageName: "star")
+   private lazy var settingsButton = UIButton(imageName: "gearshape")
+
+
    private let beeImage: UIImageView = {
       let imageView = UIImageView()
       imageView.image = UIImage(named: "bigBee")
@@ -37,14 +34,14 @@ class BeeViewController: UIViewController {
       imageView.translatesAutoresizingMaskIntoConstraints = false
       return imageView
    }()
-   
+
    private let mainLabel: UILabel = {
       let label = UILabel()
       label.font = .systemFont(ofSize: 50)
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
    }()
-   
+
    private lazy var startStopButton: UIButton = {
       let button = UIButton()
       button.setTitle("Старт", for: .normal)
@@ -55,11 +52,11 @@ class BeeViewController: UIViewController {
       return button
    }()
    
-   //MARK: - Game Properties
-   
+   // MARK: - Game Properties
+
    private var isStarted = false
    private var player: AVAudioPlayer!
-   
+
    private var x = 0
    private var y = 0
    private var movingDirection = ""
@@ -67,33 +64,50 @@ class BeeViewController: UIViewController {
    
    private var prepareTimer = Timer()
    private var stepsTimer = Timer()
-   
+
    private var isHide = false
    private var steps = 5
    private var speedInSec: Double = 1
    private var voice = "Даниил"
-   
+
    // MARK: - Lifecycle
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
       setupViews()
       setConstraints()
       setDelegates()
+
+
+
+//      StatisticManager.shared.getStepsCount()
+//      StatisticManager.shared.getTimePlayed()
+//      StatisticManager.shared.getBlindWinCount()
+//      StatisticManager.shared.getDaysStreak()
    }
-   
+
    override func viewWillAppear(_ animated: Bool) {
 //      print("apear")
       loadDefaults()
    }
-   
-   //MARK: - Setups
+
+   // MARK: - Setups
    
    private func setupViews() {
       view.backgroundColor = .systemBackground
-      navigationItem.rightBarButtonItem = settingsButton
-      navigationItem.leftBarButtonItem = statisticButton
+      view.addSubview(statisticButton)
+      statisticButton.addTarget(self,
+                                action: #selector(statisticButtonTapped),
+                                for: .touchUpInside)
+      view.addSubview(achievementsButton)
+      achievementsButton.addTarget(self,
+                                action: #selector(achievementsButtonTapped),
+                                for: .touchUpInside)
+      view.addSubview(settingsButton)
+      settingsButton.addTarget(self,
+                                   action: #selector(settingsButtonTapped),
+                                   for: .touchUpInside)
+
       view.addSubview(collectionView)
       collectionView.isHidden = true
       collectionView.isUserInteractionEnabled = false
@@ -102,11 +116,11 @@ class BeeViewController: UIViewController {
       view.addSubview(mainLabel)
       view.addSubview(startStopButton)
    }
-   
+
    private func setDelegates() {
       collectionView.tapDelegate = self
    }
-   
+
    private func loadDefaults() {
       if defaults.object(forKey: "steps") != nil {
 //         print("load")
@@ -116,91 +130,96 @@ class BeeViewController: UIViewController {
          voice = defaults.string(forKey: "voice") ?? "Даниил"
       }
    }
-   
-   //MARK: - Selectors
-   
+
+   // MARK: - Selectors
+
    @objc private func statisticButtonTapped() {
       let statisticVC = StatisticViewController()
-      navigationController?.pushViewController(statisticVC, animated: true)
+      present(statisticVC, animated: true)
    }
-   
+
+   @objc private func achievementsButtonTapped() {
+      let achievementsVC = AchievementsViewController()
+      present(achievementsVC, animated: true)
+   }
+
    @objc private func settingsButtonTapped() {
       let settingsVC = SettingsViewController()
-      navigationController?.pushViewController(settingsVC, animated: true)
+      present(settingsVC, animated: true)
    }
-   
+
    @objc private func startStopButtonTapped() {
-      
       if isStarted {
          testStop()
       } else {
          testStart()
       }
    }
-   
-   //MARK: - Game Stop
-   
+
+   // MARK: - Game Stop
+
    private func testStop() {
-      
-      //change status of test
+
+      // change status of test
       isStarted = !isStarted
-      
-      //lock screen if needed
+
+      // lock screen if needed
       UIApplication.shared.isIdleTimerDisabled = false
 
-      //hide collectionView, show settings for game, show back button
+      // hide collectionView, show settings for game, show back button
       collectionView.isHidden = true
       mainLabel.text = ""
-//      statisticButton.isHidden = false
-      navigationController?.navigationBar.isHidden = false
-
-
+      statisticButton.isHidden = false
+      achievementsButton.isHidden = false
+      settingsButton.isHidden = false
+      
       beeImage.isHidden = false
 
-      //change status of button
+      // change status of button
       startStopButton.backgroundColor = .systemBlue
       startStopButton.setTitle("Старт", for: .normal)
-      
-      //reset timers
+
+      // reset timers
       prepareTimer.invalidate()
       stepsTimer.invalidate()
    }
-   
-   //MARK: - Game Start
+
+   // MARK: - Game Start
 
    private func testStart() {
-      
-      //change status of test
+
+      // change status of test
       isStarted = !isStarted
-      
-      //not lock screen
+
+      // not lock screen
       UIApplication.shared.isIdleTimerDisabled = true
-      
-      //hide settings, hide back button - and show collectionView
+
+      // hide settings, hide back button - and show collectionView
       collectionView.isHidden = false
-//      statisticButton.isHidden = true
-      navigationController?.navigationBar.isHidden = true
+      statisticButton.isHidden = true
+      achievementsButton.isHidden = true
+      settingsButton.isHidden = true
       beeImage.isHidden = true
-      
-      //change status of button
+
+      // change status of button
       startStopButton.backgroundColor = .systemRed
       startStopButton.setTitle("Стоп", for: .normal)
-      
-      //start test
+
+      // start test
       preparingTest()
    }
-   
-   //MARK: - Game Prepares
-   
+
+   // MARK: - Game Prepares
+
    private func preparingTest() {
-      
-      //choose random position of Bee
+
+      // choose random position of Bee
       x = Int.random(in: 0...4)
       y = Int.random(in: 0...4)
-      
-      //set Bee on view
+
+      // set Bee on view
       collectionView.setupBee(x: x, y: y)
-      
+
       time = 3
       mainLabel.text = "\(time)"
       prepareTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
@@ -216,20 +235,20 @@ class BeeViewController: UIViewController {
          }
       }
    }
-   
+
    //MARK: - Moving of Bee
-   
+
    private func movingSteps() {
-      
+
       var rounds = 0
       stepsTimer = Timer.scheduledTimer(withTimeInterval: speedInSec,
-                                        repeats: true) { timer in
+                                        repeats: true) { _ in
          self.pickDirection()
          self.changePositionInXY()
          rounds += 1
          if rounds == self.steps {
             self.stepsTimer.invalidate()
-            Timer.scheduledTimer(withTimeInterval: self.speedInSec, repeats: false) { timer in
+            Timer.scheduledTimer(withTimeInterval: self.speedInSec, repeats: false) { _ in
                self.collectionView.index = IndexPath(item: self.y, section: self.x)
                print("x - \(self.x), y - \(self.y)")
                self.collectionView.isHidden = false
@@ -240,23 +259,23 @@ class BeeViewController: UIViewController {
          }
       }
    }
-   
-   //MARK: - One Step of Bee
-   
+
+   // MARK: - One Step of Bee
+
    private func pickDirection() {
-      
+
       var array = ["влево", "вправо", "вверх", "вниз"]
-      if x == 0 { array = array.filter{ $0 != "вверх"} }
-      if x == 4 { array = array.filter{ $0 != "вниз"} }
-      if y == 0 { array = array.filter{ $0 != "влево"} }
-      if y == 4 { array = array.filter{ $0 != "вправо"} }
+      if x == 0 { array = array.filter { $0 != "вверх"} }
+      if x == 4 { array = array.filter { $0 != "вниз"} }
+      if y == 0 { array = array.filter { $0 != "влево"} }
+      if y == 4 { array = array.filter { $0 != "вправо"} }
       movingDirection = array.randomElement()!
       let animation = CATransition()
       mainLabel.layer.add(animation, forKey: nil)
       mainLabel.text = movingDirection
       playSound(with: voice + " - " + movingDirection)
    }
-   
+
    private func changePositionInXY() {
       switch movingDirection {
       case "влево": y -= 1
@@ -266,22 +285,22 @@ class BeeViewController: UIViewController {
       default: return
       }
    }
-   
+
    private func playSound(with name: String) {
-      guard let url = Bundle.main.url(forResource: name, withExtension:"mp3") else { return }
+      guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else { return }
       player = try! AVAudioPlayer(contentsOf: url)
       do {
          try AVAudioSession.sharedInstance().setCategory(.playback)
-      } catch(let error) {
+      } catch {
          print(error.localizedDescription)
       }
       player.play()
    }
-   
-   //MARK: - Save Statistic
-   
+
+   // MARK: - Save Statistic
+
    private func saveResult(isWin: Bool) {
-      
+
       statisticModel.date = Date()
       statisticModel.steps = steps
       statisticModel.speed = speedInSec
@@ -290,18 +309,36 @@ class BeeViewController: UIViewController {
       StatisticManager.shared.saveResult(model: statisticModel)
       statisticModel = StatisticModel()
    }
-   
-   //MARK: - Constraints
-   
+
+   // MARK: - Constraints
+
    private func setConstraints() {
-      
+
+      statisticButton.snp.makeConstraints { make in
+         make.width.height.equalTo(30)
+         make.top.equalToSuperview().inset(50)
+         make.left.equalToSuperview().inset(50)
+      }
+
+      achievementsButton.snp.makeConstraints { make in
+         make.width.height.equalTo(30)
+         make.top.equalToSuperview().inset(50)
+         make.centerX.equalToSuperview()
+      }
+
+      settingsButton.snp.makeConstraints { make in
+         make.width.height.equalTo(30)
+         make.top.equalToSuperview().inset(50)
+         make.right.equalToSuperview().inset(50)
+      }
+
       NSLayoutConstraint.activate([
          collectionView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
          collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
          collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
          collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, constant: 10)
       ])
- 
+
       NSLayoutConstraint.activate([
          beeImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
          beeImage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
@@ -313,20 +350,20 @@ class BeeViewController: UIViewController {
          mainLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -20),
          mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
       ])
-      
+
       NSLayoutConstraint.activate([
          startStopButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
          startStopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
          startStopButton.widthAnchor.constraint(equalToConstant: 250),
          startStopButton.heightAnchor.constraint(equalToConstant: 50)
       ])
-      
+
    }
 }
 
 //MARK: - Result of Game
 
-extension BeeViewController: BeeCollectionViewProtocol {
+extension GameViewController: GameCollectionViewProtocol {
    
    func checkResult(result: Bool) {
       

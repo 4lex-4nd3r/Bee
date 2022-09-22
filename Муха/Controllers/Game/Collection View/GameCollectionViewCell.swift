@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  GameCollectionViewCell.swift
 //  Муха
 //
 //  Created by Александр on 10.06.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BeeCollectionViewCell: UICollectionViewCell {
+class GameCollectionViewCell: UICollectionViewCell {
    
    let idCell = "idCell"
    

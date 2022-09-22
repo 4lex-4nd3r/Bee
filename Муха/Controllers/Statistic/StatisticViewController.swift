@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SnapKit
 
 class StatisticViewController : UIViewController {
    
@@ -17,9 +18,9 @@ class StatisticViewController : UIViewController {
    
    // MARK: - UI Properties
    
-   private let tableView = UITableView(frame: .infinite, style: .plain)
+   private let tableView = UITableView()
    
-   private lazy var deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .done, target: self, action: #selector(deleteButtonTapped))
+   private lazy var achievementsButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .done, target: self, action: #selector(achievementsButtonTapped))
 
    let statisticCell = StatisticTableViewCell()
    let idStatisticCell = "idStatisticCell"
@@ -37,29 +38,24 @@ class StatisticViewController : UIViewController {
    private func setupViews() {
       view.backgroundColor = .systemBackground
       navigationItem.title = "Cтатистика"
-      navigationItem.rightBarButtonItem = deleteButton
+      navigationItem.rightBarButtonItem = achievementsButton
       view.addSubview(tableView)
       tableView.frame = view.frame
       tableView.dataSource = self
       tableView.delegate = self
       tableView.rowHeight = 50
       tableView.register(StatisticTableViewCell.self, forCellReuseIdentifier: idStatisticCell)
+      tableView.snp.makeConstraints { make in
+         make.top.equalToSuperview().inset(40)
+         make.left.right.bottom.equalToSuperview()
+      }
    }
    
    //MARK: - Selectors
 
-   @objc private func deleteButtonTapped() {
+   @objc private func achievementsButtonTapped() {
       
-      let alert = UIAlertController(title: "Удалить историю игр?", message: "Внимание! Удаление необратимо. Вы уверены?", preferredStyle: .alert)
-      let okAction = UIAlertAction(title: "Да, удалить", style: .destructive) { action in
-         StatisticManager.shared.deleteAllResults()
-         self.tableView.reloadData()
-         self.navigationItem.rightBarButtonItem = nil
-      }
-      let cancelAction = UIAlertAction(title: "Не удалять", style: .default)
-      alert.addAction(okAction)
-      alert.addAction(cancelAction)
-      present(alert, animated: true)
+//      окно с достижениями
    }
    
    private func getStatistics() {

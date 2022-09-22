@@ -14,7 +14,7 @@ protocol SettingsViewModelProtocol {
    var speedInSec: Box<Double> { get }
    var voice: Box<String> { get }
    var timer: Box<Date?> { get }
-   
+
    func changeIsHide(value: Bool)
    func changeSteps(value: Int)
    func changeSpeedInSec(value: Double)
@@ -26,8 +26,10 @@ class SettingsViewModel: SettingsViewModelProtocol {
 
    init() {
       isHide = Box(value: defaults.bool(forKey: "isHide"))
-      steps = Box(value: defaults.integer(forKey: "steps") == 0 ? 5 : defaults.integer(forKey: "steps"))
-      speedInSec = Box(value: defaults.double(forKey: "speedInSec") == 0.0 ? 1.0 : defaults.double(forKey: "speedInSec"))
+      let stepsValue = defaults.integer(forKey: "steps") == 0 ? 5 : defaults.integer(forKey: "steps")
+      steps = Box(value: stepsValue)
+      let speedValue = defaults.double(forKey: "speedInSec") == 0.0 ? 1.0 : defaults.double(forKey: "speedInSec")
+      speedInSec = Box(value: speedValue)
       voice = Box(value: defaults.string(forKey: "voice") ?? "Даниил")
       if let timerDate = defaults.object(forKey: "timer") as? Date {
          print("timer exist")
@@ -37,16 +39,16 @@ class SettingsViewModel: SettingsViewModelProtocol {
          timer = Box(value: nil)
       }
    }
-   
+
    private let defaults = UserDefaults.standard
    private let notifications = NotificationsService()
-      
+
    var isHide: Box<Bool>
    var steps: Box<Int>
    var speedInSec: Box<Double>
    var voice: Box<String>
    var timer: Box<Date?>
-   
+
    func changeIsHide(value: Bool) {
       isHide.value.toggle()
       defaults.set(value, forKey: "isHide")
@@ -55,17 +57,17 @@ class SettingsViewModel: SettingsViewModelProtocol {
       steps.value = value
       defaults.set(value, forKey: "steps")
    }
-   
+
    func changeSpeedInSec(value: Double) {
       speedInSec.value = value
       defaults.set(value, forKey: "speedInSec")
    }
-   
+
    func changeVoice(value: String) {
       voice.value = value
       defaults.set(value, forKey: "voice")
    }
-   
+
    func changeTimer(value: Date?) {
       if let value = value {
          timer.value = value
