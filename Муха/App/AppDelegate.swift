@@ -13,10 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    let notifications = NotificationsService()
    
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      
       notifications.requestAuth()
       notifications.center.delegate = notifications
-
       return true
    }
 

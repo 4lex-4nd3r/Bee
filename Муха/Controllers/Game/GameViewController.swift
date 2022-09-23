@@ -7,7 +7,7 @@
 
 import UIKit
 import AVFoundation
-import RealmSwift
+//import RealmSwift
 import SnapKit
 
 class GameViewController: UIViewController {
@@ -17,15 +17,12 @@ class GameViewController: UIViewController {
    private let defaults = UserDefaults.standard
    private var statisticModel = StatisticModel()
    private let collectionView = GameCollectionView()
-   
-//   private let localRealm = try! Realm()
 
    // MARK: - UI Properties
 
    private lazy var statisticButton = UIButton(imageName: "list.star")
    private lazy var achievementsButton = UIButton(imageName: "star")
    private lazy var settingsButton = UIButton(imageName: "gearshape")
-
 
    private let beeImage: UIImageView = {
       let imageView = UIImageView()
@@ -77,18 +74,6 @@ class GameViewController: UIViewController {
       setupViews()
       setConstraints()
       setDelegates()
-
-
-
-//      StatisticManager.shared.getStepsCount()
-//      StatisticManager.shared.getTimePlayed()
-//      StatisticManager.shared.getBlindWinCount()
-//      StatisticManager.shared.getDaysStreak()
-   }
-
-   override func viewWillAppear(_ animated: Bool) {
-//      print("apear")
-      loadDefaults()
    }
 
    // MARK: - Setups
@@ -111,7 +96,6 @@ class GameViewController: UIViewController {
       view.addSubview(collectionView)
       collectionView.isHidden = true
       collectionView.isUserInteractionEnabled = false
-//      view.addSubview(statisticButton)
       view.addSubview(beeImage)
       view.addSubview(mainLabel)
       view.addSubview(startStopButton)
@@ -123,7 +107,6 @@ class GameViewController: UIViewController {
 
    private func loadDefaults() {
       if defaults.object(forKey: "steps") != nil {
-//         print("load")
          steps = defaults.integer(forKey: "steps")
          speedInSec = defaults.double(forKey: "speedInSec")
          isHide = defaults.bool(forKey: "isHide")
@@ -188,7 +171,7 @@ class GameViewController: UIViewController {
 
    private func testStart() {
 
-      // change status of test
+      loadDefaults()
       isStarted = !isStarted
 
       // not lock screen

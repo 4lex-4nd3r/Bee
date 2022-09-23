@@ -32,9 +32,4 @@ class StatisticManager {
       let statistic = Array(localRealm.objects(StatisticModel.self).sorted(byKeyPath: "date", ascending: false))
       return statistic
    }
-
-
-   
-
-   
 }

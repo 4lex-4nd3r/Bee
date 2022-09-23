@@ -19,8 +19,6 @@ class StatisticViewController : UIViewController {
    // MARK: - UI Properties
    
    private let tableView = UITableView()
-   
-   private lazy var achievementsButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .done, target: self, action: #selector(achievementsButtonTapped))
 
    let statisticCell = StatisticTableViewCell()
    let idStatisticCell = "idStatisticCell"
@@ -37,8 +35,6 @@ class StatisticViewController : UIViewController {
    
    private func setupViews() {
       view.backgroundColor = .systemBackground
-      navigationItem.title = "Cтатистика"
-      navigationItem.rightBarButtonItem = achievementsButton
       view.addSubview(tableView)
       tableView.frame = view.frame
       tableView.dataSource = self
@@ -53,11 +49,6 @@ class StatisticViewController : UIViewController {
    
    //MARK: - Selectors
 
-   @objc private func achievementsButtonTapped() {
-      
-//      окно с достижениями
-   }
-   
    private func getStatistics() {
       statistic = localRealm.objects(StatisticModel.self).sorted(byKeyPath: "date", ascending: false)
       print(statistic.count)
