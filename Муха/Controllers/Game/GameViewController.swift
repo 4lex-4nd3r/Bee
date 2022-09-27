@@ -76,6 +76,10 @@ class GameViewController: UIViewController {
       setDelegates()
    }
 
+   override func viewDidAppear(_ animated: Bool) {
+      showOnboarding()
+   }
+
    // MARK: - Setups
    
    private func setupViews() {
@@ -111,6 +115,14 @@ class GameViewController: UIViewController {
          speedInSec = defaults.double(forKey: "speedInSec")
          isHide = defaults.bool(forKey: "isHide")
          voice = defaults.string(forKey: "voice") ?? "Даниил"
+      }
+   }
+
+   private func showOnboarding() {
+      if !OnboardStatus.shared.isOnboarded() {
+         let onboardingVC = OnboardingViewController()
+         onboardingVC.modalPresentationStyle = .fullScreen
+         present(onboardingVC, animated: false)
       }
    }
 

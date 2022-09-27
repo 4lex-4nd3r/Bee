@@ -33,6 +33,12 @@ class SettingsViewController: UIViewController {
    private let datePicker = UIDatePicker(color: .systemBlue)
    private var reminderStack = UIStackView()
 
+//   private lazy var onboardingButton: UIButton = {
+//      let button = UIButton()
+//
+//      return button
+//   }()
+
    // MARK: - Lifecycle
 
    override func viewDidLoad() {

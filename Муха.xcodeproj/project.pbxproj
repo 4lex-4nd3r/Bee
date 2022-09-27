@@ -41,6 +41,10 @@
 		1F9FB99428DBA7B300B20366 /* UIButton + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99328DBA7B300B20366 /* UIButton + .swift */; };
 		1F9FB99628DC287700B20366 /* Int +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99528DC287700B20366 /* Int +.swift */; };
 		1FA7B1BF28D859A8000C4B51 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7B1BE28D859A8000C4B51 /* HelpViewController.swift */; };
+		1FD548B128E314AA001BCF24 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B028E314AA001BCF24 /* OnboardingViewController.swift */; };
+		1FD548B328E32E2A001BCF24 /* OnBoardingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B228E32E2A001BCF24 /* OnBoardingText.swift */; };
+		1FD548B528E32F40001BCF24 /* OnboardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B428E32F40001BCF24 /* OnboardStatus.swift */; };
+		1FD548B728E34358001BCF24 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B628E34358001BCF24 /* OnboardingCollectionViewCell.swift */; };
 		1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DC288464A5008E02AF /* Даниил - false.mp3 */; };
 		1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DD288464A5008E02AF /* Даниил - true.mp3 */; };
 		1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E128846656008E02AF /* Филипп - false.mp3 */; };
@@ -117,6 +121,10 @@
 		1F9FB99328DBA7B300B20366 /* UIButton + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + .swift"; sourceTree = "<group>"; };
 		1F9FB99528DC287700B20366 /* Int +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int +.swift"; sourceTree = "<group>"; };
 		1FA7B1BE28D859A8000C4B51 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		1FD548B028E314AA001BCF24 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		1FD548B228E32E2A001BCF24 /* OnBoardingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingText.swift; sourceTree = "<group>"; };
+		1FD548B428E32F40001BCF24 /* OnboardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardStatus.swift; sourceTree = "<group>"; };
+		1FD548B628E34358001BCF24 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FD864DC288464A5008E02AF /* Даниил - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - false.mp3"; sourceTree = "<group>"; };
 		1FD864DD288464A5008E02AF /* Даниил - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - true.mp3"; sourceTree = "<group>"; };
 		1FD864E128846656008E02AF /* Филипп - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - false.mp3"; sourceTree = "<group>"; };
@@ -174,8 +182,6 @@
 			children = (
 				1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */,
 				1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */,
-				1F1ADD452892633200D908D7 /* StatisticModel.swift */,
-				1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */,
 			);
 			path = Statistic;
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 		1F3787A428D4E67800C78665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F3787A528D5096D00C78665 /* Help.swift */,
 				1F1296A528D5F4A700A458C4 /* Voices.swift */,
+				1F1ADD452892633200D908D7 /* StatisticModel.swift */,
+				1FD548B228E32E2A001BCF24 /* OnBoardingText.swift */,
+				1F3787A528D5096D00C78665 /* Help.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 				1FA17FDB28ABEF0B00E9461D /* App */,
 				1F9FB98C28DB46C600B20366 /* Resources */,
 				1F3787A728D50A4C00C78665 /* Helpers */,
+				1F9FB99728DEE66A00B20366 /* Services */,
 				1F3787A428D4E67800C78665 /* Models */,
 				1FA17FDC28ABEF2B00E9461D /* Controllers */,
 			);
@@ -325,12 +334,21 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1F9FB99728DEE66A00B20366 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1F1ADD43288FCFC100D908D7 /* NotificationsService.swift */,
+				1F1ADD4A28927DAD00D908D7 /* StatisticManager.swift */,
+				1FD548B428E32F40001BCF24 /* OnboardStatus.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		1FA17FDB28ABEF0B00E9461D /* App */ = {
 			isa = PBXGroup;
 			children = (
 				1F68C01B2853286000FFBDD0 /* AppDelegate.swift */,
 				1F68C01D2853286000FFBDD0 /* SceneDelegate.swift */,
-				1F1ADD43288FCFC100D908D7 /* NotificationsService.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -338,12 +356,22 @@
 		1FA17FDC28ABEF2B00E9461D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1FD548AF28E31488001BCF24 /* Onboarding */,
 				1F1ADD4928927BDD00D908D7 /* Game */,
 				1F1ADD4728927BC100D908D7 /* Statistic */,
 				1F9FB98B28DB41E700B20366 /* Achievements */,
 				1F1ADD4828927BD000D908D7 /* Settings */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1FD548AF28E31488001BCF24 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548B028E314AA001BCF24 /* OnboardingViewController.swift */,
+				1FD548B628E34358001BCF24 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		1FD864E02884663C008E02AF /* Филипп */ = {
@@ -597,6 +625,7 @@
 				1F1ADD44288FCFC100D908D7 /* NotificationsService.swift in Sources */,
 				1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */,
 				1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */,
+				1FD548B328E32E2A001BCF24 /* OnBoardingText.swift in Sources */,
 				1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */,
 				1F9FB98E28DB4EAB00B20366 /* StarsView.swift in Sources */,
 				1F68C0322853298900FFBDD0 /* GameCollectionView.swift in Sources */,
@@ -604,6 +633,7 @@
 				1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */,
 				1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */,
 				1F3787AF28D5CE7900C78665 /* Box.swift in Sources */,
+				1FD548B128E314AA001BCF24 /* OnboardingViewController.swift in Sources */,
 				1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */,
 				1F9FB98A28DB3FFA00B20366 /* AchievementsViewController.swift in Sources */,
 				1FA7B1BF28D859A8000C4B51 /* HelpViewController.swift in Sources */,
@@ -612,6 +642,7 @@
 				1F9FB99428DBA7B300B20366 /* UIButton + .swift in Sources */,
 				1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */,
 				1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */,
+				1FD548B528E32F40001BCF24 /* OnboardStatus.swift in Sources */,
 				1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */,
 				1F3787A328D4E66000C78665 /* GameViewModel.swift in Sources */,
 				1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */,
@@ -619,6 +650,7 @@
 				1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */,
 				1F9FB99228DB9CA200B20366 /* Date + .swift in Sources */,
 				1F68C030285328D200FFBDD0 /* GameViewController.swift in Sources */,
+				1FD548B728E34358001BCF24 /* OnboardingCollectionViewCell.swift in Sources */,
 				1F1296AC28D783C800A458C4 /* UISwitch + .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,7 +805,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.5;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex-und3r.bee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -806,7 +838,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.5;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex-und3r.bee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
