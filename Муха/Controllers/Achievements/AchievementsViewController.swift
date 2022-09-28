@@ -57,7 +57,11 @@ class AchievementsViewController : UIViewController {
 
       let starsLabel1 = S.Achievements.days + " \(daysStreak)"
       let starsLabel2 = S.Achievements.steps + " \(stepsCount)"
-      let starsLabel3 = S.Achievements.time + " \(timePlayed)"
+      var starsLabel3: String {
+         let (min, sec) = timePlayed.convertSeconds()
+         let times = "\(min) \(S.Achievements.min), \(sec) \(S.Achievements.sec)"
+         return (S.Achievements.time + " \(times)")
+      }
       let starsLabel4 = S.Achievements.blindCount + " \(blindWin)"
 
       starsView1.setStars(number: daysStreak.daysStars, text: starsLabel1)

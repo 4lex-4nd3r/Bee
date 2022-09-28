@@ -80,7 +80,7 @@ class OnboardingViewController : UIViewController {
 
       if pageControl.currentPage == 2 {
          OnboardStatus.shared.setToOnboarded()
-         dismiss(animated: false, completion: nil)
+         dismiss(animated: true, completion: nil)
       } else {
          pageControl.currentPage += 1
          let index: IndexPath = [0 , pageControl.currentPage]

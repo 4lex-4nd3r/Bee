@@ -9,6 +9,16 @@ import Foundation
 
 extension Int {
 
+   // MARK: - conver seconds
+
+   func convertSeconds() -> (Int, Int) {
+      let min = self / 60
+      let sec = self % 60
+      return (min, sec)
+   }
+
+   // MARK: - stars counts
+
    var daysStars: Int {
       switch self {
       case 0..<3: return 0

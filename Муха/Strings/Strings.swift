@@ -53,10 +53,12 @@ enum S {
    // MARK: - Achievements
 
    enum Achievements {
-      static let days = "days streak -".localized()
-      static let steps = "steps count -".localized()
-      static let time = "time count -".localized()
-      static let blindCount = "flies found in blind -".localized()
+      static let days = "days played streak -".localized()
+      static let steps = "fly's steps -".localized()
+      static let time = "watching the fly -".localized()
+      static let blindCount = "flies found blindly -".localized()
+      static let min = "min".localized()
+      static let sec = "sec".localized()
    }
 
    // MARK: - Settings Screen

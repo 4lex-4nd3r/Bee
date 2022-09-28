@@ -11,10 +11,12 @@
 "Speed - " = "Скорость - ";
 "Blind - Yes" = "Вслепую - Да";
 "Blind - No" = "Вслепую - Нет";
-"days streak -" = "дней непрерывно -";
-"steps count -" = "шагов пройдено -";
-"time count -" = "следил за мухой -";
-"flies found in blind -" = "мух найдено вслепую -";
+"days played streak -" = "дней непрерывно -";
+"fly's steps -" = "шагов мухи -";
+"watching the fly -" = "следил за мухой -";
+"flies found blindly -" = "мух найдено вслепую -";
+"min" = "мин";
+"sec" = "сек";
 "steps" = "шаги";
 "speed" = "скорость";
 "reminder" = "напоминание";

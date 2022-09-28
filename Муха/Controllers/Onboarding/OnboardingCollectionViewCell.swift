@@ -38,3 +38,5 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
       onboardingLabel.text = text
    }
 }
+
+

@@ -11,10 +11,12 @@
 "Speed - " = "Speed - ";
 "Blind - Yes" = "Blind - Yes";
 "Blind - No" = "Blind - No";
-"days streak -" = "days streak -";
-"steps count -" = "steps count -";
-"time count -" = "time count -";
-"flies found in blind -" = "flies found in blind -";
+"days played streak -" = "days played streak -";
+"fly's steps -" = "fly's steps -";
+"watching the fly -" = "watching the fly -";
+"flies found blindly -" = "flies found blindly -";
+"min" = "min";
+"sec" = "sec";
 "steps" = "steps";
 "speed" = "speed";
 "reminder" = "reminder";
