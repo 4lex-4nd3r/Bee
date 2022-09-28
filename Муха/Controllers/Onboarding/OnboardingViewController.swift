@@ -21,11 +21,11 @@ class OnboardingViewController : UIViewController {
       return collectionView
    }()
 
-   private let idOnboardingCell = "idOnboardingCell"
+   private let idOnboardingCell = S.CellsID.idOnboardingCell
 
-   private let onboardingText = [OnBoardingText.page0,
-                                 OnBoardingText.page1,
-                                 OnBoardingText.page2]
+   private let onboardingText = [S.OnBoardingText.page0,
+                                 S.OnBoardingText.page1,
+                                 S.OnBoardingText.page2]
 
    private lazy var pageControl: UIPageControl = {
       let pageControl = UIPageControl()
@@ -39,7 +39,7 @@ class OnboardingViewController : UIViewController {
 
    private lazy var onboardButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Далее", for: .normal)
+      button.setTitle(S.OnBoardingText.next, for: .normal)
       button.backgroundColor = .systemBlue
       button.layer.cornerRadius = 10
       button.addTarget(self, action: #selector(onboardButtonPressed), for: .touchUpInside)
@@ -75,12 +75,12 @@ class OnboardingViewController : UIViewController {
    @objc private func onboardButtonPressed() {
 
       if pageControl.currentPage == 1 {
-         onboardButton.setTitle("Готово", for: .normal)
+         onboardButton.setTitle(S.OnBoardingText.done, for: .normal)
       }
 
       if pageControl.currentPage == 2 {
          OnboardStatus.shared.setToOnboarded()
-         dismiss(animated: true, completion: nil)
+         dismiss(animated: false, completion: nil)
       } else {
          pageControl.currentPage += 1
          let index: IndexPath = [0 , pageControl.currentPage]
@@ -91,9 +91,9 @@ class OnboardingViewController : UIViewController {
    @objc private func pageControlValueChanged() {
 
       if pageControl.currentPage == 2 {
-         onboardButton.setTitle("Готово", for: .normal)
+         onboardButton.setTitle(S.OnBoardingText.done, for: .normal)
       } else {
-         onboardButton.setTitle("Далее", for: .normal)
+         onboardButton.setTitle(S.OnBoardingText.next, for: .normal)
       }
       let index: IndexPath = [0 , pageControl.currentPage]
       collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)

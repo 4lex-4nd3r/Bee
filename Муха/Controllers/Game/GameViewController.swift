@@ -41,7 +41,7 @@ class GameViewController: UIViewController {
 
    private lazy var startStopButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Старт", for: .normal)
+      button.setTitle(S.Game.start, for: .normal)
       button.backgroundColor = .systemBlue
       button.layer.cornerRadius = 10
       button.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,7 @@ class GameViewController: UIViewController {
    private var isHide = false
    private var steps = 5
    private var speedInSec: Double = 1
-   private var voice = "Даниил"
+   private var voice = S.Voices.man.fisrt
 
    // MARK: - Lifecycle
    
@@ -112,10 +112,15 @@ class GameViewController: UIViewController {
    private func loadDefaults() {
       if defaults.object(forKey: "steps") != nil {
          steps = defaults.integer(forKey: "steps")
-         speedInSec = defaults.double(forKey: "speedInSec")
-         isHide = defaults.bool(forKey: "isHide")
-         voice = defaults.string(forKey: "voice") ?? "Даниил"
       }
+      if defaults.object(forKey: "speedInSec") != nil {
+         speedInSec = defaults.double(forKey: "speedInSec")
+      }
+      isHide = defaults.bool(forKey: "isHide")
+      voice = defaults.string(forKey: "voice") ?? S.Voices.man.fisrt
+      print(steps)
+      print(speedInSec)
+      print(voice)
    }
 
    private func showOnboarding() {
@@ -172,7 +177,7 @@ class GameViewController: UIViewController {
 
       // change status of button
       startStopButton.backgroundColor = .systemBlue
-      startStopButton.setTitle("Старт", for: .normal)
+      startStopButton.setTitle(S.Game.start, for: .normal)
 
       // reset timers
       prepareTimer.invalidate()
@@ -198,7 +203,7 @@ class GameViewController: UIViewController {
 
       // change status of button
       startStopButton.backgroundColor = .systemRed
-      startStopButton.setTitle("Стоп", for: .normal)
+      startStopButton.setTitle(S.Game.stop, for: .normal)
 
       // start test
       preparingTest()
@@ -247,8 +252,9 @@ class GameViewController: UIViewController {
                self.collectionView.index = IndexPath(item: self.y, section: self.x)
                print("x - \(self.x), y - \(self.y)")
                self.collectionView.isHidden = false
-               self.playSound(with: self.voice + " - " + "Где муха?")
-               self.mainLabel.text = "Где муха?"
+               self.startStopButton.isHidden = true
+               self.playSound(with: self.voice + " - " + S.Game.whereIsTheFly)
+               self.mainLabel.text = S.Game.whereIsTheFly
                self.collectionView.isUserInteractionEnabled = true
             }
          }
@@ -259,11 +265,11 @@ class GameViewController: UIViewController {
 
    private func pickDirection() {
 
-      var array = ["влево", "вправо", "вверх", "вниз"]
-      if x == 0 { array = array.filter { $0 != "вверх"} }
-      if x == 4 { array = array.filter { $0 != "вниз"} }
-      if y == 0 { array = array.filter { $0 != "влево"} }
-      if y == 4 { array = array.filter { $0 != "вправо"} }
+      var array = [S.Game.left, S.Game.right, S.Game.up, S.Game.down]
+      if x == 0 { array = array.filter { $0 != S.Game.up} }
+      if x == 4 { array = array.filter { $0 != S.Game.down} }
+      if y == 0 { array = array.filter { $0 != S.Game.left} }
+      if y == 4 { array = array.filter { $0 != S.Game.right} }
       movingDirection = array.randomElement()!
       let animation = CATransition()
       mainLabel.layer.add(animation, forKey: nil)
@@ -273,10 +279,10 @@ class GameViewController: UIViewController {
 
    private func changePositionInXY() {
       switch movingDirection {
-      case "влево": y -= 1
-      case "вправо": y += 1
-      case "вверх": x -= 1
-      case "вниз": x += 1
+      case S.Game.left: y -= 1
+      case S.Game.right: y += 1
+      case S.Game.up: x -= 1
+      case S.Game.down: x += 1
       default: return
       }
    }
@@ -311,19 +317,19 @@ class GameViewController: UIViewController {
 
       statisticButton.snp.makeConstraints { make in
          make.width.height.equalTo(30)
-         make.top.equalToSuperview().inset(50)
+         make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
          make.left.equalToSuperview().inset(50)
       }
 
       achievementsButton.snp.makeConstraints { make in
          make.width.height.equalTo(30)
-         make.top.equalToSuperview().inset(50)
+         make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
          make.centerX.equalToSuperview()
       }
 
       settingsButton.snp.makeConstraints { make in
          make.width.height.equalTo(30)
-         make.top.equalToSuperview().inset(50)
+         make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
          make.right.equalToSuperview().inset(50)
       }
 
@@ -364,11 +370,12 @@ extension GameViewController: GameCollectionViewProtocol {
       
       playSound(with: voice + " - " + String(describing: result))
       saveResult(isWin: result)
-      mainLabel.text = result ? "Верно!" : "Ошибка."
-      let title = result ? "Верно!" : "Ошибка."
-      let message = result ? "Поздравляем." : "Попробуйте еще."
+      mainLabel.text = result ? S.Game.correct : S.Game.wrong
+      let title = result ? S.Game.correct : S.Game.wrong
+      let message = result ? S.Game.correctMessage : S.Game.wrongMessage
       let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
       let okAction = UIAlertAction(title: "ok", style: .default) { action in
+         self.startStopButton.isHidden = false
          self.testStop()
       }
       alert.addAction(okAction)

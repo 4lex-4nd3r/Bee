@@ -30,7 +30,7 @@ class SettingsViewModel: SettingsViewModelProtocol {
       steps = Box(value: stepsValue)
       let speedValue = defaults.double(forKey: "speedInSec") == 0.0 ? 1.0 : defaults.double(forKey: "speedInSec")
       speedInSec = Box(value: speedValue)
-      voice = Box(value: defaults.string(forKey: "voice") ?? "Даниил")
+      voice = Box(value: defaults.string(forKey: "voice") ?? S.Voices.man.fisrt)
       if let timerDate = defaults.object(forKey: "timer") as? Date {
          print("timer exist")
          timer = Box(value: timerDate)

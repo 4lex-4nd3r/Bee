@@ -1,0 +1,59 @@
+"Arnold" = "Arnold";
+"Ryan" = "Ryan";
+"Guy" = "Guy";
+"Kelsy" = "Kelsy";
+"Aria" = "Aria";
+"Mia" = "Mia";
+"Reminder" = "Reminder";
+"Time to practice" = "Time to practice";
+"Date " = "Date ";
+"Steps - " = "Steps - ";
+"Speed - " = "Speed - ";
+"Blind - Yes" = "Blind - Yes";
+"Blind - No" = "Blind - No";
+"days streak -" = "days streak -";
+"steps count -" = "steps count -";
+"time count -" = "time count -";
+"flies found in blind -" = "flies found in blind -";
+"steps" = "steps";
+"speed" = "speed";
+"reminder" = "reminder";
+"Show cells" = "Show cells";
+"Hide cells" = "Hide cells";
+"Where's the fly?" = "Where's the fly?";
+"Start" = "Start";
+"Stop" = "Stop";
+"Where's the fly?" = "Where's the fly?";
+"left" = "left";
+"right" = "right";
+"up" = "up";
+"down" = "down";
+"That's right" = "That's right";
+"Error" = "Error";
+"You're doing great!" = "You're doing great!";
+"Try again." = "Try again.";
+"Next" = "Next";
+"Done" = "Done";
+
+"text for first screen" = "Exercise 'Fly' develops concentration of attention.
+Amazing effect after just a month of regular training!
+
+At the beginning of the exercise, when you press the 'start' button, a fly appears in the table in one of the cells. remember its position, because in three seconds it will disappear.
+
+The announcer will begin to pronounce the directions of the fly's movement, mentally imagine how the fly moves around the table. At the moment when the announcer asks 'Where is the fly?', click on the cell in which, in your opinion, it is located.";
+
+"text for second screen" = "In the options, you can adjust the difficulty and duration of the game at your discretion.
+
+The 'steps' counter is responsible for how many cells the fly will pass before the announcer asks you to point to its location.
+
+The 'time' counter adjusts the pause between movements, increasing the time of holding attention on one cell.
+
+By enabling the 'hide cells' option, the table will be hidden throughout the game.
+
+Choose the voice of the announcer at your discretion.";
+
+"text for third screen" = "Set a reminder to not miss your daily workouts.
+
+You can view a detailed history of your exercises.
+
+Get 'stars' as a reward for achievements and hard training!";

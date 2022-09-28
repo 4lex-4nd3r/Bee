@@ -18,6 +18,7 @@ class GameCollectionView: UICollectionView {
    
    var cells = 5
    var index: IndexPath?
+   private let idGameCell = S.CellsID.idGameCell
    
    // MARK: - Init
 
@@ -37,7 +38,7 @@ class GameCollectionView: UICollectionView {
       dataSource = self
       backgroundColor = .none
       translatesAutoresizingMaskIntoConstraints = false
-      register(GameCollectionViewCell.self, forCellWithReuseIdentifier: GameCollectionViewCell().idCell)
+      register(GameCollectionViewCell.self, forCellWithReuseIdentifier: idGameCell)
    }
    
    // MARK: - Methods
@@ -86,7 +87,7 @@ extension GameCollectionView: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
       guard let cell = collectionView
-         .dequeueReusableCell(withReuseIdentifier: GameCollectionViewCell().idCell,
+         .dequeueReusableCell(withReuseIdentifier: idGameCell,
                               for: indexPath) as? GameCollectionViewCell else {
          return UICollectionViewCell()
       }

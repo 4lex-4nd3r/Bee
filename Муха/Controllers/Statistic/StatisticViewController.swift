@@ -21,7 +21,7 @@ class StatisticViewController : UIViewController {
    private let tableView = UITableView()
 
    let statisticCell = StatisticTableViewCell()
-   let idStatisticCell = "idStatisticCell"
+   let idStatisticCell = S.CellsID.idStatisticCell
    
    // MARK: - Lifecycle
    

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1296A528D5F4A700A458C4 /* Voices.swift */; };
 		1F1296AC28D783C800A458C4 /* UISwitch + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1296AB28D783C800A458C4 /* UISwitch + .swift */; };
 		1F1296AE28D793E200A458C4 /* DatePicker +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1296AD28D793E200A458C4 /* DatePicker +.swift */; };
 		1F1ADD44288FCFC100D908D7 /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD43288FCFC100D908D7 /* NotificationsService.swift */; };
@@ -17,7 +16,6 @@
 		1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */; };
 		1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */; };
 		1F3787A328D4E66000C78665 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A228D4E66000C78665 /* GameViewModel.swift */; };
-		1F3787A628D5096D00C78665 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A528D5096D00C78665 /* Help.swift */; };
 		1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A828D50A6300C78665 /* UIStepper +.swift */; };
 		1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AA28D50E0B00C78665 /* UILabel +.swift */; };
 		1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */; };
@@ -40,11 +38,55 @@
 		1F9FB99228DB9CA200B20366 /* Date + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99128DB9CA200B20366 /* Date + .swift */; };
 		1F9FB99428DBA7B300B20366 /* UIButton + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99328DBA7B300B20366 /* UIButton + .swift */; };
 		1F9FB99628DC287700B20366 /* Int +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB99528DC287700B20366 /* Int +.swift */; };
-		1FA7B1BF28D859A8000C4B51 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7B1BE28D859A8000C4B51 /* HelpViewController.swift */; };
 		1FD548B128E314AA001BCF24 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B028E314AA001BCF24 /* OnboardingViewController.swift */; };
 		1FD548B328E32E2A001BCF24 /* OnBoardingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B228E32E2A001BCF24 /* OnBoardingText.swift */; };
 		1FD548B528E32F40001BCF24 /* OnboardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B428E32F40001BCF24 /* OnboardStatus.swift */; };
 		1FD548B728E34358001BCF24 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B628E34358001BCF24 /* OnboardingCollectionViewCell.swift */; };
+		1FD548BA28E40218001BCF24 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548B928E40218001BCF24 /* Strings.swift */; };
+		1FD548BD28E42B3C001BCF24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548BF28E42B3C001BCF24 /* Localizable.strings */; };
+		1FD548C228E42BB1001BCF24 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD548C128E42BB1001BCF24 /* String +.swift */; };
+		1FD548F628E43070001BCF24 /* Kelsy - left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548C728E43070001BCF24 /* Kelsy - left.mp3 */; };
+		1FD548F728E43070001BCF24 /* Kelsy - Where's the fly?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548C828E43070001BCF24 /* Kelsy - Where's the fly?.mp3 */; };
+		1FD548F828E43070001BCF24 /* Kelsy - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548C928E43070001BCF24 /* Kelsy - right.mp3 */; };
+		1FD548F928E43070001BCF24 /* Kelsy - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548CA28E43070001BCF24 /* Kelsy - false.mp3 */; };
+		1FD548FA28E43070001BCF24 /* Kelsy - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548CB28E43070001BCF24 /* Kelsy - true.mp3 */; };
+		1FD548FB28E43070001BCF24 /* Kelsy - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548CC28E43070001BCF24 /* Kelsy - up.mp3 */; };
+		1FD548FC28E43070001BCF24 /* Kelsy - down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548CD28E43070001BCF24 /* Kelsy - down.mp3 */; };
+		1FD548FD28E43070001BCF24 /* Guy - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548CF28E43070001BCF24 /* Guy - up.mp3 */; };
+		1FD548FE28E43070001BCF24 /* Guy - left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D028E43070001BCF24 /* Guy - left.mp3 */; };
+		1FD548FF28E43070001BCF24 /* Guy - down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D128E43070001BCF24 /* Guy - down.mp3 */; };
+		1FD5490028E43070001BCF24 /* Guy - Where's the fly?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D228E43070001BCF24 /* Guy - Where's the fly?.mp3 */; };
+		1FD5490128E43070001BCF24 /* Guy - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D328E43070001BCF24 /* Guy - false.mp3 */; };
+		1FD5490228E43070001BCF24 /* Guy - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D428E43070001BCF24 /* Guy - true.mp3 */; };
+		1FD5490328E43070001BCF24 /* Guy - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D528E43070001BCF24 /* Guy - right.mp3 */; };
+		1FD5490428E43070001BCF24 /* Arnold - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D728E43070001BCF24 /* Arnold - true.mp3 */; };
+		1FD5490528E43070001BCF24 /* Arnold - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D828E43070001BCF24 /* Arnold - false.mp3 */; };
+		1FD5490628E43070001BCF24 /* Arnold - left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548D928E43070001BCF24 /* Arnold - left.mp3 */; };
+		1FD5490728E43070001BCF24 /* Arnold - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548DA28E43070001BCF24 /* Arnold - right.mp3 */; };
+		1FD5490828E43070001BCF24 /* Arnold - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548DB28E43070001BCF24 /* Arnold - up.mp3 */; };
+		1FD5490928E43070001BCF24 /* Arnold - Where's the fly?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548DC28E43070001BCF24 /* Arnold - Where's the fly?.mp3 */; };
+		1FD5490A28E43070001BCF24 /* Arnold - down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548DD28E43070001BCF24 /* Arnold - down.mp3 */; };
+		1FD5490B28E43070001BCF24 /* Aria - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548DF28E43070001BCF24 /* Aria - up.mp3 */; };
+		1FD5490C28E43070001BCF24 /* Aria - down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E028E43070001BCF24 /* Aria - down.mp3 */; };
+		1FD5490D28E43070001BCF24 /* Aria - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E128E43070001BCF24 /* Aria - true.mp3 */; };
+		1FD5490E28E43070001BCF24 /* Aria - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E228E43070001BCF24 /* Aria - false.mp3 */; };
+		1FD5490F28E43070001BCF24 /* Aria - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E328E43070001BCF24 /* Aria - right.mp3 */; };
+		1FD5491028E43070001BCF24 /* Aria - Where's the fly?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E428E43070001BCF24 /* Aria - Where's the fly?.mp3 */; };
+		1FD5491128E43070001BCF24 /* Aria - left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E528E43070001BCF24 /* Aria - left.mp3 */; };
+		1FD5491228E43070001BCF24 /* Ryan - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E728E43070001BCF24 /* Ryan - right.mp3 */; };
+		1FD5491328E43070001BCF24 /* Ryan - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E828E43070001BCF24 /* Ryan - true.mp3 */; };
+		1FD5491428E43070001BCF24 /* Ryan - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548E928E43070001BCF24 /* Ryan - false.mp3 */; };
+		1FD5491528E43070001BCF24 /* Ryan - down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548EA28E43070001BCF24 /* Ryan - down.mp3 */; };
+		1FD5491628E43070001BCF24 /* Ryan - Where's the fly?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548EB28E43070001BCF24 /* Ryan - Where's the fly?.mp3 */; };
+		1FD5491728E43070001BCF24 /* Ryan - left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548EC28E43070001BCF24 /* Ryan - left.mp3 */; };
+		1FD5491828E43070001BCF24 /* Ryan - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548ED28E43070001BCF24 /* Ryan - up.mp3 */; };
+		1FD5491928E43070001BCF24 /* Mia - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548EF28E43070001BCF24 /* Mia - true.mp3 */; };
+		1FD5491A28E43070001BCF24 /* Mia - down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F028E43070001BCF24 /* Mia - down.mp3 */; };
+		1FD5491B28E43070001BCF24 /* Mia - Where's the fly?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F128E43070001BCF24 /* Mia - Where's the fly?.mp3 */; };
+		1FD5491C28E43070001BCF24 /* Mia - left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F228E43070001BCF24 /* Mia - left.mp3 */; };
+		1FD5491D28E43070001BCF24 /* Mia - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F328E43070001BCF24 /* Mia - false.mp3 */; };
+		1FD5491E28E43070001BCF24 /* Mia - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F428E43070001BCF24 /* Mia - right.mp3 */; };
+		1FD5491F28E43070001BCF24 /* Mia - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F528E43070001BCF24 /* Mia - up.mp3 */; };
 		1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DC288464A5008E02AF /* Даниил - false.mp3 */; };
 		1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DD288464A5008E02AF /* Даниил - true.mp3 */; };
 		1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E128846656008E02AF /* Филипп - false.mp3 */; };
@@ -85,7 +127,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F1296A528D5F4A700A458C4 /* Voices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices.swift; sourceTree = "<group>"; };
 		1F1296AB28D783C800A458C4 /* UISwitch + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISwitch + .swift"; sourceTree = "<group>"; };
 		1F1296AD28D793E200A458C4 /* DatePicker +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePicker +.swift"; sourceTree = "<group>"; };
 		1F1ADD43288FCFC100D908D7 /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
@@ -95,7 +136,6 @@
 		1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		1F3787A228D4E66000C78665 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		1F3787A528D5096D00C78665 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		1F3787A828D50A6300C78665 /* UIStepper +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStepper +.swift"; sourceTree = "<group>"; };
 		1F3787AA28D50E0B00C78665 /* UILabel +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel +.swift"; sourceTree = "<group>"; };
 		1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl +.swift"; sourceTree = "<group>"; };
@@ -120,11 +160,56 @@
 		1F9FB99128DB9CA200B20366 /* Date + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + .swift"; sourceTree = "<group>"; };
 		1F9FB99328DBA7B300B20366 /* UIButton + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + .swift"; sourceTree = "<group>"; };
 		1F9FB99528DC287700B20366 /* Int +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int +.swift"; sourceTree = "<group>"; };
-		1FA7B1BE28D859A8000C4B51 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		1FD548B028E314AA001BCF24 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		1FD548B228E32E2A001BCF24 /* OnBoardingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingText.swift; sourceTree = "<group>"; };
 		1FD548B428E32F40001BCF24 /* OnboardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardStatus.swift; sourceTree = "<group>"; };
 		1FD548B628E34358001BCF24 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		1FD548B928E40218001BCF24 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		1FD548BE28E42B3C001BCF24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1FD548C028E42B8C001BCF24 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1FD548C128E42BB1001BCF24 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
+		1FD548C728E43070001BCF24 /* Kelsy - left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kelsy - left.mp3"; sourceTree = "<group>"; };
+		1FD548C828E43070001BCF24 /* Kelsy - Where's the fly?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kelsy - Where's the fly?.mp3"; sourceTree = "<group>"; };
+		1FD548C928E43070001BCF24 /* Kelsy - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kelsy - right.mp3"; sourceTree = "<group>"; };
+		1FD548CA28E43070001BCF24 /* Kelsy - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kelsy - false.mp3"; sourceTree = "<group>"; };
+		1FD548CB28E43070001BCF24 /* Kelsy - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kelsy - true.mp3"; sourceTree = "<group>"; };
+		1FD548CC28E43070001BCF24 /* Kelsy - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kelsy - up.mp3"; sourceTree = "<group>"; };
+		1FD548CD28E43070001BCF24 /* Kelsy - down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kelsy - down.mp3"; sourceTree = "<group>"; };
+		1FD548CF28E43070001BCF24 /* Guy - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guy - up.mp3"; sourceTree = "<group>"; };
+		1FD548D028E43070001BCF24 /* Guy - left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guy - left.mp3"; sourceTree = "<group>"; };
+		1FD548D128E43070001BCF24 /* Guy - down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guy - down.mp3"; sourceTree = "<group>"; };
+		1FD548D228E43070001BCF24 /* Guy - Where's the fly?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guy - Where's the fly?.mp3"; sourceTree = "<group>"; };
+		1FD548D328E43070001BCF24 /* Guy - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guy - false.mp3"; sourceTree = "<group>"; };
+		1FD548D428E43070001BCF24 /* Guy - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guy - true.mp3"; sourceTree = "<group>"; };
+		1FD548D528E43070001BCF24 /* Guy - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guy - right.mp3"; sourceTree = "<group>"; };
+		1FD548D728E43070001BCF24 /* Arnold - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arnold - true.mp3"; sourceTree = "<group>"; };
+		1FD548D828E43070001BCF24 /* Arnold - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arnold - false.mp3"; sourceTree = "<group>"; };
+		1FD548D928E43070001BCF24 /* Arnold - left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arnold - left.mp3"; sourceTree = "<group>"; };
+		1FD548DA28E43070001BCF24 /* Arnold - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arnold - right.mp3"; sourceTree = "<group>"; };
+		1FD548DB28E43070001BCF24 /* Arnold - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arnold - up.mp3"; sourceTree = "<group>"; };
+		1FD548DC28E43070001BCF24 /* Arnold - Where's the fly?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arnold - Where's the fly?.mp3"; sourceTree = "<group>"; };
+		1FD548DD28E43070001BCF24 /* Arnold - down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arnold - down.mp3"; sourceTree = "<group>"; };
+		1FD548DF28E43070001BCF24 /* Aria - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aria - up.mp3"; sourceTree = "<group>"; };
+		1FD548E028E43070001BCF24 /* Aria - down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aria - down.mp3"; sourceTree = "<group>"; };
+		1FD548E128E43070001BCF24 /* Aria - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aria - true.mp3"; sourceTree = "<group>"; };
+		1FD548E228E43070001BCF24 /* Aria - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aria - false.mp3"; sourceTree = "<group>"; };
+		1FD548E328E43070001BCF24 /* Aria - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aria - right.mp3"; sourceTree = "<group>"; };
+		1FD548E428E43070001BCF24 /* Aria - Where's the fly?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aria - Where's the fly?.mp3"; sourceTree = "<group>"; };
+		1FD548E528E43070001BCF24 /* Aria - left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aria - left.mp3"; sourceTree = "<group>"; };
+		1FD548E728E43070001BCF24 /* Ryan - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan - right.mp3"; sourceTree = "<group>"; };
+		1FD548E828E43070001BCF24 /* Ryan - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan - true.mp3"; sourceTree = "<group>"; };
+		1FD548E928E43070001BCF24 /* Ryan - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan - false.mp3"; sourceTree = "<group>"; };
+		1FD548EA28E43070001BCF24 /* Ryan - down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan - down.mp3"; sourceTree = "<group>"; };
+		1FD548EB28E43070001BCF24 /* Ryan - Where's the fly?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan - Where's the fly?.mp3"; sourceTree = "<group>"; };
+		1FD548EC28E43070001BCF24 /* Ryan - left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan - left.mp3"; sourceTree = "<group>"; };
+		1FD548ED28E43070001BCF24 /* Ryan - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan - up.mp3"; sourceTree = "<group>"; };
+		1FD548EF28E43070001BCF24 /* Mia - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - true.mp3"; sourceTree = "<group>"; };
+		1FD548F028E43070001BCF24 /* Mia - down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - down.mp3"; sourceTree = "<group>"; };
+		1FD548F128E43070001BCF24 /* Mia - Where's the fly?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - Where's the fly?.mp3"; sourceTree = "<group>"; };
+		1FD548F228E43070001BCF24 /* Mia - left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - left.mp3"; sourceTree = "<group>"; };
+		1FD548F328E43070001BCF24 /* Mia - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - false.mp3"; sourceTree = "<group>"; };
+		1FD548F428E43070001BCF24 /* Mia - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - right.mp3"; sourceTree = "<group>"; };
+		1FD548F528E43070001BCF24 /* Mia - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - up.mp3"; sourceTree = "<group>"; };
 		1FD864DC288464A5008E02AF /* Даниил - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - false.mp3"; sourceTree = "<group>"; };
 		1FD864DD288464A5008E02AF /* Даниил - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - true.mp3"; sourceTree = "<group>"; };
 		1FD864E128846656008E02AF /* Филипп - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - false.mp3"; sourceTree = "<group>"; };
@@ -191,7 +276,6 @@
 			children = (
 				1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */,
 				1F825AC3285B7C8300B7C315 /* SettingsViewController.swift */,
-				1FA7B1BE28D859A8000C4B51 /* HelpViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -218,10 +302,8 @@
 		1F3787A428D4E67800C78665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F1296A528D5F4A700A458C4 /* Voices.swift */,
 				1F1ADD452892633200D908D7 /* StatisticModel.swift */,
 				1FD548B228E32E2A001BCF24 /* OnBoardingText.swift */,
-				1F3787A528D5096D00C78665 /* Help.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +311,7 @@
 		1F3787A728D50A4C00C78665 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1FD548C128E42BB1001BCF24 /* String +.swift */,
 				1F3787A828D50A6300C78665 /* UIStepper +.swift */,
 				1F3787AA28D50E0B00C78665 /* UILabel +.swift */,
 				1F9FB99328DBA7B300B20366 /* UIButton + .swift */,
@@ -263,6 +346,8 @@
 		1F68C01A2853286000FFBDD0 /* Муха */ = {
 			isa = PBXGroup;
 			children = (
+				1FD548BF28E42B3C001BCF24 /* Localizable.strings */,
+				1FD548B828E40201001BCF24 /* Strings */,
 				1F825AB8285B146800B7C315 /* Sounds */,
 				1FA17FDB28ABEF0B00E9461D /* App */,
 				1F9FB98C28DB46C600B20366 /* Resources */,
@@ -277,12 +362,8 @@
 		1F825AB8285B146800B7C315 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				1FD865152884698A008E02AF /* Дмитрий */,
-				1FD865142884697F008E02AF /* Анна */,
-				1FD864FE28846753008E02AF /* Алена */,
-				1FD864E02884663C008E02AF /* Филипп */,
-				1F9510F228844D10002F4345 /* Карина */,
-				1F9510E728844BBC002F4345 /* Даниил */,
+				1FD548C528E43070001BCF24 /* En */,
+				1FD548C428E43065001BCF24 /* Rus */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -372,6 +453,125 @@
 				1FD548B628E34358001BCF24 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1FD548B828E40201001BCF24 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548B928E40218001BCF24 /* Strings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		1FD548C428E43065001BCF24 /* Rus */ = {
+			isa = PBXGroup;
+			children = (
+				1FD865152884698A008E02AF /* Дмитрий */,
+				1FD865142884697F008E02AF /* Анна */,
+				1FD864FE28846753008E02AF /* Алена */,
+				1FD864E02884663C008E02AF /* Филипп */,
+				1F9510F228844D10002F4345 /* Карина */,
+				1F9510E728844BBC002F4345 /* Даниил */,
+			);
+			path = Rus;
+			sourceTree = "<group>";
+		};
+		1FD548C528E43070001BCF24 /* En */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548C628E43070001BCF24 /* Kelsy */,
+				1FD548CE28E43070001BCF24 /* Guy */,
+				1FD548D628E43070001BCF24 /* Arnold */,
+				1FD548DE28E43070001BCF24 /* Aria */,
+				1FD548E628E43070001BCF24 /* Ryan */,
+				1FD548EE28E43070001BCF24 /* Mia */,
+			);
+			name = En;
+			path = "Муха Sounds/En";
+			sourceTree = SOURCE_ROOT;
+		};
+		1FD548C628E43070001BCF24 /* Kelsy */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548C728E43070001BCF24 /* Kelsy - left.mp3 */,
+				1FD548C828E43070001BCF24 /* Kelsy - Where's the fly?.mp3 */,
+				1FD548C928E43070001BCF24 /* Kelsy - right.mp3 */,
+				1FD548CA28E43070001BCF24 /* Kelsy - false.mp3 */,
+				1FD548CB28E43070001BCF24 /* Kelsy - true.mp3 */,
+				1FD548CC28E43070001BCF24 /* Kelsy - up.mp3 */,
+				1FD548CD28E43070001BCF24 /* Kelsy - down.mp3 */,
+			);
+			path = Kelsy;
+			sourceTree = "<group>";
+		};
+		1FD548CE28E43070001BCF24 /* Guy */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548CF28E43070001BCF24 /* Guy - up.mp3 */,
+				1FD548D028E43070001BCF24 /* Guy - left.mp3 */,
+				1FD548D128E43070001BCF24 /* Guy - down.mp3 */,
+				1FD548D228E43070001BCF24 /* Guy - Where's the fly?.mp3 */,
+				1FD548D328E43070001BCF24 /* Guy - false.mp3 */,
+				1FD548D428E43070001BCF24 /* Guy - true.mp3 */,
+				1FD548D528E43070001BCF24 /* Guy - right.mp3 */,
+			);
+			path = Guy;
+			sourceTree = "<group>";
+		};
+		1FD548D628E43070001BCF24 /* Arnold */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548D728E43070001BCF24 /* Arnold - true.mp3 */,
+				1FD548D828E43070001BCF24 /* Arnold - false.mp3 */,
+				1FD548D928E43070001BCF24 /* Arnold - left.mp3 */,
+				1FD548DA28E43070001BCF24 /* Arnold - right.mp3 */,
+				1FD548DB28E43070001BCF24 /* Arnold - up.mp3 */,
+				1FD548DC28E43070001BCF24 /* Arnold - Where's the fly?.mp3 */,
+				1FD548DD28E43070001BCF24 /* Arnold - down.mp3 */,
+			);
+			path = Arnold;
+			sourceTree = "<group>";
+		};
+		1FD548DE28E43070001BCF24 /* Aria */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548DF28E43070001BCF24 /* Aria - up.mp3 */,
+				1FD548E028E43070001BCF24 /* Aria - down.mp3 */,
+				1FD548E128E43070001BCF24 /* Aria - true.mp3 */,
+				1FD548E228E43070001BCF24 /* Aria - false.mp3 */,
+				1FD548E328E43070001BCF24 /* Aria - right.mp3 */,
+				1FD548E428E43070001BCF24 /* Aria - Where's the fly?.mp3 */,
+				1FD548E528E43070001BCF24 /* Aria - left.mp3 */,
+			);
+			path = Aria;
+			sourceTree = "<group>";
+		};
+		1FD548E628E43070001BCF24 /* Ryan */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548E728E43070001BCF24 /* Ryan - right.mp3 */,
+				1FD548E828E43070001BCF24 /* Ryan - true.mp3 */,
+				1FD548E928E43070001BCF24 /* Ryan - false.mp3 */,
+				1FD548EA28E43070001BCF24 /* Ryan - down.mp3 */,
+				1FD548EB28E43070001BCF24 /* Ryan - Where's the fly?.mp3 */,
+				1FD548EC28E43070001BCF24 /* Ryan - left.mp3 */,
+				1FD548ED28E43070001BCF24 /* Ryan - up.mp3 */,
+			);
+			path = Ryan;
+			sourceTree = "<group>";
+		};
+		1FD548EE28E43070001BCF24 /* Mia */ = {
+			isa = PBXGroup;
+			children = (
+				1FD548EF28E43070001BCF24 /* Mia - true.mp3 */,
+				1FD548F028E43070001BCF24 /* Mia - down.mp3 */,
+				1FD548F128E43070001BCF24 /* Mia - Where's the fly?.mp3 */,
+				1FD548F228E43070001BCF24 /* Mia - left.mp3 */,
+				1FD548F328E43070001BCF24 /* Mia - false.mp3 */,
+				1FD548F428E43070001BCF24 /* Mia - right.mp3 */,
+				1FD548F528E43070001BCF24 /* Mia - up.mp3 */,
+			);
+			path = Mia;
 			sourceTree = "<group>";
 		};
 		1FD864E02884663C008E02AF /* Филипп */ = {
@@ -492,6 +692,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 1F68C00F2853286000FFBDD0;
 			productRefGroup = 1F68C0192853286000FFBDD0 /* Products */;
@@ -508,50 +709,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD548FB28E43070001BCF24 /* Kelsy - up.mp3 in Resources */,
 				1FD8651E28846997008E02AF /* Анна - false.mp3 in Resources */,
 				1FD864FB2884673A008E02AF /* Карина - вправо.mp3 in Resources */,
+				1FD5490428E43070001BCF24 /* Arnold - true.mp3 in Resources */,
+				1FD5490728E43070001BCF24 /* Arnold - right.mp3 in Resources */,
+				1FD548F828E43070001BCF24 /* Kelsy - right.mp3 in Resources */,
 				1FD8652228846997008E02AF /* Анна - вниз.mp3 in Resources */,
+				1FD5491C28E43070001BCF24 /* Mia - left.mp3 in Resources */,
+				1FD548FE28E43070001BCF24 /* Guy - left.mp3 in Resources */,
+				1FD5491428E43070001BCF24 /* Ryan - false.mp3 in Resources */,
 				1FD8652E288469A4008E02AF /* Дмитрий - true.mp3 in Resources */,
 				1FD864F72884673A008E02AF /* Карина - вверх.mp3 in Resources */,
 				1F68C0282853286200FFBDD0 /* LaunchScreen.storyboard in Resources */,
+				1FD5491028E43070001BCF24 /* Aria - Where's the fly?.mp3 in Resources */,
 				1FD864E928846656008E02AF /* Филипп - влево.mp3 in Resources */,
 				1FD864F92884673A008E02AF /* Карина - Где муха?.mp3 in Resources */,
+				1FD5491528E43070001BCF24 /* Ryan - down.mp3 in Resources */,
 				1FD864EB28846656008E02AF /* Филипп - вниз.mp3 in Resources */,
 				1F9510EF28844BE5002F4345 /* Даниил - вправо.mp3 in Resources */,
+				1FD5491B28E43070001BCF24 /* Mia - Where's the fly?.mp3 in Resources */,
 				1FD8652C288469A4008E02AF /* Дмитрий - false.mp3 in Resources */,
+				1FD5490A28E43070001BCF24 /* Arnold - down.mp3 in Resources */,
+				1FD5491628E43070001BCF24 /* Ryan - Where's the fly?.mp3 in Resources */,
 				1FD864EC28846656008E02AF /* Филипп - вверх.mp3 in Resources */,
 				1FD8651328846874008E02AF /* Алена - false.mp3 in Resources */,
 				1FD86531288469A4008E02AF /* Дмитрий - вправо.mp3 in Resources */,
 				1FD8651028846874008E02AF /* Алена - true.mp3 in Resources */,
+				1FD5490E28E43070001BCF24 /* Aria - false.mp3 in Resources */,
+				1FD5491D28E43070001BCF24 /* Mia - false.mp3 in Resources */,
+				1FD5490228E43070001BCF24 /* Guy - true.mp3 in Resources */,
+				1FD5491728E43070001BCF24 /* Ryan - left.mp3 in Resources */,
+				1FD5490328E43070001BCF24 /* Guy - right.mp3 in Resources */,
+				1FD5490028E43070001BCF24 /* Guy - Where's the fly?.mp3 in Resources */,
 				1F9510EE28844BE5002F4345 /* Даниил - Где муха?.mp3 in Resources */,
+				1FD5490F28E43070001BCF24 /* Aria - right.mp3 in Resources */,
 				1FD8650F28846874008E02AF /* Алена - вправо.mp3 in Resources */,
+				1FD5490D28E43070001BCF24 /* Aria - true.mp3 in Resources */,
 				1FD864EA28846656008E02AF /* Филипп - вправо.mp3 in Resources */,
 				1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */,
+				1FD5491F28E43070001BCF24 /* Mia - up.mp3 in Resources */,
+				1FD5490128E43070001BCF24 /* Guy - false.mp3 in Resources */,
 				1FD864ED28846656008E02AF /* Филипп - true.mp3 in Resources */,
 				1FD8652B288469A4008E02AF /* Дмитрий - вверх.mp3 in Resources */,
 				1FD8652128846997008E02AF /* Анна - влево.mp3 in Resources */,
+				1FD5491A28E43070001BCF24 /* Mia - down.mp3 in Resources */,
+				1FD548FA28E43070001BCF24 /* Kelsy - true.mp3 in Resources */,
+				1FD5490928E43070001BCF24 /* Arnold - Where's the fly?.mp3 in Resources */,
 				1FD8650E28846874008E02AF /* Алена - вверх.mp3 in Resources */,
+				1FD548F928E43070001BCF24 /* Kelsy - false.mp3 in Resources */,
 				1F9510F028844BE5002F4345 /* Даниил - вверх.mp3 in Resources */,
 				1FD8651F28846997008E02AF /* Анна - вправо.mp3 in Resources */,
+				1FD5490B28E43070001BCF24 /* Aria - up.mp3 in Resources */,
+				1FD5491E28E43070001BCF24 /* Mia - right.mp3 in Resources */,
 				1FD8651228846874008E02AF /* Алена - вниз.mp3 in Resources */,
 				1FD864F82884673A008E02AF /* Карина - true.mp3 in Resources */,
+				1FD5491328E43070001BCF24 /* Ryan - true.mp3 in Resources */,
+				1FD5491928E43070001BCF24 /* Mia - true.mp3 in Resources */,
 				1FD8651D28846997008E02AF /* Анна - true.mp3 in Resources */,
 				1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */,
 				1F9510ED28844BE5002F4345 /* Даниил - вниз.mp3 in Resources */,
 				1F68C0252853286200FFBDD0 /* Assets.xcassets in Resources */,
 				1FD8651128846874008E02AF /* Алена - Где муха?.mp3 in Resources */,
+				1FD5491828E43070001BCF24 /* Ryan - up.mp3 in Resources */,
 				1FD864EE28846656008E02AF /* Филипп - Где муха?.mp3 in Resources */,
 				1FD8652028846997008E02AF /* Анна - вверх.mp3 in Resources */,
 				1F9510F128844BE5002F4345 /* Даниил - влево.mp3 in Resources */,
+				1FD5490628E43070001BCF24 /* Arnold - left.mp3 in Resources */,
+				1FD548FC28E43070001BCF24 /* Kelsy - down.mp3 in Resources */,
 				1FD8650D28846874008E02AF /* Алена - влево.mp3 in Resources */,
 				1FD864FA2884673A008E02AF /* Карина - false.mp3 in Resources */,
+				1FD548FF28E43070001BCF24 /* Guy - down.mp3 in Resources */,
+				1FD548FD28E43070001BCF24 /* Guy - up.mp3 in Resources */,
+				1FD5490C28E43070001BCF24 /* Aria - down.mp3 in Resources */,
 				1FD8652328846997008E02AF /* Анна - Где муха?.mp3 in Resources */,
 				1FD8652D288469A4008E02AF /* Дмитрий - вниз.mp3 in Resources */,
 				1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */,
+				1FD548F628E43070001BCF24 /* Kelsy - left.mp3 in Resources */,
+				1FD548BD28E42B3C001BCF24 /* Localizable.strings in Resources */,
+				1FD5491128E43070001BCF24 /* Aria - left.mp3 in Resources */,
 				1FD864FC2884673A008E02AF /* Карина - вниз.mp3 in Resources */,
+				1FD5491228E43070001BCF24 /* Ryan - right.mp3 in Resources */,
 				1FD864F62884673A008E02AF /* Карина - влево.mp3 in Resources */,
 				1FD8652F288469A4008E02AF /* Дмитрий - влево.mp3 in Resources */,
+				1FD5490528E43070001BCF24 /* Arnold - false.mp3 in Resources */,
+				1FD548F728E43070001BCF24 /* Kelsy - Where's the fly?.mp3 in Resources */,
 				1FD86530288469A4008E02AF /* Дмитрий - Где муха?.mp3 in Resources */,
+				1FD5490828E43070001BCF24 /* Arnold - up.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,21 +876,20 @@
 				1F68C03428532CE400FFBDD0 /* GameCollectionViewCell.swift in Sources */,
 				1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */,
 				1F68C01C2853286000FFBDD0 /* AppDelegate.swift in Sources */,
+				1FD548C228E42BB1001BCF24 /* String +.swift in Sources */,
 				1F3787AF28D5CE7900C78665 /* Box.swift in Sources */,
 				1FD548B128E314AA001BCF24 /* OnboardingViewController.swift in Sources */,
 				1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */,
 				1F9FB98A28DB3FFA00B20366 /* AchievementsViewController.swift in Sources */,
-				1FA7B1BF28D859A8000C4B51 /* HelpViewController.swift in Sources */,
 				1F68C01E2853286000FFBDD0 /* SceneDelegate.swift in Sources */,
 				1F9FB99628DC287700B20366 /* Int +.swift in Sources */,
 				1F9FB99428DBA7B300B20366 /* UIButton + .swift in Sources */,
 				1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */,
 				1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */,
 				1FD548B528E32F40001BCF24 /* OnboardStatus.swift in Sources */,
-				1F1296A628D5F4A700A458C4 /* Voices.swift in Sources */,
+				1FD548BA28E40218001BCF24 /* Strings.swift in Sources */,
 				1F3787A328D4E66000C78665 /* GameViewModel.swift in Sources */,
 				1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */,
-				1F3787A628D5096D00C78665 /* Help.swift in Sources */,
 				1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */,
 				1F9FB99228DB9CA200B20366 /* Date + .swift in Sources */,
 				1F68C030285328D200FFBDD0 /* GameViewController.swift in Sources */,
@@ -666,6 +909,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		1FD548BF28E42B3C001BCF24 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FD548BE28E42B3C001BCF24 /* en */,
+				1FD548C028E42B8C001BCF24 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -673,6 +925,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -733,6 +986,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

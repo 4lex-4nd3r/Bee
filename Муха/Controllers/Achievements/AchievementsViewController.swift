@@ -55,10 +55,10 @@ class AchievementsViewController : UIViewController {
       let timePlayed = getTimePlayed(statistic: statistic)
       let blindWin = getBlindWinCount(statistic: statistic)
 
-      let starsLabel1 = "дней непрерывно - \(daysStreak)"
-      let starsLabel2 = "шагов пройдено - \(stepsCount)"
-      let starsLabel3 = "следил за мухой \(timePlayed) секунд"
-      let starsLabel4 = "мух найдено вслепую - \(blindWin)"
+      let starsLabel1 = S.Achievements.days + " \(daysStreak)"
+      let starsLabel2 = S.Achievements.steps + " \(stepsCount)"
+      let starsLabel3 = S.Achievements.time + " \(timePlayed)"
+      let starsLabel4 = S.Achievements.blindCount + " \(blindWin)"
 
       starsView1.setStars(number: daysStreak.daysStars, text: starsLabel1)
       starsView2.setStars(number: stepsCount.stepsStars, text: starsLabel2)

@@ -83,10 +83,10 @@ class StatisticTableViewCell: UITableViewCell {
       
       winImageView.image = statisticModel.isWin ? winImage : lossImage
       winImageView.tintColor = statisticModel.isWin ? .systemBlue : .systemRed
-      dateLabel.text = "Дата " + formatter.string(from: statisticModel.date)
-      stepsLabel.text = "Шаги  " + "\(statisticModel.steps)"
-      speedLabel.text = "Скорость " + "\(round(statisticModel.speed * 10) / 10.0)"
-      isHideLabel.text = "Вслепую - " + (statisticModel.isHide ? "да" : "нет")
+      dateLabel.text = S.StatisticCell.date + formatter.string(from: statisticModel.date)
+      stepsLabel.text = S.StatisticCell.steps + "\(statisticModel.steps)"
+      speedLabel.text = S.StatisticCell.speed + "\(round(statisticModel.speed * 10) / 10.0)"
+      isHideLabel.text = statisticModel.isHide ? S.StatisticCell.isHideYes : S.StatisticCell.isHideNo
    }
    
    

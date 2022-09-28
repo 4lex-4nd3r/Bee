@@ -8,9 +8,7 @@
 import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
-   
-   let idCell = "idCell"
-   
+
    let imageView: UIImageView = {
       let imageView = UIImageView()
       imageView.layer.cornerRadius = 15

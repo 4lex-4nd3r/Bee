@@ -16,19 +16,23 @@ class SettingsViewController: UIViewController {
    private var viewModel: SettingsViewModelProtocol!
    private var player: AVAudioPlayer!
 
-   private let stepsLabel = UILabel(text: "шаги")
-   private let speedLabel = UILabel(text: "время")
-   private let reminderLabel = UILabel(text: "напоминание")
+   private let stepsLabel = UILabel(text: S.Settings.steps)
+   private let speedLabel = UILabel(text: S.Settings.speed)
+   private let reminderLabel = UILabel(text: S.Settings.notification)
    private let stepsCountLabel = UILabel(size: 25, weight: .bold)
    private let speedCountLabel = UILabel(size: 25, weight: .bold)
    private lazy var stepsStepper = UIStepper(min: 5, max: 100, step: 5)
    private lazy var speedStepper = UIStepper(min: 1, max: 10, step: 0.5)
    private lazy var hideSegmentControl = UISegmentedControl(
-      segments: ["Показать ячейки", "Спрятать ячейки"], color: .systemBlue)
+      segments: [S.Settings.showCells, S.Settings.hideCells], color: .systemBlue)
    private lazy var menSegmentedControl = UISegmentedControl(
-      segments: ["Даниил", "Дмитрий", "Филипп"], color: .systemBlue)
+      segments: [S.Voices.man.fisrt,
+                 S.Voices.man.second,
+                 S.Voices.man.third], color: .systemBlue)
    private lazy var womenSegmentedControl = UISegmentedControl(
-      segments: ["Анна", "Алена", "Карина"], color: .systemPink)
+      segments: [S.Voices.woman.fisrt,
+                 S.Voices.woman.second,
+                 S.Voices.woman.third], color: .systemPink)
    private lazy var reminderSwitch = UISwitch(color: .systemBlue)
    private let datePicker = UIDatePicker(color: .systemBlue)
    private var reminderStack = UIStackView()
@@ -54,13 +58,6 @@ class SettingsViewController: UIViewController {
 
    private func setupViews() {
       view.backgroundColor = .systemBackground
-      let howToImage = UIImage(systemName: "questionmark.circle")
-      let howToButton = UIBarButtonItem(image: howToImage,
-                                        style: .done,
-                                        target: self,
-                                        action: #selector(howToButtonTapped))
-      navigationItem.rightBarButtonItem = howToButton
-      navigationItem.title = "Настройки"
       view.addSubview(stepsLabel)
       view.addSubview(stepsCountLabel)
       view.addSubview(stepsStepper)
@@ -130,17 +127,17 @@ class SettingsViewController: UIViewController {
 
       // need refactor with enums
       switch voice {
-      case "Анна":
+      case S.Voices.woman.fisrt:
          womenSegmentedControl.selectedSegmentIndex = 0
-      case "Алена":
+      case S.Voices.woman.second:
          womenSegmentedControl.selectedSegmentIndex = 1
-      case "Карина":
+      case S.Voices.woman.third:
          womenSegmentedControl.selectedSegmentIndex = 2
-      case "Даниил":
+      case S.Voices.man.fisrt:
          menSegmentedControl.selectedSegmentIndex = 0
-      case "Дмитрий":
+      case S.Voices.man.second:
          menSegmentedControl.selectedSegmentIndex = 1
-      case "Филипп":
+      case S.Voices.man.third:
          menSegmentedControl.selectedSegmentIndex = 2
       default:
          return
@@ -189,26 +186,21 @@ class SettingsViewController: UIViewController {
       viewModel.changeTimer(value: datePicker.date)
    }
 
-   @objc private func howToButtonTapped() {
-      let helpVC = HelpViewController()
-      navigationController?.pushViewController(helpVC, animated: true)
-   }
-
    // MARK: - Functions
 
    private func voiceChanged(voice: String) {
       viewModel.changeVoice(value: voice)
-      playSound(with: voice + " - " + "Где муха?")
+      playSound(with: voice + " - " + S.Settings.whereIsTheFly)
    }
 
    private func playSound(with name: String) {
       guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else { return }
       player = try! AVAudioPlayer(contentsOf: url)
-//      do {
-//         try AVAudioSession.sharedInstance().setCategory(.playback)
-//      } catch {
-//         print(error.localizedDescription)
-//      }
+      do {
+         try AVAudioSession.sharedInstance().setCategory(.playback)
+      } catch {
+         print(error.localizedDescription)
+      }
       player.play()
    }
 
