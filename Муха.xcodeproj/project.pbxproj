@@ -87,6 +87,8 @@
 		1FD5491D28E43070001BCF24 /* Mia - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F328E43070001BCF24 /* Mia - false.mp3 */; };
 		1FD5491E28E43070001BCF24 /* Mia - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F428E43070001BCF24 /* Mia - right.mp3 */; };
 		1FD5491F28E43070001BCF24 /* Mia - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F528E43070001BCF24 /* Mia - up.mp3 */; };
+		1FD5492128E61E88001BCF24 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492028E61E88001BCF24 /* GameLogic.swift */; };
+		1FD5492328E62914001BCF24 /* UIViewController + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492228E62914001BCF24 /* UIViewController + .swift */; };
 		1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DC288464A5008E02AF /* Даниил - false.mp3 */; };
 		1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DD288464A5008E02AF /* Даниил - true.mp3 */; };
 		1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E128846656008E02AF /* Филипп - false.mp3 */; };
@@ -210,6 +212,8 @@
 		1FD548F328E43070001BCF24 /* Mia - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - false.mp3"; sourceTree = "<group>"; };
 		1FD548F428E43070001BCF24 /* Mia - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - right.mp3"; sourceTree = "<group>"; };
 		1FD548F528E43070001BCF24 /* Mia - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - up.mp3"; sourceTree = "<group>"; };
+		1FD5492028E61E88001BCF24 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		1FD5492228E62914001BCF24 /* UIViewController + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + .swift"; sourceTree = "<group>"; };
 		1FD864DC288464A5008E02AF /* Даниил - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - false.mp3"; sourceTree = "<group>"; };
 		1FD864DD288464A5008E02AF /* Даниил - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - true.mp3"; sourceTree = "<group>"; };
 		1FD864E128846656008E02AF /* Филипп - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - false.mp3"; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 				1F9FB99128DB9CA200B20366 /* Date + .swift */,
 				1F9FB99528DC287700B20366 /* Int +.swift */,
 				1F3787AE28D5CE7900C78665 /* Box.swift */,
+				1FD5492228E62914001BCF24 /* UIViewController + .swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 			children = (
 				1FD548AF28E31488001BCF24 /* Onboarding */,
 				1F1ADD4928927BDD00D908D7 /* Game */,
+				1FD5492028E61E88001BCF24 /* GameLogic.swift */,
 				1F1ADD4728927BC100D908D7 /* Statistic */,
 				1F9FB98B28DB41E700B20366 /* Achievements */,
 				1F1ADD4828927BD000D908D7 /* Settings */,
@@ -893,7 +899,9 @@
 				1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */,
 				1F9FB99228DB9CA200B20366 /* Date + .swift in Sources */,
 				1F68C030285328D200FFBDD0 /* GameViewController.swift in Sources */,
+				1FD5492328E62914001BCF24 /* UIViewController + .swift in Sources */,
 				1FD548B728E34358001BCF24 /* OnboardingCollectionViewCell.swift in Sources */,
+				1FD5492128E61E88001BCF24 /* GameLogic.swift in Sources */,
 				1F1296AC28D783C800A458C4 /* UISwitch + .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
