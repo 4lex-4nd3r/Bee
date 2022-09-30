@@ -22,6 +22,10 @@
 "reminder" = "reminder";
 "Show cells" = "Show cells";
 "Hide cells" = "Hide cells";
+"empty" = "empty";
+"table 1" = "table 1";
+"table 2" = "table 2";
+"table 3" = "table 3";
 "Where's the fly?" = "Where's the fly?";
 "Start" = "Start";
 "Stop" = "Stop";

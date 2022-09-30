@@ -25,6 +25,11 @@ class SettingsViewController: UIViewController {
    private lazy var speedStepper = UIStepper(min: 1, max: 10, step: 0.5)
    private lazy var hideSegmentControl = UISegmentedControl(
       segments: [S.Settings.showCells, S.Settings.hideCells], color: .systemBlue)
+   private lazy var tableSegmentedControl = UISegmentedControl(
+      segments: [S.Table.empty,
+                 S.Table.first,
+                 S.Table.second,
+                 S.Table.third], color: .systemBlue)
    private lazy var menSegmentedControl = UISegmentedControl(
       segments: [S.Voices.man.fisrt,
                  S.Voices.man.second,
@@ -37,11 +42,6 @@ class SettingsViewController: UIViewController {
    private let datePicker = UIDatePicker(color: .systemBlue)
    private var reminderStack = UIStackView()
 
-//   private lazy var onboardingButton: UIButton = {
-//      let button = UIButton()
-//
-//      return button
-//   }()
 
    // MARK: - Lifecycle
 
@@ -65,6 +65,7 @@ class SettingsViewController: UIViewController {
       view.addSubview(speedCountLabel)
       view.addSubview(speedStepper)
       view.addSubview(hideSegmentControl)
+      view.addSubview(tableSegmentedControl)
       view.addSubview(menSegmentedControl)
       view.addSubview(womenSegmentedControl)
       reminderStack = UIStackView(arrangedSubviews: [reminderLabel,
@@ -73,14 +74,16 @@ class SettingsViewController: UIViewController {
       reminderStack.axis = .horizontal
       reminderStack.distribution = .equalCentering
       view.addSubview(reminderStack)
+
    }
 
    private func setupTargets() {
       stepsStepper.addTarget(self, action: #selector(stepsStepperValueChanged), for: .valueChanged)
       speedStepper.addTarget(self, action: #selector(speedStepperValueChanged), for: .valueChanged)
       hideSegmentControl.addTarget(self, action: #selector(hideSegmentChanged), for: .valueChanged)
-      womenSegmentedControl.addTarget(self, action: #selector(womenSegmentedChanged), for: .valueChanged)
+      tableSegmentedControl.addTarget(self, action: #selector(tableSegmentedChanged), for: .valueChanged)
       menSegmentedControl.addTarget(self, action: #selector(menSegmentedChanged), for: .valueChanged)
+      womenSegmentedControl.addTarget(self, action: #selector(womenSegmentedChanged), for: .valueChanged)
       reminderSwitch.addTarget(self, action: #selector(reminderSwitchChanged), for: .valueChanged)
       datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
    }
@@ -90,6 +93,11 @@ class SettingsViewController: UIViewController {
          guard let self = self else { return }
          print("new value of isHide is - \(isHide)")
          self.hideSegmentControl.selectedSegmentIndex = isHide ? 1 : 0
+      }
+      viewModel.table.bind { [weak self] table in
+         guard let self = self else { return }
+         print("new value of table is - \(table)")
+         self.tableSegmentedControl.selectedSegmentIndex = table
       }
       viewModel.steps.bind { [weak self] steps in
          guard let self = self else { return }
@@ -106,7 +114,7 @@ class SettingsViewController: UIViewController {
       viewModel.voice.bind { [weak self] voice in
          guard let self = self else { return }
          print("new value of voice is - \(voice)")
-         self.setSegmentsIndex(for: voice)
+         self.setSegmentsIndexForVoice(voice: voice)
       }
       viewModel.timer.bind { [weak self] date in
          guard let self = self else { return }
@@ -123,7 +131,7 @@ class SettingsViewController: UIViewController {
       }
    }
 
-   private func setSegmentsIndex(for voice: String) {
+   private func setSegmentsIndexForVoice(voice: String) {
 
       // need refactor with enums
       switch voice {
@@ -154,6 +162,11 @@ class SettingsViewController: UIViewController {
    }
    @objc private func hideSegmentChanged() {
       viewModel.changeIsHide(value: hideSegmentControl.selectedSegmentIndex == 1)
+   }
+
+   @objc private func tableSegmentedChanged() {
+      let index = tableSegmentedControl.selectedSegmentIndex
+      viewModel.changeTable(value: index)
    }
 
    @objc private func womenSegmentedChanged() {
@@ -236,19 +249,23 @@ class SettingsViewController: UIViewController {
          make.left.right.equalToSuperview().inset(40)
          make.top.equalTo(speedStepper.snp.bottom).inset(-40)
       }
+      tableSegmentedControl.snp.makeConstraints { make in
+         make.top.equalTo(hideSegmentControl.snp.bottom).inset(-10)
+         make.left.right.equalToSuperview().inset(40)
+      }
 
       menSegmentedControl.snp.makeConstraints { make in
-         make.top.equalTo(hideSegmentControl.snp.bottom).inset(-40)
+         make.top.equalTo(tableSegmentedControl.snp.bottom).inset(-40)
          make.left.right.equalToSuperview().inset(40)
       }
       womenSegmentedControl.snp.makeConstraints { make in
          make.top.equalTo(menSegmentedControl.snp.bottom).inset(-10)
          make.left.right.equalToSuperview().inset(40)
       }
-
       reminderStack.snp.makeConstraints { make in
          make.left.right.equalToSuperview().inset(40)
          make.top.equalTo(womenSegmentedControl.snp.bottom).inset(-40)
       }
+
    }
 }

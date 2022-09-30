@@ -86,7 +86,6 @@
 		1FD5491D28E43070001BCF24 /* Mia - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F328E43070001BCF24 /* Mia - false.mp3 */; };
 		1FD5491E28E43070001BCF24 /* Mia - right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F428E43070001BCF24 /* Mia - right.mp3 */; };
 		1FD5491F28E43070001BCF24 /* Mia - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F528E43070001BCF24 /* Mia - up.mp3 */; };
-		1FD5492128E61E88001BCF24 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492028E61E88001BCF24 /* GameLogic.swift */; };
 		1FD5492328E62914001BCF24 /* UIViewController + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492228E62914001BCF24 /* UIViewController + .swift */; };
 		1FD5492828E76498001BCF24 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492728E76498001BCF24 /* GameViewModel.swift */; };
 		1FD5492A28E764AC001BCF24 /* GameViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492928E764AC001BCF24 /* GameViewModelProtocol.swift */; };
@@ -212,7 +211,6 @@
 		1FD548F328E43070001BCF24 /* Mia - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - false.mp3"; sourceTree = "<group>"; };
 		1FD548F428E43070001BCF24 /* Mia - right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - right.mp3"; sourceTree = "<group>"; };
 		1FD548F528E43070001BCF24 /* Mia - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - up.mp3"; sourceTree = "<group>"; };
-		1FD5492028E61E88001BCF24 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		1FD5492228E62914001BCF24 /* UIViewController + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + .swift"; sourceTree = "<group>"; };
 		1FD5492728E76498001BCF24 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1FD5492928E764AC001BCF24 /* GameViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -447,7 +445,6 @@
 			children = (
 				1FD548AF28E31488001BCF24 /* Onboarding */,
 				1F1ADD4928927BDD00D908D7 /* Game */,
-				1FD5492028E61E88001BCF24 /* GameLogic.swift */,
 				1F1ADD4728927BC100D908D7 /* Statistic */,
 				1F9FB98B28DB41E700B20366 /* Achievements */,
 				1F1ADD4828927BD000D908D7 /* Settings */,
@@ -905,7 +902,6 @@
 				1F68C030285328D200FFBDD0 /* GameViewController.swift in Sources */,
 				1FD5492328E62914001BCF24 /* UIViewController + .swift in Sources */,
 				1FD548B728E34358001BCF24 /* OnboardingCollectionViewCell.swift in Sources */,
-				1FD5492128E61E88001BCF24 /* GameLogic.swift in Sources */,
 				1F1296AC28D783C800A458C4 /* UISwitch + .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

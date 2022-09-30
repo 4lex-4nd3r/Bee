@@ -73,6 +73,14 @@ enum S {
       static let whereIsTheFly = "Where's the fly?".localized()
    }
 
+   enum Table {
+
+      static let empty = "empty".localized()
+      static let first = "first".localized()
+      static let second = "second".localized()
+      static let third = "third".localized()
+   }
+
    // MARK: - Game
 
    enum Game {
@@ -92,20 +100,11 @@ enum S {
    // MARK: - OnBoarding Text
 
    enum OnBoardingText {
-
       static let next = "Next".localized()
       static let done = "Done".localized()
-      static let page0 = """
-text for first screen
-""".localized()
-
-      static let page1 = """
-text for second screen
-""".localized()
-
-      static let page2 = """
-text for third screen
-""".localized()
+      static let page0 = "text for first screen".localized()
+      static let page1 = "text for second screen".localized()
+      static let page2 = "text for third screen".localized()
    }
 }
 

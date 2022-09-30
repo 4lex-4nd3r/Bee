@@ -14,8 +14,10 @@ protocol SettingsViewModelProtocol {
    var speedInSec: Box<Double> { get }
    var voice: Box<String> { get }
    var timer: Box<Date?> { get }
+   var table: Box<Int> { get }
 
    func changeIsHide(value: Bool)
+   func changeTable(value: Int)
    func changeSteps(value: Int)
    func changeSpeedInSec(value: Double)
    func changeVoice(value: String)
@@ -26,6 +28,7 @@ class SettingsViewModel: SettingsViewModelProtocol {
 
    init() {
       isHide = Box(value: defaults.bool(forKey: "isHide"))
+      table = Box(value: defaults.integer(forKey: "table"))
       let stepsValue = defaults.integer(forKey: "steps") == 0 ? 5 : defaults.integer(forKey: "steps")
       steps = Box(value: stepsValue)
       let speedValue = defaults.double(forKey: "speedInSec") == 0.0 ? 1.0 : defaults.double(forKey: "speedInSec")
@@ -48,11 +51,18 @@ class SettingsViewModel: SettingsViewModelProtocol {
    var speedInSec: Box<Double>
    var voice: Box<String>
    var timer: Box<Date?>
+   var table: Box<Int>
 
    func changeIsHide(value: Bool) {
       isHide.value.toggle()
       defaults.set(value, forKey: "isHide")
    }
+
+   func changeTable(value: Int) {
+      table.value = value
+      defaults.set(value, forKey: "table")
+   }
+
    func changeSteps(value: Int) {
       steps.value = value
       defaults.set(value, forKey: "steps")
