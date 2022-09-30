@@ -33,15 +33,9 @@ class GameViewController: UIViewController {
 
    private var viewModel: GameViewModelProtocol!
    
-   // MARK: - Game Properties
+   // MARK: - Timers
 
-   private var isStarted = false
-
-   private var x = 0
-   private var y = 0
-   private var movingDirection = ""
    private var time = 3
-   
    private var prepareTimer = Timer()
    private var stepsTimer = Timer()
 
@@ -51,6 +45,7 @@ class GameViewController: UIViewController {
       super.viewDidLoad()
       viewModel = GameViewModel()
       setupViews()
+      setupBind()
       setConstraints()
    }
 
@@ -76,6 +71,34 @@ class GameViewController: UIViewController {
       view.addSubview(mainLabel)
       view.addSubview(startStopButton)
       startStopButton.addTarget(self, action: #selector(startStopButtonTapped), for: .touchUpInside)
+   }
+
+   private func setupBind() {
+      viewModel.mainText.bind { [weak self] text in
+         guard let self = self else { return }
+         let animation = CATransition()
+         self.mainLabel.layer.add(animation, forKey: nil)
+         self.mainLabel.text = text
+      }
+
+      viewModel.isStarted.bind { [weak self] isStarted in
+         guard let self = self else { return }
+         UIApplication.shared.isIdleTimerDisabled = isStarted
+         self.collectionView.isHidden = !isStarted
+         self.statisticButton.isHidden = isStarted
+         self.achievementsButton.isHidden = isStarted
+         self.settingsButton.isHidden = isStarted
+         self.beeImage.isHidden = isStarted
+         self.startStopButton.backgroundColor = isStarted ? .systemRed : .systemBlue
+         self.startStopButton.setTitle((isStarted ? S.Game.stop : S.Game.start), for: .normal)
+         if isStarted {
+            self.preparingTest()
+         } else {
+            self.prepareTimer.invalidate()
+            self.stepsTimer.invalidate()
+            self.mainLabel.text = ""
+         }
+      }
    }
 
    private func showOnboarding() {
@@ -104,53 +127,14 @@ class GameViewController: UIViewController {
    }
 
    @objc private func startStopButtonTapped() {
-      isStarted ? testStop() : testStart()
-   }
-
-   // MARK: - Game Stop
-
-   private func testStop() {
-      UIApplication.shared.isIdleTimerDisabled = false
-      isStarted.toggle()
-      prepareTimer.invalidate()
-      stepsTimer.invalidate()
-      collectionView.isHidden = true
-      mainLabel.text = ""
-      statisticButton.isHidden = false
-      achievementsButton.isHidden = false
-      settingsButton.isHidden = false
-      beeImage.isHidden = false
-      startStopButton.backgroundColor = .systemBlue
-      startStopButton.setTitle(S.Game.start, for: .normal)
-   }
-
-   // MARK: - Game Start
-
-   private func testStart() {
-      UIApplication.shared.isIdleTimerDisabled = true
-      isStarted.toggle()
-      collectionView.isHidden = false
-      statisticButton.isHidden = true
-      achievementsButton.isHidden = true
-      settingsButton.isHidden = true
-      beeImage.isHidden = true
-      startStopButton.backgroundColor = .systemRed
-      startStopButton.setTitle(S.Game.stop, for: .normal)
-      preparingTest()
+      viewModel.startStopButtonTapped()
    }
 
    // MARK: - Game Prepares
 
    private func preparingTest() {
-
-      viewModel.loadDefaults()
-
-      // choose random position of Bee
-      x = Int.random(in: 0...4)
-      y = Int.random(in: 0...4)
-
       // set Bee on view
-      collectionView.setupBee(x: x, y: y)
+      collectionView.setupBee(x: viewModel.xPosition, y: viewModel.yPosition)
 
       time = 3
       mainLabel.text = "\(time)"
@@ -175,14 +159,13 @@ class GameViewController: UIViewController {
       var rounds = 0
       stepsTimer = Timer.scheduledTimer(withTimeInterval: viewModel.speedInSec,
                                         repeats: true) { _ in
-         self.pickDirection()
-         self.changePositionInXY()
+         self.viewModel.pickDirection()
          rounds += 1
          if rounds == self.viewModel.steps {
             self.stepsTimer.invalidate()
             Timer.scheduledTimer(withTimeInterval: self.viewModel.speedInSec, repeats: false) { _ in
-               self.collectionView.index = IndexPath(item: self.y, section: self.x)
-               print("x - \(self.x), y - \(self.y)")
+               self.collectionView.index = IndexPath(item: self.viewModel.yPosition,
+                                                     section: self.viewModel.xPosition)
                self.collectionView.isHidden = false
                self.startStopButton.isHidden = true
                self.viewModel.playSound(with: S.Game.whereIsTheFly)
@@ -190,32 +173,6 @@ class GameViewController: UIViewController {
                self.collectionView.isUserInteractionEnabled = true
             }
          }
-      }
-   }
-
-   // MARK: - One Step of Bee
-
-   private func pickDirection() {
-
-      var array = [S.Game.left, S.Game.right, S.Game.up, S.Game.down]
-      if x == 0 { array = array.filter { $0 != S.Game.up} }
-      if x == 4 { array = array.filter { $0 != S.Game.down} }
-      if y == 0 { array = array.filter { $0 != S.Game.left} }
-      if y == 4 { array = array.filter { $0 != S.Game.right} }
-      movingDirection = array.randomElement()!
-      let animation = CATransition()
-      mainLabel.layer.add(animation, forKey: nil)
-      mainLabel.text = movingDirection
-      viewModel.playSound(with: movingDirection)
-   }
-
-   private func changePositionInXY() {
-      switch movingDirection {
-      case S.Game.left: y -= 1
-      case S.Game.right: y += 1
-      case S.Game.up: x -= 1
-      case S.Game.down: x += 1
-      default: return
       }
    }
 
@@ -274,11 +231,10 @@ extension GameViewController: GameCollectionViewProtocol {
    func checkResult(result: Bool) {
       viewModel.saveResult(isWin: result)
       viewModel.playSound(with: String(describing: result))
-      mainLabel.text = result ? S.Game.correct : S.Game.wrong
       alertOk(result: result) { [weak self] in
          guard let self = self else { return }
          self.startStopButton.isHidden = false
-         self.testStop()
+         self.viewModel.startStopButtonTapped()
       }
    }
 }

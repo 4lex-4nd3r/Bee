@@ -15,7 +15,6 @@
 		1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */; };
 		1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */; };
 		1F37879E28D4BCAF00C78665 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */; };
-		1F3787A328D4E66000C78665 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A228D4E66000C78665 /* GameViewModel.swift */; };
 		1F3787A928D50A6300C78665 /* UIStepper +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787A828D50A6300C78665 /* UIStepper +.swift */; };
 		1F3787AB28D50E0B00C78665 /* UILabel +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AA28D50E0B00C78665 /* UILabel +.swift */; };
 		1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */; };
@@ -89,6 +88,8 @@
 		1FD5491F28E43070001BCF24 /* Mia - up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD548F528E43070001BCF24 /* Mia - up.mp3 */; };
 		1FD5492128E61E88001BCF24 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492028E61E88001BCF24 /* GameLogic.swift */; };
 		1FD5492328E62914001BCF24 /* UIViewController + .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492228E62914001BCF24 /* UIViewController + .swift */; };
+		1FD5492828E76498001BCF24 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492728E76498001BCF24 /* GameViewModel.swift */; };
+		1FD5492A28E764AC001BCF24 /* GameViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5492928E764AC001BCF24 /* GameViewModelProtocol.swift */; };
 		1FD864DE288464A5008E02AF /* Даниил - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DC288464A5008E02AF /* Даниил - false.mp3 */; };
 		1FD864DF288464A5008E02AF /* Даниил - true.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864DD288464A5008E02AF /* Даниил - true.mp3 */; };
 		1FD864E828846656008E02AF /* Филипп - false.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD864E128846656008E02AF /* Филипп - false.mp3 */; };
@@ -137,7 +138,6 @@
 		1F1ADD4C28928EB000D908D7 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		1F1ADD4E2892A7E800D908D7 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		1F37879D28D4BCAF00C78665 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		1F3787A228D4E66000C78665 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1F3787A828D50A6300C78665 /* UIStepper +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStepper +.swift"; sourceTree = "<group>"; };
 		1F3787AA28D50E0B00C78665 /* UILabel +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel +.swift"; sourceTree = "<group>"; };
 		1F3787AC28D5127100C78665 /* UISegmentedControl +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl +.swift"; sourceTree = "<group>"; };
@@ -214,6 +214,8 @@
 		1FD548F528E43070001BCF24 /* Mia - up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mia - up.mp3"; sourceTree = "<group>"; };
 		1FD5492028E61E88001BCF24 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		1FD5492228E62914001BCF24 /* UIViewController + .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + .swift"; sourceTree = "<group>"; };
+		1FD5492728E76498001BCF24 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		1FD5492928E764AC001BCF24 /* GameViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelProtocol.swift; sourceTree = "<group>"; };
 		1FD864DC288464A5008E02AF /* Даниил - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - false.mp3"; sourceTree = "<group>"; };
 		1FD864DD288464A5008E02AF /* Даниил - true.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Даниил - true.mp3"; sourceTree = "<group>"; };
 		1FD864E128846656008E02AF /* Филипп - false.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Филипп - false.mp3"; sourceTree = "<group>"; };
@@ -287,8 +289,9 @@
 		1F1ADD4928927BDD00D908D7 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				1F3787A228D4E66000C78665 /* GameViewModel.swift */,
 				1F68C02F285328D200FFBDD0 /* GameViewController.swift */,
+				1FD5492728E76498001BCF24 /* GameViewModel.swift */,
+				1FD5492928E764AC001BCF24 /* GameViewModelProtocol.swift */,
 				1F3787A128D4E44800C78665 /* Collection View */,
 			);
 			path = Game;
@@ -872,8 +875,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1296AE28D793E200A458C4 /* DatePicker +.swift in Sources */,
+				1FD5492828E76498001BCF24 /* GameViewModel.swift in Sources */,
 				1F1ADD44288FCFC100D908D7 /* NotificationsService.swift in Sources */,
 				1F1ADD4F2892A7E800D908D7 /* StatisticTableViewCell.swift in Sources */,
+				1FD5492A28E764AC001BCF24 /* GameViewModelProtocol.swift in Sources */,
 				1F1ADD4B28927DAD00D908D7 /* StatisticManager.swift in Sources */,
 				1FD548B328E32E2A001BCF24 /* OnBoardingText.swift in Sources */,
 				1F1ADD4D28928EB000D908D7 /* StatisticViewController.swift in Sources */,
@@ -894,7 +899,6 @@
 				1F825AC4285B7C8300B7C315 /* SettingsViewController.swift in Sources */,
 				1FD548B528E32F40001BCF24 /* OnboardStatus.swift in Sources */,
 				1FD548BA28E40218001BCF24 /* Strings.swift in Sources */,
-				1F3787A328D4E66000C78665 /* GameViewModel.swift in Sources */,
 				1F1ADD462892633200D908D7 /* StatisticModel.swift in Sources */,
 				1F3787AD28D5127100C78665 /* UISegmentedControl +.swift in Sources */,
 				1F9FB99228DB9CA200B20366 /* Date + .swift in Sources */,
