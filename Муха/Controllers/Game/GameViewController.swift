@@ -16,19 +16,32 @@ class GameViewController: UIViewController {
    private lazy var statisticButton = UIButton(imageName: "list.star")
    private lazy var achievementsButton = UIButton(imageName: "star")
    private lazy var settingsButton = UIButton(imageName: "gearshape")
-   private let mainLabel = UILabel(size: 50, weight: .regular)
+   private let mainLabel = UILabel(size: 50, weight: .bold)
    private let beeImage: UIImageView = {
       let imageView = UIImageView()
       imageView.image = UIImage(named: "bigBee")
       imageView.contentMode = .scaleAspectFit
       return imageView
    }()
-   private let startStopButton: UIButton = {
+   private lazy var startStopButton: UIButton = {
       let button = UIButton()
       button.setTitle(S.Game.start, for: .normal)
+      button.titleLabel?.font = .systemFont(ofSize: 25)
       button.backgroundColor = .systemBlue
       button.layer.cornerRadius = 10
+      button.layer.shadowColor = UIColor.black.cgColor
+      button.layer.shadowRadius = 5
+      button.layer.shadowOpacity = 0.5
+      button.layer.shadowOffset = CGSize(width: 2, height: 2)
+      button.layer.masksToBounds = false
       return button
+   }()
+   private let tableImageView: UIImageView = {
+      let imageView = UIImageView()
+      imageView.contentMode = .scaleAspectFill
+      imageView.alpha = 0.7
+      imageView.isHidden = true
+      return imageView
    }()
 
    private var viewModel: GameViewModelProtocol!
@@ -57,6 +70,7 @@ class GameViewController: UIViewController {
    
    private func setupViews() {
       view.backgroundColor = .systemBackground
+      view.addSubview(tableImageView)
       view.addSubview(statisticButton)
       statisticButton.addTarget(self, action: #selector(statisticButtonTapped), for: .touchUpInside)
       view.addSubview(achievementsButton)
@@ -80,17 +94,43 @@ class GameViewController: UIViewController {
          self.mainLabel.layer.add(animation, forKey: nil)
          self.mainLabel.text = text
       }
+      viewModel.table.bind { [weak self] table in
+         guard let self = self else { return }
+         self.tableImageView.image = (table == 0) ? nil : UIImage(named: "\(table)")
+      }
+
 
       viewModel.isStarted.bind { [weak self] isStarted in
          guard let self = self else { return }
          UIApplication.shared.isIdleTimerDisabled = isStarted
-         self.collectionView.isHidden = !isStarted
-         self.statisticButton.isHidden = isStarted
-         self.achievementsButton.isHidden = isStarted
-         self.settingsButton.isHidden = isStarted
+
+         self.hideViewWithAnimation(shouldHidden: !isStarted, view: self.collectionView, time: 1)
+         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.statisticButton, time: 1)
+         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.achievementsButton, time: 1)
+         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.settingsButton, time: 1)
+         self.hideTableWithAnimation(shouldHidden: !isStarted, view: self.tableImageView)
+         self.changeColorForButton(isDefault: !isStarted, button: self.startStopButton)
+
+
+         //need animation for bee
          self.beeImage.isHidden = isStarted
-         self.startStopButton.backgroundColor = isStarted ? .systemRed : .systemBlue
-         self.startStopButton.setTitle((isStarted ? S.Game.stop : S.Game.start), for: .normal)
+
+//         if isStarted {
+//         let indexPath = IndexPath(item: self.viewModel.yPosition, section: self.viewModel.xPosition)
+//
+//         let cPoint = self.collectionView.layoutAttributesForItem(at: indexPath)?.center
+//         print(cPoint!)
+//
+//         UIView.animate(withDuration: 3, animations: {
+//
+//            self.beeImage.snp.makeConstraints { make in
+//               make.width.height.equalTo(50)
+//               make.center.equalTo(cPoint!)
+//            }
+//         })
+//         }
+
+
          if isStarted {
             self.preparingTest()
          } else {
@@ -132,9 +172,18 @@ class GameViewController: UIViewController {
 
    // MARK: - Game Prepares
 
+
    private func preparingTest() {
       // set Bee on view
       collectionView.setupBee(x: viewModel.xPosition, y: viewModel.yPosition)
+
+
+
+
+         //Frame Option 2:
+         //self.myView.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 4)
+         //         self.myView.backgroundColor = .blue
+
 
       time = 3
       mainLabel.text = "\(time)"
@@ -180,20 +229,24 @@ class GameViewController: UIViewController {
 
    private func setConstraints() {
 
+      tableImageView.snp.makeConstraints { make in
+         make.edges.equalToSuperview()
+      }
+
       statisticButton.snp.makeConstraints { make in
-         make.width.height.equalTo(30)
+         make.width.height.equalTo(50)
          make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
          make.left.equalToSuperview().inset(50)
       }
 
       achievementsButton.snp.makeConstraints { make in
-         make.width.height.equalTo(30)
+         make.width.height.equalTo(50)
          make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
          make.centerX.equalToSuperview()
       }
 
       settingsButton.snp.makeConstraints { make in
-         make.width.height.equalTo(30)
+         make.width.height.equalTo(50)
          make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
          make.right.equalToSuperview().inset(50)
       }
@@ -205,9 +258,8 @@ class GameViewController: UIViewController {
       }
 
       beeImage.snp.makeConstraints { make in
-         make.left.right.equalToSuperview().inset(40)
-         make.centerY.equalToSuperview()
-         make.height.equalTo(beeImage.snp.width)
+         make.height.width.equalTo(300)
+         make.center.equalToSuperview()
       }
 
       mainLabel.snp.makeConstraints { make in

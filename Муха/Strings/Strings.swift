@@ -43,6 +43,7 @@ enum S {
    // MARK: - StatisticCell
 
    enum StatisticCell {
+      static let label = "Statistic".localized()
       static let date = "Date ".localized()
       static let steps = "Steps - ".localized()
       static let speed = "Speed - ".localized()
@@ -53,6 +54,7 @@ enum S {
    // MARK: - Achievements
 
    enum Achievements {
+      static let label = "Achievements".localized()
       static let days = "days played streak -".localized()
       static let steps = "fly's steps -".localized()
       static let time = "watching the fly -".localized()
@@ -64,7 +66,7 @@ enum S {
    // MARK: - Settings Screen
 
    enum Settings {
-
+      static let label = "Settings".localized()
       static let steps = "steps".localized()
       static let speed = "speed".localized()
       static let notification = "reminder".localized()
@@ -76,9 +78,9 @@ enum S {
    enum Table {
 
       static let empty = "empty".localized()
-      static let first = "first".localized()
-      static let second = "second".localized()
-      static let third = "third".localized()
+      static let first = "table 1".localized()
+      static let second = "table 2".localized()
+      static let third = "table 3".localized()
    }
 
    // MARK: - Game

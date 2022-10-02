@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,18 +17,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigBee" translatesAutoresizingMaskIntoConstraints="NO" id="D57-2O-tO0">
-                                <rect key="frame" x="40" y="281" width="334" height="334"/>
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" secondItem="D57-2O-tO0" secondAttribute="width" multiplier="1:1" id="n6W-LX-4mA"/>
+                                    <constraint firstAttribute="width" constant="300" id="Mgv-tD-MvW"/>
+                                    <constraint firstAttribute="height" constant="300" id="l0O-2c-hUk"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="D57-2O-tO0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="40" id="3M3-VR-iqe"/>
-                            <constraint firstItem="D57-2O-tO0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QbF-Qf-p3I"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D57-2O-tO0" secondAttribute="trailing" constant="40" id="tR2-LR-Hpo"/>
+                            <constraint firstItem="D57-2O-tO0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9hS-Do-Lla"/>
+                            <constraint firstItem="D57-2O-tO0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="npY-lP-r7v"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,8 +39,5 @@
     </scenes>
     <resources>
         <image name="bigBee" width="1000" height="1128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

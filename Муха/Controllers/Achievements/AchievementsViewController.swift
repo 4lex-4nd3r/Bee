@@ -13,6 +13,7 @@ class AchievementsViewController : UIViewController {
 
    // MARK: - Properties
 
+   private let titleLabel = UILabel(size: 25, weight: .regular)
    private let starsView1 = StarsView()
    private let starsView2 = StarsView()
    private let starsView3 = StarsView()
@@ -31,6 +32,12 @@ class AchievementsViewController : UIViewController {
 
    private func setupViews() {
       view.backgroundColor = .systemBackground
+      view.addSubview(titleLabel)
+      titleLabel.text = S.Achievements.label
+      titleLabel.snp.makeConstraints { make in
+         make.centerX.equalToSuperview()
+         make.top.equalToSuperview().inset(20)
+      }
       starsStack = UIStackView(arrangedSubviews: [starsView1,
                                                   starsView2,
                                                   starsView3,

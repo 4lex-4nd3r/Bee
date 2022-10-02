@@ -17,6 +17,8 @@ class StatisticViewController : UIViewController {
    private let localRealm = try! Realm()
    
    // MARK: - UI Properties
+
+   private let titleLabel = UILabel(size: 25, weight: .regular)
    
    private let tableView = UITableView()
 
@@ -35,6 +37,12 @@ class StatisticViewController : UIViewController {
    
    private func setupViews() {
       view.backgroundColor = .systemBackground
+      view.addSubview(titleLabel)
+      titleLabel.text = S.StatisticCell.label
+      titleLabel.snp.makeConstraints { make in
+         make.centerX.equalToSuperview()
+         make.top.equalToSuperview().inset(20)
+      }
       view.addSubview(tableView)
       tableView.frame = view.frame
       tableView.dataSource = self
@@ -42,7 +50,7 @@ class StatisticViewController : UIViewController {
       tableView.rowHeight = 50
       tableView.register(StatisticTableViewCell.self, forCellReuseIdentifier: idStatisticCell)
       tableView.snp.makeConstraints { make in
-         make.top.equalToSuperview().inset(40)
+         make.top.equalTo(titleLabel.snp.bottom).inset(-20)
          make.left.right.bottom.equalToSuperview()
       }
    }

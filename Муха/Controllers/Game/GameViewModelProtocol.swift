@@ -12,13 +12,13 @@ protocol GameViewModelProtocol: AnyObject {
    var xPosition: Int { get }
    var yPosition: Int { get }
 
-   
    var isHide: Bool { get }
    var steps: Int { get }
    var speedInSec: Double { get }
    var voice: String { get }
 
    var mainText: Box<String> { get }
+   var table: Box<Int> { get }
    var isStarted: Box<Bool> { get }
 
    func startStopButtonTapped()

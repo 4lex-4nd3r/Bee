@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController {
    private var viewModel: SettingsViewModelProtocol!
    private var player: AVAudioPlayer!
 
+   private let titleLabel = UILabel(size: 25, weight: .regular)
    private let stepsLabel = UILabel(text: S.Settings.steps)
    private let speedLabel = UILabel(text: S.Settings.speed)
    private let reminderLabel = UILabel(text: S.Settings.notification)
@@ -58,6 +59,8 @@ class SettingsViewController: UIViewController {
 
    private func setupViews() {
       view.backgroundColor = .systemBackground
+      view.addSubview(titleLabel)
+      titleLabel.text = S.Settings.label
       view.addSubview(stepsLabel)
       view.addSubview(stepsCountLabel)
       view.addSubview(stepsStepper)
@@ -220,7 +223,11 @@ class SettingsViewController: UIViewController {
    // MARK: - Constraints
 
    private func setConstraints() {
-
+      
+      titleLabel.snp.makeConstraints { make in
+         make.centerX.equalToSuperview()
+         make.top.equalToSuperview().inset(20)
+      }
       stepsLabel.snp.makeConstraints { make in
          make.top.equalToSuperview().inset(100)
          make.left.equalToSuperview().inset(40)

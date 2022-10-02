@@ -22,6 +22,7 @@ class GameCollectionViewCell: UICollectionViewCell {
       super.init(frame: frame)
       backgroundColor = .systemGray3
       layer.cornerRadius = 15
+      layer.borderWidth = 1
       addSubview(imageView)
       imageView.snp.makeConstraints { make in
          make.edges.equalToSuperview()

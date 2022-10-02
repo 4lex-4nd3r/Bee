@@ -24,4 +24,49 @@ extension UIViewController {
       alertController.addAction(ok)
       present(alertController, animated: true)
    }
+
+
+   func hideViewWithAnimation<T: UIView>(shouldHidden: Bool, view: T, time: Double) {
+      if shouldHidden == true {
+         UIView.animate(withDuration: time, animations: {
+            view.alpha = 0
+         }) { (finished) in
+            view.isHidden = shouldHidden
+         }
+      } else {
+         view.alpha = 0
+         view.isHidden = shouldHidden
+         UIView.animate(withDuration: time) {
+            view.alpha = 1
+         }
+      }
+   }
+
+   func hideTableWithAnimation<T: UIView>(shouldHidden: Bool, view: T) {
+      if shouldHidden == true {
+         UIView.animate(withDuration: 1, animations: {
+            view.alpha = 0
+         }) { (finished) in
+            view.isHidden = shouldHidden
+         }
+      } else {
+         view.alpha = 0
+         view.isHidden = shouldHidden
+         UIView.animate(withDuration: 1) {
+            view.alpha = 0.7
+         }
+      }
+   }
+
+   func changeColorForButton<T:UIButton>(isDefault: Bool, button: T) {
+      UIView.animate(withDuration: 0.4) {
+         button.backgroundColor = isDefault ? .systemBlue : .systemRed
+         button.setTitle((!isDefault ? S.Game.stop : S.Game.start), for: .normal)
+      }
+   }
+
+   func hideBeeWithAnimation(hide: Bool) {
+
+      
+   }
 }

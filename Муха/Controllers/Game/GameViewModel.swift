@@ -12,6 +12,9 @@ import AVFoundation
 
 class GameViewModel: GameViewModelProtocol {
 
+
+
+
    var xPosition: Int = 0
    var yPosition: Int = 0
 
@@ -36,6 +39,7 @@ class GameViewModel: GameViewModelProtocol {
    var speedInSec: Double = 1
    var voice = S.Voices.man.fisrt
 
+   var table: Box<Int> = Box(value: 0)
    var isStarted: Box<Bool> = Box(value: false)
 
    func startStopButtonTapped() {
@@ -77,6 +81,7 @@ class GameViewModel: GameViewModelProtocol {
       if defaults.object(forKey: "speedInSec") != nil { speedInSec = defaults.double(forKey: "speedInSec") }
       isHide = defaults.bool(forKey: "isHide")
       voice = defaults.string(forKey: "voice") ?? S.Voices.man.fisrt
+      table.value = defaults.integer(forKey: "table")
    }
 
    func saveResult(isWin: Bool) {
