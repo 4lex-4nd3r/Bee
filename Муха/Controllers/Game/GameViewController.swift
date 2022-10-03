@@ -104,16 +104,17 @@ class GameViewController: UIViewController {
          guard let self = self else { return }
          UIApplication.shared.isIdleTimerDisabled = isStarted
 
-         self.hideViewWithAnimation(shouldHidden: !isStarted, view: self.collectionView, time: 1)
-         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.statisticButton, time: 1)
-         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.achievementsButton, time: 1)
-         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.settingsButton, time: 1)
+         self.hideViewWithAnimation(shouldHidden: !isStarted, view: self.collectionView, time: 0.5)
+         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.statisticButton, time: 0.5)
+         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.achievementsButton, time: 0.5)
+         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.settingsButton, time: 0.5)
          self.hideTableWithAnimation(shouldHidden: !isStarted, view: self.tableImageView)
          self.changeColorForButton(isDefault: !isStarted, button: self.startStopButton)
 
 
+         self.hideViewWithAnimation(shouldHidden: isStarted, view: self.beeImage, time: 0.5)
          //need animation for bee
-         self.beeImage.isHidden = isStarted
+//         self.beeImage.isHidden = isStarted
 
 //         if isStarted {
 //         let indexPath = IndexPath(item: self.viewModel.yPosition, section: self.viewModel.xPosition)

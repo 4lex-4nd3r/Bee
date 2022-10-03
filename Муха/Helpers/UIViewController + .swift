@@ -34,7 +34,7 @@ extension UIViewController {
             view.isHidden = shouldHidden
          }
       } else {
-         view.alpha = 0
+//         view.alpha = 0
          view.isHidden = shouldHidden
          UIView.animate(withDuration: time) {
             view.alpha = 1
@@ -44,7 +44,7 @@ extension UIViewController {
 
    func hideTableWithAnimation<T: UIView>(shouldHidden: Bool, view: T) {
       if shouldHidden == true {
-         UIView.animate(withDuration: 1, animations: {
+         UIView.animate(withDuration: 0.5, animations: {
             view.alpha = 0
          }) { (finished) in
             view.isHidden = shouldHidden
@@ -52,14 +52,14 @@ extension UIViewController {
       } else {
          view.alpha = 0
          view.isHidden = shouldHidden
-         UIView.animate(withDuration: 1) {
+         UIView.animate(withDuration: 0.5) {
             view.alpha = 0.7
          }
       }
    }
 
    func changeColorForButton<T:UIButton>(isDefault: Bool, button: T) {
-      UIView.animate(withDuration: 0.4) {
+      UIView.animate(withDuration: 0.5) {
          button.backgroundColor = isDefault ? .systemBlue : .systemRed
          button.setTitle((!isDefault ? S.Game.stop : S.Game.start), for: .normal)
       }
